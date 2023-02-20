@@ -1,0 +1,4 @@
+{
+  "extends": "@tsconfig/node16",
+  "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*"]
+}

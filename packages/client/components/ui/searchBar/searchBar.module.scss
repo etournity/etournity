@@ -1,0 +1,71 @@
+@import 'style/variables';
+
+.searchBar {
+  display: flex;
+  justify-content: space-between;
+  min-width: 16rem;
+  max-width: 30rem;
+  height: 2.0625rem;
+  border-radius: $br-small;
+}
+
+.states {
+  background: $steel;
+  color: $dark-grey;
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  &:hover {
+    color: $middle-grey;
+    background: $matt-black;
+    ::placeholder {
+      color: $middle-grey;
+    }
+  }
+}
+
+.input {
+  border: none;
+  height: 1.25rem;
+  width: 100%;
+  background-color: inherit;
+  outline: none;
+  &:focus {
+    color: $white;
+  }
+}
+
+.icon {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.placeholder {
+  display: flex;
+  flex: 5;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.x {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.click {
+  background: $matt-black;
+  color: $white;
+  &:hover {
+    background: $matt-black;
+    color: $white;
+  }
+}

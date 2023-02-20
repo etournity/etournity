@@ -1,0 +1,147 @@
+query matchInfo($matchId: ID!) {
+  match(matchId: $matchId) {
+    id
+    status
+    gameLobbyCode
+    supportLink
+    inGame
+    noShowTimer
+    round {
+      id
+      format
+      stage {
+        id
+        tournament {
+          id
+          noShow
+        }
+      }
+    }
+    readyChecks {
+      id
+      participant {
+        id
+      }
+      lobbyRole
+    }
+    opponents {
+      id
+      name
+      participantsReady(matchId: $matchId)
+      allScoresSubmitted(matchId: $matchId)
+      leaderId
+      participants {
+        id
+        isCreator(matchId: $matchId)
+        isReady(matchId: $matchId)
+        kicked
+        user {
+          id
+          linkedAccounts {
+            id
+            avatar
+          }
+        }
+      }
+    }
+    matchGames {
+      id
+      status
+      number
+      submissionsEqual
+      finalResults {
+        id
+        teamId
+        score
+      }
+      submissions {
+        id
+        teamId
+        resubmitted
+        matchGame {
+          id
+          number
+        }
+        results {
+          id
+          teamId
+          score
+        }
+      }
+    }
+  }
+}
+
+subscription matchChanged($matchId: ID!) {
+  matchChanged(matchId: $matchId) {
+    id
+    status
+    gameLobbyCode
+    supportLink
+    inGame
+    noShowTimer
+    round {
+      id
+      format
+      stage {
+        id
+        tournament {
+          id
+          noShow
+        }
+      }
+    }
+    readyChecks {
+      id
+      participant {
+        id
+      }
+      lobbyRole
+    }
+    opponents {
+      id
+      name
+      participantsReady(matchId: $matchId)
+      allScoresSubmitted(matchId: $matchId)
+      leaderId
+      participants {
+        id
+        isCreator(matchId: $matchId)
+        isReady(matchId: $matchId)
+        kicked
+        user {
+          id
+          linkedAccounts {
+            id
+            avatar
+          }
+        }
+      }
+    }
+    matchGames {
+      id
+      status
+      number
+      submissionsEqual
+      finalResults {
+        id
+        teamId
+        score
+      }
+      submissions {
+        id
+        teamId
+        resubmitted
+        matchGame {
+          id
+          number
+        }
+        results {
+          id
+          teamId
+          score
+        }
+      }
+    }
+  }
+}

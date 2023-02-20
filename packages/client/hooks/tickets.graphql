@@ -1,0 +1,51 @@
+query RelatedTickets {
+  relatedTickets {
+    id
+    type
+    number
+    message
+    verdict
+    resolved
+    matchBlocked
+    matchId
+    assignee {
+      id
+      displayName
+      linkedAccounts {
+        id
+        avatar
+        username
+        discriminator
+      }
+    }
+    reporter {
+      id
+      linkedAccounts {
+        id
+        avatar
+        username
+        discriminator
+      }
+    }
+    reported {
+      id
+      displayName
+      linkedAccounts {
+        id
+        avatar
+        username
+        discriminator
+      }
+      participants {
+        id
+        tournamentId
+      }
+    }
+    tournament {
+      id
+      hostUser {
+        id
+      }
+    }
+  }
+}

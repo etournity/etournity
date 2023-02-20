@@ -1,0 +1,25 @@
+@import 'style/variables';
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  .card {
+    width: 100%;
+    grid-column: span 2;
+    width: 25rem;
+
+    &:last-child:nth-child(odd) {
+      place-self: center;
+    }
+
+    &:nth-child(odd):not(:last-child:nth-child(odd)) {
+      margin-left: auto;
+    }
+
+    &:nth-last-child(1):nth-child(odd) {
+      grid-column: 2 / span 2;
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "@etournity/rbac",
+  "version": "1.6.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "yarn tsc --outDir dist",
+    "test:types": "yarn tsc --noEmit --skipLibCheck",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "@prisma/client": "3.13.0",
+    "type-fest": "^2.12.2",
+    "typescript": "^4.6.3"
+  }
+}

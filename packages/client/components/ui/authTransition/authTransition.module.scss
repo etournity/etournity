@@ -1,0 +1,50 @@
+@import 'style/variables';
+
+@keyframes fadein {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.authTransition {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: pink;
+
+  .transition {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    font-weight: 600;
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    &.visible {
+      display: none;
+    }
+    > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      :first-child {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    background: $plastic;
+    opacity: 1;
+    animation: fadein 2s;
+    animation-delay: 2s;
+  }
+}

@@ -1,0 +1,23 @@
+@import 'style/variables';
+.wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  .info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    color: $white;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin: 2.5rem;
+  }
+  .button {
+    height: 2.875rem;
+  }
+}

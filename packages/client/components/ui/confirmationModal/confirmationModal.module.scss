@@ -1,0 +1,49 @@
+@import 'style/variables';
+
+.confirmationModal {
+  display: flex;
+  font-weight: 600;
+  font-size: 0.875rem;
+  justify-content: center;
+  padding: 1.5rem;
+  .title {
+    display: flex;
+    font-size: 1.125rem;
+    font-weight: bold;
+    img {
+      padding-right: 0.5rem;
+    }
+  }
+  .content {
+    margin: 1.5rem 0;
+
+    p {
+      margin-bottom: 1.125rem;
+    }
+  }
+  .actionsWrapper {
+    justify-content: center;
+
+    &.stacked {
+      max-width: 66%;
+      margin: 0 auto;
+      align-self: center;
+      flex-wrap: wrap-reverse;
+      > * {
+        width: calc(50% - 0.25rem);
+        &:nth-child(2) {
+          margin: 0;
+        }
+      }
+
+      :last-child {
+        width: 100%;
+        margin-bottom: 0.5rem;
+      }
+    }
+  }
+}
+
+.note {
+  color: $error;
+}

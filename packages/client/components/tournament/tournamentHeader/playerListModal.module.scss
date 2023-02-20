@@ -1,0 +1,46 @@
+@import 'style/variables';
+
+.modal {
+  max-height: 80vh;
+  .table {
+    width: 20rem;
+
+    th,
+    td {
+      padding: 0.5rem;
+      border-bottom: none;
+      &:first-child {
+        padding-left: 0.75rem;
+      }
+      &:last-child {
+        padding-right: 0.75rem;
+      }
+    }
+    .head {
+      .headRow {
+        th {
+          background-color: $muiSurface1;
+
+          &:first-child {
+            border-top-left-radius: 0.75rem;
+            border-bottom-left-radius: 0.75rem;
+          }
+          &:last-child {
+            border-top-right-radius: 0.75rem;
+            border-bottom-right-radius: 0.75rem;
+          }
+        }
+      }
+    }
+    .body {
+      overflow-y: auto;
+      .seed {
+        margin-left: 0.5rem;
+      }
+      .playerInfo {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}

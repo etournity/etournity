@@ -1,0 +1,72 @@
+@import 'style/variables';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .reporterToReported {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    line-height: 1.0625rem;
+    font-weight: 600;
+    > svg {
+      margin: 0 0.5rem;
+    }
+  }
+  .inputWrapper {
+    display: flex;
+    .msgTitle {
+      padding-left: 0.25rem;
+      color: $middle-grey;
+      font-size: 1.125rem;
+      .reporter {
+        color: $primary;
+        font-weight: 600;
+      }
+    }
+
+    .card {
+      flex: 1;
+      flex-shrink: 0;
+      word-break: break-all;
+      &:first-child {
+        margin-right: 0.75rem;
+      }
+      &:last-child {
+        margin-left: 0.75rem;
+      }
+    }
+  }
+  .verdictCard {
+    width: 100%;
+    margin-top: 1rem;
+    .description {
+      font-size: 0.75rem;
+      line-height: 0.9375rem;
+      font-weight: 600;
+    }
+  }
+  .actionWrapper {
+    display: flex;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-top: 0.125rem solid $white;
+
+    .actions {
+      justify-content: center;
+    }
+  }
+}
+
+.reporterTeam {
+  color: $primary;
+}
+
+.reportedTeam {
+  color: $secondary;
+}
+.allParticipants {
+  color: $error;
+}

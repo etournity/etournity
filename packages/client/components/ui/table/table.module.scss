@@ -1,0 +1,153 @@
+@import 'style/variables';
+.tableWrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+  .tableHeader {
+    display: flex;
+    background: $void;
+    padding: 0.5rem 1rem;
+    border-bottom: solid $primary 0.125rem;
+    &.hideUnderline {
+      border-bottom: none;
+      margin-bottom: 0.25rem;
+    }
+
+    .headerItem {
+      display: flex;
+      align-items: center;
+      user-select: none;
+      svg {
+        visibility: collapse;
+        margin: 0.25rem;
+      }
+      &:first-child.hasLeading {
+        margin-left: 0.5rem;
+      }
+      &.sortable {
+        cursor: pointer;
+        &:not(.sorted) {
+          &:hover {
+            color: $middle-grey;
+          }
+        }
+      }
+
+      &.sorted {
+        color: $primary;
+        svg {
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .tableContent {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background: $plastic;
+    overflow-y: auto;
+
+    .tableItem {
+      display: flex;
+      flex: 1;
+      background: $matt-black;
+      align-items: center;
+      border-radius: $br-small;
+
+      &:not(:last-child) {
+        margin-bottom: 0.25rem;
+      }
+      &:hover {
+        cursor: pointer;
+        .sectionWrapper {
+          border: 0.125rem solid $primary;
+          border-radius: $br-small;
+          padding: 0;
+        }
+        box-shadow: $box-shadow__primary;
+        &.isBlocking {
+          box-shadow: $box-shadow__error;
+        }
+      }
+      &.hasLeading {
+        .sectionWrapper {
+          padding-left: 0;
+          border-left: none;
+          .itemSection:first-child {
+            margin-left: 0;
+          }
+        }
+      }
+      &.slim {
+        .itemSection {
+          margin: 0.375rem 0;
+          padding-left: 0;
+          .seperator {
+            margin: 0;
+          }
+        }
+        .itemNumber,
+        .itemText {
+          padding-right: 1rem;
+        }
+      }
+      .leading {
+        width: 1.5rem;
+      }
+      .sectionWrapper {
+        display: flex;
+        flex: 1;
+        align-self: stretch;
+        padding: 0.125rem;
+      }
+      .itemSection {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+
+        padding-left: 1rem;
+        margin: 0.875rem 0;
+        min-height: 1.0625rem;
+        max-height: 2.125rem;
+
+        &:first-child {
+          margin-left: 1rem;
+          padding-left: 0;
+        }
+        &:last-child {
+          flex: 1;
+          .seperator {
+            display: none;
+          }
+        }
+        .itemText {
+          text-align: start;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin: auto 0;
+          max-height: inherit;
+          font-size: 0.875rem;
+          line-height: 1.0625rem;
+        }
+        .itemNumber {
+          width: inherit;
+          margin: auto 0;
+          font-size: 1rem;
+          line-height: 1rem;
+          text-align: end;
+        }
+        .seperator {
+          width: 0.0625rem;
+          background: inherit;
+          margin-left: 1rem;
+          flex-shrink: 0;
+        }
+      }
+    }
+    .empty {
+      flex: 1;
+    }
+  }
+}

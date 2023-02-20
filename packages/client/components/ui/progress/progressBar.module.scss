@@ -1,0 +1,24 @@
+@import 'style/variables';
+.barWrapper {
+  display: flex;
+  align-items: center;
+
+  .barBackground {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+    height: 0.125rem;
+    background-image: $logo-gradient;
+  }
+  .barFill {
+    height: 0.125rem;
+    background: #393939;
+    transition: 0.5s width ease-in-out;
+  }
+  .text {
+    margin-left: 0.25rem;
+    font-weight: 600;
+    min-width: 2.5rem;
+    text-align: end;
+  }
+}

@@ -1,0 +1,8 @@
+.countdown {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  > svg {
+    margin-right: 0.25rem;
+  }
+}

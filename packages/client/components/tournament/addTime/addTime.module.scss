@@ -1,0 +1,60 @@
+@import 'style/variables';
+
+.main {
+  display: flex;
+  font-size: 0.75rem;
+}
+
+.upperDiv {
+  display: flex;
+  justify-content: stretch;
+
+  .leftDiv,
+  .rightDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1.9375rem;
+    width: 50%;
+  }
+  margin-bottom: 0.375rem;
+}
+
+.leftDiv {
+  background: $void;
+  color: $white;
+  border-radius: $br-small 0 0 $br-small;
+
+  span {
+    color: $middle-grey;
+    width: 50%;
+  }
+
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+
+  input {
+    width: 50%;
+    color: $white;
+    border: none;
+    background: $void;
+    outline: none;
+    text-align: right;
+  }
+}
+
+.rightDiv {
+  background: $steel;
+  cursor: pointer;
+  border-radius: 0 $br-small $br-small 0;
+
+  &:hover {
+    background: $ash-black;
+  }
+}

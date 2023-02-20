@@ -1,0 +1,32 @@
+@import 'style/variables';
+
+.schedule {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  border-radius: 0.75rem;
+  background-color: $muiSurface2;
+
+  .lowerSchedule {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1rem;
+
+    div {
+      display: flex;
+      align-self: flex-end;
+      justify-content: space-between;
+      width: 100%;
+      &:not(:last-child) {
+        margin-bottom: 0.5rem;
+      }
+
+      :first-child {
+        font-weight: bold;
+      }
+    }
+  }
+}

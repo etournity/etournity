@@ -1,0 +1,36 @@
+query BracketInfo($tournamentId: ID!) {
+  tournament(tournamentId: $tournamentId) {
+    participants {
+      teamId
+      user {
+        id
+      }
+    }
+    stages {
+      id
+      title
+      type
+      rounds {
+        id
+        number
+        format
+        matches {
+          id
+          status
+          opponents {
+            id
+            name
+            seed
+            avatar
+          }
+          matchGames {
+            finalResults {
+              teamId
+              score
+            }
+          }
+        }
+      }
+    }
+  }
+}

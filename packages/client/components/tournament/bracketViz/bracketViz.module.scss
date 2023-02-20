@@ -1,0 +1,55 @@
+@import 'style/variables';
+
+.scrollReminder {
+  > :nth-child(2) {
+    pointer-events: none;
+  }
+
+  .stageParent {
+    overflow: hidden;
+    background: $charcoal;
+    border-radius: $br-large;
+    box-shadow: $box-shadow;
+    position: relative;
+
+    &.fullscreen {
+      border: transparent;
+      box-shadow: none;
+    }
+
+    .floatBarContainer {
+      position: absolute;
+      z-index: 1;
+      bottom: 1.25rem;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      &.isMobile {
+        bottom: 0;
+        background-color: $muiSurface4;
+        .floatBar {
+          background: none;
+          box-shadow: none;
+          padding: 0.625rem;
+          .floatBarButton:not(:last-child) {
+            margin-right: 1rem;
+          }
+        }
+      }
+      .floatBar {
+        background: $muiSurface4;
+        border-radius: 2rem;
+        display: flex;
+        box-shadow: $box-shadow;
+        padding: 0.75rem;
+
+        .floatBarButton {
+          border-radius: 2rem;
+          &:not(:last-child) {
+            margin-right: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}

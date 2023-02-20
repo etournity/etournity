@@ -1,0 +1,76 @@
+query relatedChatRooms {
+  relatedChatRooms {
+    id
+    name
+    tournament {
+      id
+      title
+    }
+    members {
+      id
+      displayName
+    }
+  }
+}
+
+query chatRoomMessages($chatRoomId: ID!) {
+  chatRoomMessages(chatRoomId: $chatRoomId) {
+    id
+    content
+    createdAt
+    author {
+      id
+      displayName
+      linkedAccounts {
+        id
+        avatar
+      }
+    }
+    chatRoomId
+  }
+}
+mutation createMessage($chatRoomId: String!, $content: String!) {
+  createChatMessage(chatRoomId: $chatRoomId, content: $content) {
+    id
+    createdAt
+    content
+    chatRoomId
+    author {
+      id
+      displayName
+      linkedAccounts {
+        id
+        avatar
+      }
+    }
+  }
+}
+
+subscription chatRoomChanged($chatRoomId: ID!, $fetchMessages: Boolean!) {
+  chatRoomChanged(chatRoomId: $chatRoomId) {
+    id
+    name
+    tournament {
+      id
+      title
+    }
+    members {
+      id
+      displayName
+    }
+    messages @include(if: $fetchMessages) {
+      id
+      createdAt
+      content
+      chatRoomId
+      author {
+        id
+        displayName
+        linkedAccounts {
+          id
+          avatar
+        }
+      }
+    }
+  }
+}

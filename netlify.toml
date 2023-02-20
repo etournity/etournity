@@ -1,0 +1,9 @@
+[dev]
+command = "yarn workspace @etournity/client dev"
+
+[build]
+command = "yarn workspace @etournity/client deploy"
+publish = "packages/client/.next"
+
+[[plugins]]
+package = "@netlify/plugin-nextjs"

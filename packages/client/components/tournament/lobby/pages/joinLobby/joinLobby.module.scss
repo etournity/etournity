@@ -1,0 +1,17 @@
+@import 'style/variables';
+
+.waiting {
+  padding-right: 2rem;
+  display: flex;
+  color: $steel;
+  justify-content: center;
+  align-items: center;
+  > span {
+    margin-left: 0.25rem;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    font-weight: 600;
+    text-align: center;
+    max-width: 9rem;
+  }
+}

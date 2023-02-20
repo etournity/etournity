@@ -1,0 +1,61 @@
+query BracketGenInfo($tournamentId: ID!) {
+  tournament(tournamentId: $tournamentId) {
+    id
+    checkinEnd
+    participants {
+      id
+      isPlayer
+      isCheckedIn
+      team {
+        id
+        name
+        seed
+        avatar
+        averageElo
+      }
+    }
+    stages {
+      id
+      type
+      rounds {
+        id
+        completedMatches
+        format
+        locked
+        number
+        status
+        matches {
+          id
+        }
+      }
+    }
+  }
+}
+
+mutation generateBrackets($tournamentId: ID!, $algorithm: String!) {
+  generateBrackets(tournamentId: $tournamentId, algorithm: $algorithm)
+}
+
+mutation publishBrackets(
+  $tournamentId: ID!
+  $publishInput: [[[String]]!]!
+  $bestOfs: [BestOfInput]!
+) {
+  publishBrackets(
+    tournamentId: $tournamentId
+    publishInput: $publishInput
+    bestOfs: $bestOfs
+  ) {
+    id
+    format
+    matches {
+      id
+      status
+      number
+      opponents {
+        id
+        name
+      }
+    }
+  }
+}

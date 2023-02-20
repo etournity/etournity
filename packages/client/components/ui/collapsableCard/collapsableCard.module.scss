@@ -1,0 +1,16 @@
+@import 'style/variables';
+
+.collapsableCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  background-color: $muiSurface1;
+  .title {
+    color: $muiOnSurfaceVariant;
+  }
+  .expandToggle {
+    display: flex;
+    align-items: center;
+    padding-top: 0.5rem;
+  }
+}

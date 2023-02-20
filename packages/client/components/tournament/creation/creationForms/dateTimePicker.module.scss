@@ -1,0 +1,24 @@
+@import 'style/variables';
+
+.picker {
+  padding: 0.1rem 0.7rem;
+  background: $ash-black;
+  border-radius: $br-large;
+  transition-duration: 200ms;
+  cursor: pointer;
+
+  &:hover {
+    background: $dark-grey;
+    box-shadow: $box-shadow;
+  }
+
+  &.selected {
+    background: transparent;
+    color: $primary;
+
+    &:hover {
+      background: $ash-black;
+      box-shadow: none;
+    }
+  }
+}

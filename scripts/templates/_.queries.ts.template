@@ -1,0 +1,6 @@
+import { extendType } from 'nexus'
+
+export const %ObjectQueries = extendType({
+  type: 'Query',
+  definition(t) {},
+})

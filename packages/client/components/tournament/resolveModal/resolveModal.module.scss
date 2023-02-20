@@ -1,0 +1,87 @@
+@import 'style/variables';
+
+.modal {
+  background-color: $plastic;
+  .step {
+    display: flex;
+    justify-content: stretch;
+    flex-direction: column;
+    &:not(:last-child) {
+      border-bottom: 2px solid $white;
+    }
+    padding: 1rem 0;
+    .stepTitle {
+      font-size: 1.125rem;
+      line-height: 1.375rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+    }
+    .stepContent {
+      display: flex;
+      justify-content: center;
+      align-self: stretch;
+      flex-direction: column;
+      max-width: 100%;
+
+      .supportWrapper {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        width: min-content;
+        .tooltip {
+          &.overCopied {
+            :last-child > span {
+              color: $error;
+            }
+          }
+        }
+
+        .linkWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background: $gradient;
+          padding: 1rem 1.5rem;
+          border-radius: $br-large;
+          cursor: pointer;
+          min-width: 12rem;
+
+          &:hover {
+            .link {
+              color: $void;
+              ~ svg > path {
+                fill: $void;
+              }
+            }
+          }
+          .link {
+            background: none;
+            border: none;
+            outline: none;
+            color: $steel;
+            font-size: 0.75rem;
+            line-height: 0.9375rem;
+            margin-right: 1.25rem;
+            transition: color 0.1s linear;
+            ~ svg > path {
+              transition: fill 0.1s linear;
+            }
+            &::selection {
+              background: none;
+              color: $plastic;
+            }
+          }
+        }
+      }
+      .description {
+        color: $middle-grey;
+        text-align: center;
+      }
+    }
+  }
+  .submit {
+    display: flex;
+    justify-content: center;
+    padding-top: 1rem;
+  }
+}

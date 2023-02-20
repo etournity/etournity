@@ -1,0 +1,30 @@
+@import 'style/variables';
+
+.wrapper {
+  display: flex;
+  justify-content: flex-end;
+  height: 65vh;
+  overflow: hidden;
+
+  .pageIndicator {
+    margin-right: 1rem;
+    margin-top: 2rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.2rem;
+    color: $primary;
+    font-weight: 600;
+  }
+
+  .forms {
+    margin-right: 10rem;
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      margin-top: 2rem;
+      &:last-child {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

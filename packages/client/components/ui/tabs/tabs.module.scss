@@ -1,0 +1,40 @@
+@import 'style/variables';
+
+.tabComp {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background: $void;
+}
+
+.tabWrapper {
+  display: flex;
+  background: $void;
+}
+
+.content {
+  width: 100%;
+  background: $plastic;
+  display: flex;
+  flex: 1;
+}
+
+.header {
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 1rem 1.5rem;
+  background: $void;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $middle-grey;
+  max-width: max-content;
+  display: flex;
+}

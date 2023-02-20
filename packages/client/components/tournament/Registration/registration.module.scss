@@ -1,0 +1,95 @@
+@import 'style/variables';
+
+.registration {
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  align-items: flex-end;
+
+  .action {
+    width: 100%;
+    border-radius: 6.25rem;
+    height: 2.5rem;
+  }
+}
+.mobileRegistration {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  bottom: 5rem;
+  left: 0;
+  width: 100%;
+  height: 3.5rem;
+  background: $muiSurface4;
+  transition: transform 0.2s ease;
+  &.hiddenLeft {
+    transform: translateX(-100%);
+  }
+  &.hiddenDown {
+    transform: translateY(100%);
+  }
+  .mobileAction {
+    position: absolute;
+    top: 0;
+    height: 3.5rem;
+    right: 1rem;
+    border-radius: 1rem;
+    transform: translateY(calc(-100% - 1rem));
+
+    &[aria-disabled='true'],
+    &:disabled {
+      background-color: $muiSurface4;
+    }
+
+    /* M3/Elevation Dark/3 */
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15);
+    filter: drop-shadow(0px 1px 3px rgba(0, 0, 0, 0.3));
+  }
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.75rem 0 0.5rem;
+  svg {
+    margin-right: 0.125rem;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+
+  &.primary {
+    color: $muiPrimary;
+  }
+  &.error {
+    color: $muiError;
+  }
+  &.info {
+    color: $muiOnSurfaceVariant;
+  }
+  &.mobile {
+    margin: 0;
+  }
+}
+
+.leaveButton {
+  width: 4.375rem;
+  height: 2.5rem;
+  align-self: flex-end;
+  border-radius: 6.25rem;
+  margin-left: 0.25rem;
+
+  span {
+    margin: 0;
+  }
+  svg {
+    height: 1.375rem;
+    width: 1.375rem;
+  }
+  &.mobile {
+    align-self: center;
+    margin-left: 0.75rem;
+  }
+}

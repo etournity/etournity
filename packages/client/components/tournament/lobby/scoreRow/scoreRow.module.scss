@@ -1,0 +1,53 @@
+@import 'style/variables';
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+
+  .displayBorder {
+    display: flex;
+    align-items: stretch;
+    padding: 0.125rem;
+    width: 5rem;
+    height: 2rem;
+    color: $white;
+    border-radius: 2rem;
+
+    &.both {
+      background-image: $gradient;
+    }
+    &.current {
+      background: $primary;
+    }
+    &.opponent {
+      background: $secondary;
+    }
+    &.none {
+      padding: 0;
+    }
+    .display {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      background-color: $steel;
+      font-size: 0.75rem;
+      line-height: 0.75rem;
+      border-radius: 2rem;
+    }
+  }
+  .game {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.125rem;
+    color: $error;
+
+    &.scoresEqual {
+      color: $white;
+    }
+    svg {
+      margin-left: 0.5rem;
+    }
+  }
+}

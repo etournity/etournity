@@ -1,0 +1,66 @@
+@import 'style/variables';
+
+.wrapper {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: stretch;
+  align-items: stretch;
+  &:not(.hide) {
+    &.hover {
+      &:hover {
+        .accessDiv {
+          opacity: 1;
+        }
+      }
+    }
+    &.static {
+      .accessDiv {
+        opacity: 1;
+      }
+    }
+  }
+  &.hide {
+    .accessDiv {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  .component {
+    flex: 1;
+  }
+  .accessDiv {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    z-index: 6;
+    transition: all 0.2s linear;
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-anchor: center;
+      .title {
+        color: $white;
+        letter-spacing: 1rem;
+        text-indent: 1rem;
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        font-weight: 700;
+      }
+      .message {
+        color: $middle-grey;
+        font-size: 1.25rem;
+        line-height: 1.5rem;
+      }
+    }
+  }
+}

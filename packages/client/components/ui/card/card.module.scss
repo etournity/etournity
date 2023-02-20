@@ -1,0 +1,45 @@
+@import 'style/variables';
+
+.card {
+  position: relative;
+  background: $steel;
+  display: flex;
+  flex-direction: column;
+  width: max-content;
+
+  .title {
+    display: flex;
+    position: absolute;
+    white-space: nowrap;
+    left: 0;
+    top: 0;
+    transform: translateY(-50%);
+    width: 100%;
+
+    &.insetTitle {
+      justify-content: center;
+      position: unset;
+      transform: unset;
+      padding: 1rem;
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+    .titleString {
+      flex: 1;
+      line-height: 1.375rem;
+      font-size: 1.125rem;
+      font-weight: 600;
+      text-align: center;
+    }
+  }
+
+  .content {
+    padding: 1rem;
+  }
+
+  &.disabled {
+    opacity: 20%;
+    user-select: none;
+    pointer-events: none;
+  }
+}

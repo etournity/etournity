@@ -1,0 +1,47 @@
+query getPlayersFromTournament($tournamentId: ID!) {
+  tournament(tournamentId: $tournamentId) {
+    players {
+      id
+      team {
+        id
+      }
+      user {
+        id
+        displayName
+        gameUsers {
+          id
+          inGameName
+        }
+      }
+    }
+  }
+}
+
+mutation createTicket(
+  $tournamentId: ID!
+  $ticketType: TicketType!
+  $reportedId: ID!
+  $message: String
+  $reporterId: ID!
+) {
+  createTicket(
+    tournamentId: $tournamentId
+    ticketType: $ticketType
+    message: $message
+    reporterId: $reporterId
+    reportedId: $reportedId
+  ) {
+    id
+    tournament {
+      id
+    }
+    type
+    message
+    reporter {
+      id
+    }
+    reporter {
+      id
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@import 'style/variables';
+
+.modalActions {
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+}
+
+.modal {
+  .card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: calc(100% - 2rem);
+    border-radius: 1.75rem;
+    background-color: $muiSurface3;
+    padding: 1.5rem;
+
+    .icon,
+    .title {
+      font-size: 1.5rem;
+      line-height: 2rem;
+      margin-bottom: 1rem;
+      svg {
+        width: 1.5rem;
+        height: 1.5rem;
+      }
+    }
+
+    .content {
+      flex: 1;
+
+      p {
+        color: $muiOnSurfaceVariant;
+      }
+    }
+  }
+}

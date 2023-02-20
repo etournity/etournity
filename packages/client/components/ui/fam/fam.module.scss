@@ -1,0 +1,116 @@
+@import 'style/variables';
+
+.wrapper {
+  --margin: 1.5rem;
+
+  position: relative;
+  width: max-content;
+  height: max-content;
+
+  &.open {
+    .menu {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .activator:hover {
+    cursor: pointer;
+    > svg > path {
+      fill: $middle-grey;
+      transition: fill 0.1s linear;
+    }
+  }
+
+  .menu {
+    position: absolute;
+    padding: 0.5rem 0;
+    background-color: $steel;
+    max-width: 15rem;
+    width: inherit;
+    height: inherit;
+    z-index: 5;
+    box-shadow: $box-shadow;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    cursor: default;
+    border-radius: $br-small;
+
+    .option {
+      padding: 0 0.5rem;
+      transition: background-color 0.2s;
+      &:hover {
+        background-color: $matt-black;
+      }
+    }
+    &::before {
+      content: '';
+      height: 1rem;
+      width: 1rem;
+      position: absolute;
+      transform: rotate(45deg);
+      background-color: inherit;
+      z-index: -1;
+    }
+    &.giveWay-top {
+      &.left,
+      &.right,
+      &.top,
+      &.bottom {
+        top: 160%;
+        &::before {
+          top: calc(20% - 0.5rem);
+          right: -0.5rem;
+        }
+      }
+    }
+    &.giveWay-bottom {
+      &.left,
+      &.right,
+      &.top,
+      &.bottom {
+        top: -60%;
+        &::before {
+          top: calc(80% - 0.5rem);
+          right: -0.5rem;
+        }
+      }
+    }
+    &.left {
+      right: calc(100% + var(--margin));
+      top: 50%;
+      transform: translateY(-50%);
+      &::before {
+        top: calc(50% - 0.5rem);
+        right: -0.5rem;
+      }
+    }
+    &.right {
+      left: calc(100% + var(--margin));
+      top: 50%;
+      transform: translateY(-50%);
+      &::before {
+        top: calc(50% - 0.5rem);
+        left: -0.5rem;
+      }
+    }
+    &.top {
+      bottom: calc(100% + var(--margin));
+      left: 50%;
+      transform: translateX(-50%);
+      &::before {
+        left: calc(50% - 0.5rem);
+        bottom: -0.5rem;
+      }
+    }
+    &.bottom {
+      top: calc(100% + var(--margin));
+      left: 50%;
+      transform: translateX(-50%);
+      &::before {
+        left: calc(50% - 0.5rem);
+        top: -0.5rem;
+      }
+    }
+  }
+}

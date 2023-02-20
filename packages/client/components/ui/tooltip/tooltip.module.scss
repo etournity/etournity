@@ -1,0 +1,97 @@
+@import 'style/variables';
+.wrapper {
+  --margin: 1.5rem;
+
+  position: relative;
+  width: max-content;
+  height: max-content;
+  .activator:focus {
+    ~ .tooltip.noHover:not(.disabled) {
+      opacity: 1;
+      pointer-events: auto;
+    }
+  }
+  .activator:hover {
+    ~ .tooltip:not(.noHover):not(.disabled) {
+      opacity: 1;
+      transition-delay: 0.3s;
+      pointer-events: auto;
+    }
+  }
+}
+.tooltip {
+  position: absolute;
+  padding: 1rem;
+  background-color: $ash-black;
+  border-radius: $br-large;
+  max-width: 15rem;
+  word-wrap: break-word;
+  width: inherit;
+  height: inherit;
+  z-index: 5;
+  box-shadow: $box-shadow;
+  opacity: 0;
+  transition: opacity 0.2s linear;
+  cursor: default;
+  pointer-events: none;
+
+  &.slim {
+    padding: 0.5rem 1rem;
+  }
+  .title {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: inherit;
+  }
+
+  .content {
+    font-size: 0.75rem;
+    color: inherit;
+  }
+
+  &::after {
+    content: '';
+    height: 1rem;
+    width: 1rem;
+    position: absolute;
+    transform: rotate(45deg);
+    background-color: inherit;
+  }
+  &.left {
+    right: calc(100% + var(--margin));
+    top: 50%;
+    transform: translateY(-50%);
+    &::after {
+      top: calc(50% - 0.5rem);
+      right: -0.5rem;
+    }
+  }
+  &.right {
+    left: calc(100% + var(--margin));
+    top: 50%;
+    transform: translateY(-50%);
+    &::after {
+      top: calc(50% - 0.5rem);
+      left: -0.5rem;
+    }
+  }
+  &.top {
+    bottom: calc(100% + var(--margin));
+    left: 50%;
+    transform: translateX(-50%);
+    &::after {
+      left: calc(50% - 0.5rem);
+      bottom: -0.5rem;
+    }
+  }
+  &.bottom {
+    top: calc(100% + var(--margin));
+    left: 50%;
+    transform: translateX(-50%);
+    &::after {
+      left: calc(50% - 0.5rem);
+      top: -0.5rem;
+    }
+  }
+}

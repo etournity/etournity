@@ -1,0 +1,55 @@
+@import 'style/variables';
+
+.header {
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  background: $void;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $middle-grey;
+  transition: color 0.15s linear;
+
+  &:hover {
+    background: $matt-black;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+  }
+}
+
+.underline {
+  height: 0.125rem;
+  background-color: $primary;
+  width: 0;
+  transition: width 0.15s linear;
+  &.active {
+    width: 100%;
+  }
+}
+
+.activeHeader {
+  background: $plastic;
+  color: $white;
+}
+
+.title {
+  display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  user-select: none;
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 0.25rem;
+  font-size: 0.75rem;
+}
+
+.badgeNumber {
+  margin-left: 0.25rem;
+}

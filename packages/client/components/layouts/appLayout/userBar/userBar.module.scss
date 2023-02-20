@@ -1,0 +1,90 @@
+@import 'style/variables';
+.userBar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 100%;
+  .menu {
+    display: flex;
+    overflow: hidden;
+    border-top-right-radius: 0;
+    max-width: 12rem;
+    .menuList,
+    .socialsList {
+      flex-shrink: 0;
+      width: 100%;
+      transition: transform 0.15s;
+    }
+    &.showSocials {
+      .menuList,
+      .socialsList {
+        transform: translateX(-100%);
+      }
+    }
+    .menuItem {
+      padding: 0.375rem 0.75rem;
+      min-height: 2rem;
+      > p {
+        font-size: 0.875rem;
+      }
+      .menuIcon {
+        margin-right: 1rem;
+      }
+      .trailingIcon {
+        margin-left: auto;
+        color: $muiOnSurface;
+        opacity: 0.08;
+      }
+      &.socialLink {
+        min-height: 2.5rem;
+      }
+      &:hover {
+        .trailingIcon {
+          opacity: 1;
+        }
+      }
+    }
+    .userInfo {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      padding: 0 1rem;
+      min-height: 2rem;
+      > p {
+        line-height: 1rem;
+      }
+    }
+
+    .divider {
+      margin: 0.375rem 0.75rem;
+      height: 0.0625rem;
+      background-color: $muiOnSurface;
+      opacity: 0.08;
+    }
+
+    .version {
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      margin-top: 0.5rem;
+      padding: 0.5rem;
+      font-size: 0.625rem;
+      line-height: 0.625rem;
+      color: $muiNeutral40;
+    }
+  }
+  .menuButton {
+    height: 100%;
+    border-radius: 0;
+  }
+  .logIn {
+    height: 100%;
+    border-radius: 0;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.625rem;
+    line-height: 0.625rem;
+    padding: 0.25rem 1rem;
+    color: $white;
+  }
+}

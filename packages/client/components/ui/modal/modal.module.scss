@@ -1,0 +1,92 @@
+@import 'style/variables';
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  &.active {
+    display: flex;
+  }
+}
+
+.defaultModal {
+  min-height: 10rem;
+  max-height: calc(100% - 4rem);
+  max-width: calc(100% - 4rem);
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  box-shadow: $box-shadow;
+  background: $plastic;
+  border-radius: $br-large;
+  position: relative;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &.disablePadding {
+    padding: 0;
+    min-height: 0;
+  }
+
+  &.scroll {
+    height: calc(100% - 4rem);
+    overflow-y: scroll;
+  }
+
+  .sticky {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .icon {
+      margin-right: 0.5rem;
+      line-height: 0;
+    }
+
+    .title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0;
+    }
+
+    > Button {
+      padding: 0;
+      margin-left: auto;
+      line-height: 0;
+    }
+  }
+}
+
+div.modalActions {
+  display: flex;
+  padding-top: 0.5rem;
+  justify-content: flex-end;
+  flex: 1;
+
+  > div,
+  > button {
+    margin-right: 0.5rem;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}

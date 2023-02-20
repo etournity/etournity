@@ -1,0 +1,45 @@
+@import 'style/variables';
+.wrapper {
+  position: relative;
+  .text {
+    --margin: 0.5rem;
+    color: $white;
+    position: absolute;
+
+    line-height: normal;
+    width: max-content;
+
+    &.center {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      width: min-content;
+    }
+    &.left {
+      right: calc(100% + var(--margin));
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &.right {
+      left: calc(100% + var(--margin));
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    &.top {
+      bottom: calc(100% + var(--margin));
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    &.bottom {
+      top: calc(100% + var(--margin));
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+}

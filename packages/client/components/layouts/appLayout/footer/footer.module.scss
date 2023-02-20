@@ -1,0 +1,73 @@
+@import 'style/variables';
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3.5rem;
+  background-color: $void;
+  padding: 0 1rem;
+  color: $middle-grey;
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  .logoWrapper {
+    flex: 1;
+    max-width: 15rem;
+    display: flex;
+    align-items: flex-end;
+    .version {
+      font-size: 0.875rem;
+      line-height: 0.8125rem;
+    }
+  }
+  .center {
+    .links {
+      margin-right: 1rem;
+      > span {
+        transition: color 0.15s ease-out;
+        cursor: pointer;
+
+        &.currentPage {
+          text-decoration: underline;
+          color: white;
+        }
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
+  .socials {
+    align-self: stretch;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: stretch;
+    max-width: 15rem;
+
+    > a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 3.5rem;
+      transition: background-color 0.3s;
+      &:hover {
+        &.discord {
+          background-color: #5865f2;
+        }
+        &.twitch {
+          background-color: #9146ff;
+        }
+        &.instagram {
+          background-color: #dd2d75;
+        }
+        &.twitter {
+          background-color: #1d9bf0;
+        }
+        &.youtube {
+          background-color: #ff0000;
+        }
+      }
+    }
+  }
+}

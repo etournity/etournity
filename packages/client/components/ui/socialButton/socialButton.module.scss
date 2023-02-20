@@ -1,0 +1,70 @@
+@import 'style/variables';
+
+.socialButton {
+  display: flex;
+  flex-direction: column;
+  border-radius: $br-large;
+  background: $ash-black;
+  min-width: 8.125rem;
+  width: fit-content;
+  min-height: 4.5625rem;
+  height: fit-content;
+  font-weight: bold;
+  font-size: 0.625rem;
+  line-height: 1.125rem;
+  color: $middle-grey;
+
+  .upperDiv {
+    position: relative;
+    display: flex;
+    flex: 3;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 3.4375rem;
+    border-radius: $br-large;
+    padding: 0.8125rem 1.125rem 0.8125rem 1.125rem;
+    img {
+      max-width: 5.875rem;
+    }
+    p {
+      width: 100%;
+      text-align: center;
+      color: $white;
+      font-size: 1.5rem;
+    }
+  }
+
+  .text {
+    flex: 1;
+    padding: 0 0.75rem 0 0.75rem;
+    text-align: center;
+    min-height: 1.125rem;
+  }
+
+  &.Discord {
+    .upperDiv {
+      background: #5865f2;
+      box-shadow: 0 0 0.75rem #5865f2;
+    }
+  }
+  &.Twitch {
+    .upperDiv {
+      background: #9146ff;
+      box-shadow: 0 0 0.75rem #9146ff;
+    }
+  }
+  &.Youtube {
+    .upperDiv {
+      background: $steel;
+      box-shadow: 0 0 0.75rem $steel;
+      padding: 0;
+    }
+  }
+  &.Default {
+    .upperDiv {
+      background: $steel;
+      box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.25);
+    }
+  }
+}

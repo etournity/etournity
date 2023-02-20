@@ -1,0 +1,65 @@
+@import 'style/variables';
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 14.375rem;
+  cursor: pointer;
+  border-radius: $br-large;
+  background-color: $matt-black;
+  flex-shrink: 0;
+  transition-duration: 100ms;
+  font-size: 1.25rem;
+  line-height: 1.3rem;
+  user-select: none;
+
+  .background {
+    transition-duration: 100ms;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border-radius: $br-large;
+    filter: brightness(0.5);
+  }
+
+  .title {
+    z-index: 1;
+    font-weight: 700;
+  }
+
+  .subtitle {
+    z-index: 1;
+    font-weight: lighter;
+  }
+
+  &:hover {
+    box-shadow: $box-shadow;
+    color: $primary;
+    background: $matt-black;
+
+    .background {
+      filter: brightness(0.7);
+    }
+  }
+
+  &.active {
+    border: 0.25rem solid $primary;
+    background: $matt-black;
+  }
+
+  &.disabled {
+    cursor: default;
+    filter: brightness(0.8);
+    background: $matt-black;
+
+    &:hover {
+      box-shadow: none;
+      color: $white;
+      background: $matt-black;
+    }
+  }
+}

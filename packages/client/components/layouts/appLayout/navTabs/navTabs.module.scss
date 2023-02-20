@@ -1,0 +1,25 @@
+@import 'style/variables';
+
+.navTabs {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  position: relative;
+  .divider {
+    width: 0.125rem;
+    margin: 0 1rem;
+    height: 50%;
+    background-color: $muiOnSurface;
+    opacity: 0.08;
+  }
+
+  .activeIndicator {
+    position: absolute;
+    bottom: 0;
+    height: 0.25rem;
+    margin: 0 0.5rem;
+    border-radius: 0.625rem 0.625rem 0 0;
+    background-color: $muiPrimary;
+    transition: all 0.2s;
+  }
+}

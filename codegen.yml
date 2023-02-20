@@ -1,0 +1,26 @@
+schema:
+  [
+    packages/server/src/generated/schema.graphql,
+    packages/client/state/local-schema.graphql,
+  ]
+documents:
+  - 'packages/client/**/*.graphql'
+generates:
+  packages/client/generated/graphql.tsx:
+    plugins:
+      - 'typescript'
+      - 'typescript-resolvers'
+      - 'typescript-operations'
+      - 'typescript-react-apollo'
+    config:
+      forceTypename: true
+      withComponent: false
+      withHOC: false
+      withHooks: true
+      apolloReactHooksImportFrom: '@apollo/client'
+      apolloReactCommonImportFrom: '@apollo/client'
+      preResolveTypes: true
+
+  packages/client/generated/graphql-files.d.ts:
+    plugins:
+      - 'typescript-graphql-files-modules'

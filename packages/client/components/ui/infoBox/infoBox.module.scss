@@ -1,0 +1,21 @@
+@import 'style/variables';
+
+.infobox {
+  background: $steel;
+  border: 0.125rem dashed $middle-grey;
+  border-radius: 0.9375rem;
+  width: fit-content;
+  padding: 1rem;
+  font-weight: 600;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+
+  h1 {
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    letter-spacing: 0.085em;
+    color: $primary;
+    font-weight: bold;
+    text-align: center;
+  }
+}

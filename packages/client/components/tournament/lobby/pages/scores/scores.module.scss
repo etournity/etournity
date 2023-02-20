@@ -1,0 +1,104 @@
+@use 'sass:color';
+@import 'style/variables';
+
+.formWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+  flex: 1;
+  .bestOf {
+    text-align: center;
+    font-size: 0.8125rem;
+    line-height: 0.9375rem;
+    font-weight: 600;
+    margin-bottom: 0.125rem;
+  }
+  .bubbles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    .bubble {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 100%;
+      border: 0.1rem solid $dark-grey;
+      margin: 0 0.2rem;
+      transition: all 0.2s ease-in-out;
+
+      &.pointLeft {
+        border: 0.1rem solid $primary-accent;
+        background-color: $primary;
+      }
+
+      &.pointRight {
+        border: 0.1rem solid $secondary-accent;
+        background-color: $secondary;
+      }
+
+      &.win {
+        border: 0.15rem solid $tertiary;
+      }
+    }
+  }
+
+  .radios {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    list-style-type: none;
+    align-items: center;
+
+    input[type='radio'] {
+      display: none;
+    }
+
+    span {
+      font-size: 1rem;
+      color: $middle-grey;
+    }
+
+    label {
+      display: inline-block;
+      background-color: color.change($primary, $alpha: 0.4);
+      padding: 0.5rem 0;
+      border-radius: $br-small;
+      cursor: pointer;
+      color: $void;
+      transition: all 0.2s ease-in-out;
+      width: 5.5rem;
+      text-align: center;
+
+      &:hover {
+        background: $primary-hover;
+        box-shadow: 0 0 0.5rem rgba(172, 247, 240, 0.5);
+      }
+    }
+
+    &.hidden {
+      display: none;
+    }
+
+    &.active {
+      span {
+        color: $white;
+      }
+
+      label {
+        background: $primary;
+      }
+    }
+
+    input[type='radio']:checked + label {
+      background: $primary;
+    }
+  }
+  .waiting {
+    align-self: center;
+    border-radius: $br-large;
+    background: $primary;
+    color: $void;
+    padding: 0.5rem 1rem;
+  }
+}

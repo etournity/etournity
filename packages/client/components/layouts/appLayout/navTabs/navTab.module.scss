@@ -1,0 +1,36 @@
+@import 'style/variables';
+
+.navTab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1.25rem;
+  max-width: 11rem;
+  min-width: 9.375rem;
+  height: 4rem;
+  background: $muiSurface4;
+  &:hover {
+    cursor: pointer;
+    background: $muiSurface5;
+  }
+  .title {
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 1rem;
+    line-height: 1rem;
+    font-weight: 700;
+    width: fit-content;
+
+    &.active {
+      color: $muiPrimary;
+    }
+  }
+  .badgeRoot {
+    flex: 1;
+    justify-content: center;
+  }
+  .badgeOffset {
+    right: -0.25rem;
+  }
+}

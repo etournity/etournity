@@ -1,0 +1,165 @@
+@import 'style/variables';
+
+.hub {
+  display: flex;
+  flex: 1;
+  max-width: 93.75rem;
+  align-self: stretch;
+  flex-direction: column;
+  justify-content: stretch;
+  margin: 4rem 0 2rem;
+  .hubBar {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    background: $steel;
+    margin-bottom: 0.5rem;
+    border-radius: $br-large;
+    flex-shrink: 0;
+    .aligner {
+      display: flex;
+      flex: 2;
+      margin-right: 0.5rem;
+      > * {
+        flex: 1;
+        &:first-child {
+          border-top-left-radius: 0.3125rem;
+          border-bottom-left-radius: 0.3125rem;
+          margin-right: 0.5rem;
+        }
+      }
+    }
+    > .tournamentController {
+      flex: 1;
+      border-top-right-radius: 0.3125rem;
+      border-bottom-right-radius: 0.3125rem;
+      > :first-child {
+        border-top-right-radius: 0.3125rem;
+        border-bottom-right-radius: 0.3125rem;
+      }
+    }
+    .delete {
+      position: absolute;
+      top: 0;
+      left: 0.5rem;
+      transform: translatey(-100%);
+      display: flex;
+      align-items: center;
+      background-color: $matt-black;
+      height: 2rem;
+      padding: 0.25rem;
+      border-top-right-radius: 0.3125rem;
+      border-top-left-radius: 0.3125rem;
+      overflow: hidden;
+      max-width: 2rem;
+      transition: all 0.2s linear;
+      white-space: nowrap;
+      font-weight: 700;
+      cursor: pointer;
+      * {
+        margin-right: 0.25rem;
+      }
+
+      &:hover {
+        max-width: 20rem;
+        color: $error;
+        svg > path {
+          fill: $error;
+          transition: fill 0.2s linear;
+        }
+      }
+    }
+  }
+  .lower {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    .title {
+      padding: 1rem 0;
+      font-size: 1.5rem;
+      line-height: 1.8125rem;
+      font-weight: 700;
+      border-bottom: solid $white 0.125rem;
+    }
+    .issueTracker {
+      flex: 2;
+      background: $plastic;
+      border-radius: $br-large;
+      margin-right: 0.5rem;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      .issueLock {
+        align-items: stretch;
+        flex: 1;
+      }
+    }
+    .participantManager {
+      flex: 1;
+      background: $plastic;
+      border-radius: $br-large;
+      text-align: center;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}
+
+.dataHandler {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.notStaff {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+
+  > svg {
+    margin-bottom: 1rem;
+  }
+  > button {
+    margin-top: 1.5rem;
+  }
+  > span {
+    font-size: 1rem;
+    &:first-of-type {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+  }
+}
+
+.sharingModal {
+  text-align: center;
+
+  p {
+    margin-top: 1.625rem;
+  }
+
+  .link {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
+
+  button {
+    text-transform: capitalize;
+  }
+
+  .copyButton {
+    border-radius: 6.25rem;
+    padding: 0.625rem 3.1875rem 0.625rem 2.6875rem;
+    margin-top: 1rem;
+    margin-bottom: 2.625rem;
+    min-width: 257px;
+  }
+}

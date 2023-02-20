@@ -1,0 +1,32 @@
+@import 'style/variables';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .title {
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1.8125rem;
+    letter-spacing: 0.69rem;
+    text-indent: 0.69rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .description {
+    color: $middle-grey;
+    font-weight: 900;
+    font-size: 1.5rem;
+    line-height: 1.8125rem;
+    margin-top: 1rem;
+  }
+
+  .actions {
+    margin-top: 1rem;
+    :not(:last-child) {
+      margin-right: 0.5rem;
+    }
+  }
+}

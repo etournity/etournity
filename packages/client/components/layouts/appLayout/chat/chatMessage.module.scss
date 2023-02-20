@@ -1,0 +1,21 @@
+@import 'style/variables';
+
+.message {
+  &:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    .authorName {
+      margin-left: 0.5rem;
+    }
+    .messageTimestamp {
+      margin-left: 0.5rem;
+      color: $muiOnSurfaceVariant;
+    }
+  }
+  .messageContent {
+    margin-left: 2rem;
+  }
+}

@@ -1,0 +1,86 @@
+@import 'style/variables';
+
+.wrapper {
+  display: flex;
+  flex: 1;
+
+  .pickers {
+    > div {
+      display: grid;
+      grid-template-columns: 50% 50%;
+      flex: 1;
+
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+
+      > div {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+
+        > * {
+          white-space: nowrap;
+        }
+      }
+
+      > :first-child {
+        font-weight: 800;
+        font-size: 1rem;
+        margin-right: 0.3rem;
+        justify-content: start;
+      }
+    }
+  }
+
+  .interval {
+    display: flex;
+    align-items: center;
+
+    .bracket:first-child {
+      border: 1px solid white;
+      border-left: none;
+      height: 3rem - 0.375rem; // Subtract border width
+      width: 0.5rem;
+    }
+
+    .bracket:nth-child(2) {
+      background: white;
+      height: 0.0625rem;
+      width: 0.3125rem;
+      margin-right: 0.3rem;
+    }
+
+    .label {
+      padding: 0.1rem 0.4rem;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+
+      background-color: $plastic;
+      border-radius: $br-large;
+
+      .labelInput {
+        background: none;
+        border: none;
+        width: 1.25rem;
+      }
+    }
+  }
+}
+
+.disclaimer {
+  font-size: smaller;
+  color: $dark-grey;
+  margin-top: 0.5rem;
+}
+
+.timer {
+  display: flex;
+
+  > :first-child {
+    margin-top: 1rem;
+    margin-right: 2rem;
+  }
+}

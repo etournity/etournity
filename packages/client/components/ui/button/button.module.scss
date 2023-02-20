@@ -1,0 +1,84 @@
+@import 'style/variables';
+
+button.button {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: $white;
+  background: $primary;
+  border: none;
+  box-sizing: border-box;
+  font-weight: 600;
+  border-radius: $br-large;
+
+  &.primary {
+    color: $steel;
+  }
+  &.secondary {
+    background: $ash-black;
+  }
+  &.tertiary {
+    background: transparent;
+  }
+  &.ghost {
+    background: none;
+  }
+  &.error {
+    background: $error;
+  }
+
+  transition: all 0.2s ease-in-out;
+  &:hover:not(.loading) {
+    &.primary {
+      background: $primary-hover;
+      box-shadow: 0 0 0.5rem rgba(172, 247, 240, 0.5);
+    }
+    &.secondary {
+      box-shadow: 0 0 0.5rem rgba(239, 239, 239, 0.5);
+    }
+    &.ghost {
+      text-shadow: 0 0 1rem $white;
+    }
+    &.error {
+      box-shadow: 0 0 0.5rem $error;
+    }
+  }
+
+  &:focus:not(:disabled),
+  &:active:not(:disabled) {
+    &.primary {
+      animation: primaryClick 0.45s ease-out 1;
+    }
+    &.secondary {
+      animation: secondaryClick 0.45s ease-out 1;
+      svg > path {
+        animation: iconClick 0.45s ease-out 1;
+      }
+    }
+    &.ghost {
+      animation: ghostClick 0.45s ease-out 1;
+    }
+  }
+  &:disabled {
+    cursor: initial;
+    &:not(.loading) {
+      &.primary {
+        background: $primary-disabled;
+        color: $matt-black;
+        box-shadow: none;
+      }
+      &.secondary {
+        color: $dark-grey;
+        box-shadow: none;
+      }
+      &.ghost {
+        color: $dark-grey;
+        text-shadow: none;
+      }
+      &.error {
+        background: $error__disabled;
+        box-shadow: none;
+        color: $middle-grey;
+      }
+    }
+  }
+}

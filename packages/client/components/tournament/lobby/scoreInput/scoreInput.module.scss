@@ -1,0 +1,88 @@
+@use 'sass:color';
+@import 'style/variables';
+
+.radios {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  align-items: center;
+
+  input[type='radio'] {
+    display: none;
+  }
+  .game {
+    font-size: 1rem;
+    font-weight: 600;
+    color: $middle-grey;
+    margin: 0 1rem;
+  }
+
+  label {
+    display: inline-block;
+    background-color: color.change($ash-black, $alpha: 0.4);
+    padding: 0.5rem 0;
+    border-radius: 2rem;
+    border: 2px solid color.change($ash-black, $alpha: 0.4);
+
+    cursor: pointer;
+    color: $white;
+    transition: all 0.2s ease-in-out;
+    transition: outline 0.1s ease-in-out;
+    width: 5.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+
+    &.disabled {
+      cursor: default;
+    }
+
+    &:hover:not(.disabled) {
+      background: $primary-hover;
+      border: 2px solid $primary-hover;
+      color: $void;
+      box-shadow: 0 0 0.5rem rgba(172, 247, 240, 0.3);
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+
+  &.active {
+    label {
+      background: $primary;
+      color: $void;
+    }
+  }
+
+  input[type='radio']:checked + label {
+    background: $ash-black;
+    border: 2px solid $primary;
+    &:hover:not(.disabled) {
+      color: $white;
+    }
+  }
+  &.multiColor {
+    label:last-of-type {
+      background-color: color.change($ash-black, $alpha: 0.4);
+      border: 2px solid color.change($ash-black, $alpha: 0.4);
+
+      &:hover:not(.disabled) {
+        background: $secondary-accent;
+        border: 2px solid $secondary-accent;
+      }
+    }
+    &.active {
+      label:last-of-type {
+        background: $secondary;
+        border: 2px solid $secondary;
+      }
+    }
+
+    input[type='radio']:checked + label:last-of-type {
+      background: $ash-black;
+      border: 2px solid $secondary;
+    }
+  }
+}

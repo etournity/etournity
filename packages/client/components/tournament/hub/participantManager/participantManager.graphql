@@ -1,0 +1,60 @@
+mutation updateGameUserElo($id: ID!, $elo: Int!, $tournamentId: ID!) {
+  updateElo(id: $id, elo: $elo, tournamentId: $tournamentId) {
+    id
+    elo
+  }
+}
+mutation updateSeed($teamId: ID!, $seed: Int!) {
+  updateSeed(teamId: $teamId, seed: $seed) {
+    id
+    seed
+  }
+}
+
+mutation updateParticipantRoles(
+  $participantId: ID!
+  $addRoles: [ParticipantRoleType!]
+  $removeRoles: [ParticipantRoleType!]
+  $deniedMod: Boolean
+  $ticketId: ID
+  $verdict: String
+) {
+  updateParticipantRoles(
+    participantId: $participantId
+    addRoles: $addRoles
+    removeRoles: $removeRoles
+    deniedMod: $deniedMod
+    ticketId: $ticketId
+    verdict: $verdict
+  ) {
+    id
+    isCheckedIn
+    isRegistered
+    isPlayer
+    isHost
+    isCurrentUser
+    requestingMod
+    deniedMod
+    kicked
+    roles {
+      type
+    }
+  }
+}
+
+mutation kickParticipant($participantId: ID!) {
+  kickParticipant(participantId: $participantId) {
+    id
+    isCheckedIn
+    isRegistered
+    isPlayer
+    isHost
+    isCurrentUser
+    requestingMod
+    deniedMod
+    kicked
+    roles {
+      type
+    }
+  }
+}

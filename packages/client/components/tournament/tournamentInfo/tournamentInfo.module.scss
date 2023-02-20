@@ -1,0 +1,70 @@
+@import 'style/variables';
+
+.info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  border-radius: 0.75rem;
+  background-color: $muiSurface2;
+
+  .title {
+    margin: 1rem 0 0.5rem;
+    color: $muiOnSurfaceVariant;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .infoBody {
+    display: flex;
+    flex: 1;
+
+    .infoWrapper {
+      width: 50%;
+
+      div {
+        display: flex;
+        flex: 1;
+        align-items: center;
+
+        svg {
+          margin-right: 0.75rem;
+        }
+      }
+    }
+  }
+  .links {
+    display: flex;
+
+    .link {
+      display: flex;
+      align-items: center;
+      width: 50%;
+      cursor: pointer;
+      label {
+        cursor: pointer;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      svg {
+        margin-right: 0.75rem;
+      }
+      &:hover {
+        label {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .organizer {
+    display: flex;
+    align-items: center;
+
+    .avatar {
+      margin-right: 1rem;
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+}

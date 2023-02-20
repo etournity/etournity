@@ -1,0 +1,180 @@
+@import 'style/variables';
+
+.tournamentController {
+  min-width: 29rem;
+  max-width: 35rem;
+  min-height: 11rem;
+  background: $matt-black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0;
+
+  .header {
+    font-size: 1.125rem;
+    line-height: 1.375rem;
+    font-weight: bold;
+  }
+}
+
+.main {
+  display: flex;
+  flex: 1;
+  padding: 1rem;
+  justify-content: center;
+  align-items: stretch;
+  align-self: stretch;
+}
+.endedWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  .endedText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    margin-bottom: 1.5rem;
+    > svg {
+      margin-right: 0.5rem;
+    }
+    &.finished {
+      color: $success;
+    }
+    &.cancelled {
+      color: $error;
+    }
+  }
+}
+.steps {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0.5rem;
+}
+
+.controls {
+  flex: 1;
+  display: flex;
+  margin-left: 0.5rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  > :not(:last-child) {
+    margin-bottom: 0.125rem;
+  }
+
+  .forceEnd {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $steel;
+    color: $white;
+    border-radius: $br-small;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    &:hover {
+      background: $plastic;
+    }
+  }
+
+  .top {
+    display: flex;
+    justify-content: stretch;
+    align-items: stretch;
+    flex: 1;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: $br-small;
+
+    background: $primary;
+    flex: 2;
+    text-align: center;
+    color: $steel;
+    font-size: 0.75rem;
+    font-weight: 600;
+    .loadingWrapper {
+      display: flex;
+      align-items: center;
+      margin-right: 2rem;
+      .loadingSpacer {
+        width: 2rem;
+      }
+    }
+    .countdown {
+      justify-content: center;
+    }
+    &.interactable {
+      cursor: pointer;
+      &:hover {
+        background-color: $primary-hover;
+        box-shadow: $selected-shadow__primary;
+      }
+    }
+  }
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    font-size: 0.6875rem;
+    line-height: 0.8125rem;
+    color: $middle-grey;
+    :first-child {
+      padding-right: 0.5rem;
+    }
+  }
+}
+
+.lowerDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $primary;
+  height: 2.9375rem;
+  width: 100%;
+  color: $steel;
+  font-weight: 600;
+  cursor: pointer;
+
+  .end {
+    background: $dark-grey;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    color: $white;
+    cursor: default;
+  }
+}
+
+.addTime {
+  background: $steel;
+}
+
+.time {
+  background: $void;
+}
+
+.modal {
+  button {
+    border-radius: $br-large;
+  }
+}

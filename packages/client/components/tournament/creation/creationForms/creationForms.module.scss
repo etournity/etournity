@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+
+  > div {
+    margin-right: 1rem;
+  }
+
+  > div > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+}

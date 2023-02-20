@@ -1,0 +1,172 @@
+@import 'style/variables';
+div.container {
+  position: relative;
+
+  .input {
+    margin: 0.25rem 0;
+    font-weight: 600;
+    background: $void;
+    padding: 0.6rem;
+    transition-duration: 250ms;
+    transition-property: background, box-shadow, border;
+    color: $input-font-color;
+    border: 0.125rem solid transparent;
+    border-radius: $br-large;
+
+    &:hover {
+      background: $plastic;
+      box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.25);
+
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $plastic;
+        }
+      }
+    }
+    &:focus {
+      background: $plastic;
+      outline: none;
+      border: 0.125rem solid $primary;
+      box-shadow: 0 0.25rem 0.75rem rgba(172, 247, 240, 0.25);
+
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $plastic;
+        }
+      }
+    }
+    &:disabled {
+      background: $plastic;
+      color: $input-font-disabled;
+
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $plastic;
+        }
+      }
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    &.success {
+      animation-name: pulse;
+      animation-duration: 400ms;
+      animation-direction: alternate;
+      animation-iteration-count: 2;
+
+      @keyframes pulse {
+        from {
+          background: $void;
+          boder: 0.125rem solid transparent;
+          box-shadow: none;
+        }
+        to {
+          background: $plastic;
+          border: 0.125rem solid $success;
+          box-shadow: 0 0.25rem 0.75rem rgba(0, 211, 59, 0.25);
+        }
+      }
+
+      & ~ .labelWrapper {
+        .stroke {
+          animation-name: stroke-pulse;
+          animation-duration: 400ms;
+          animation-direction: alternate;
+          animation-iteration-count: 2;
+
+          @keyframes stroke-pulse {
+            from {
+              background: $void;
+            }
+            to {
+              background: $plastic;
+            }
+          }
+        }
+
+        .label {
+          animation-name: label-pulse;
+          animation-duration: 400ms;
+          animation-direction: alternate;
+          animation-iteration-count: 2;
+
+          @keyframes label-pulse {
+            from {
+              color: $input-font-color;
+            }
+            to {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    &.error {
+      background: $plastic;
+      border: 0.125rem solid $error;
+      box-shadow: 0 0.25rem 0.75rem rgba(211, 0, 0, 0.25);
+
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $plastic;
+        }
+        .label {
+          color: $white;
+        }
+      }
+    }
+    &.fullWidth {
+      width: 100%;
+    }
+  }
+
+  .labelWrapper {
+    position: absolute;
+    left: 0.35rem;
+    top: -0.25rem;
+
+    .strokeContainer {
+      position: relative;
+      .stroke {
+        transition-duration: 250ms;
+        background-color: $void;
+        width: 100%;
+        position: absolute;
+        height: 0.1225rem;
+        top: 0.5rem;
+        &.hidden {
+          width: 0;
+        }
+      }
+
+      .label {
+        white-space: nowrap;
+        overflow: hidden;
+        transition-duration: 250ms;
+        padding: 0 0.0625rem;
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        font-size: 0.625rem;
+        width: 100%;
+        color: $input-font-color;
+        &.disabled {
+          color: $input-font-disabled;
+        }
+        &.hidden {
+          width: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+
+  .errorText {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: $error;
+    text-shadow: 0 0 0.25rem #000, 0 0 0.25rem $error;
+    margin-bottom: 0;
+  }
+}

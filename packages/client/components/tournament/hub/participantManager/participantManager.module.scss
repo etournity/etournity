@@ -1,0 +1,133 @@
+@import 'style/variables';
+
+.tabs {
+  > :first-child {
+    > :first-child {
+      width: max-content;
+    }
+    > :last-child {
+      flex: 1;
+      padding: 0.5rem;
+      max-width: none;
+    }
+  }
+  > :last-child {
+    border-top: 0.125rem solid $plastic;
+  }
+}
+.searchBar {
+  min-width: 10rem;
+  width: 100%;
+}
+.player {
+  max-height: 3rem;
+}
+.discord {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+
+  .discordInfo {
+    margin-left: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    line-height: 0.875rem;
+    font-size: 0.75rem;
+    text-align: start;
+    overflow: hidden;
+
+    .discordName {
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding-right: 0.25rem;
+    }
+  }
+}
+.seed {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin-right: 1rem;
+}
+.statusIcon {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  margin-right: 0.5rem;
+}
+.playerName {
+  line-height: 2rem;
+  font-size: 0.875rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.staffManager {
+  padding: 1rem;
+  border-top: 0.125rem solid $primary;
+}
+.input::-webkit-inner-spin-button,
+.input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.input {
+  &[type='number'] {
+    -moz-appearance: textfield;
+  }
+  background: inherit;
+  border: none;
+  outline: none;
+  width: inherit;
+  text-align: center;
+  font-size: 0.875rem;
+  line-height: 1rem;
+  margin: auto 0;
+  &:hover {
+    background: $steel;
+  }
+  &:focus {
+    background: $primary;
+    color: $void;
+  }
+}
+.playerMenu {
+  display: flex;
+  justify-content: flex-end;
+  margin: auto 0;
+
+  .playerOption {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-weight: 600;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    padding: 0 0.5rem;
+    transition: background-color 0.1s linear;
+    &:hover {
+      background-color: $plastic;
+    }
+    &.red {
+      color: $error;
+      path {
+        fill: $error;
+      }
+    }
+    :first-child {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+.empty {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

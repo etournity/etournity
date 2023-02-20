@@ -1,0 +1,9 @@
+query getUserDetails($userId: ID!) {
+  user(userId: $userId) {
+    id
+    linkedAccounts {
+      userId
+      avatar
+    }
+  }
+}

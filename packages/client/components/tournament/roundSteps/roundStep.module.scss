@@ -1,0 +1,86 @@
+@import 'style/variables';
+
+.roundStep {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &:hover {
+    cursor: default;
+  }
+
+  .roundTitle {
+    color: $middle-grey;
+    font-size: 0.5625rem;
+    font-weight: 600;
+    line-height: 0.6875rem;
+  }
+
+  &.UPCOMING {
+    .number {
+      border: 0.0625rem solid $middle-grey;
+    }
+  }
+
+  &.COMPLETED {
+    .number {
+      border: 0.0625rem solid $primary-disabled;
+    }
+  }
+
+  &.ACTIVE {
+    .number {
+      border: 0.0625rem solid $primary;
+    }
+  }
+  &.LOCKED {
+    display: flex;
+  }
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  font-weight: bold;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  border-radius: 50%;
+  margin-top: 0.125rem;
+  margin-bottom: 0.375rem;
+  position: relative;
+}
+
+.lower {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $white;
+  font-size: 0.5625rem;
+  line-height: 0.6875rem;
+
+  :first-child {
+    font-weight: bold;
+  }
+}
+
+.tick {
+  background: $primary;
+  border-radius: 1.5rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  box-shadow: $box-shadow__primary;
+  & > * {
+    padding-left: 0.5px;
+    padding-top: 0.5px;
+  }
+}

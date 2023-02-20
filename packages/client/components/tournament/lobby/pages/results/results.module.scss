@@ -1,0 +1,102 @@
+@import 'style/variables';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem 0;
+  .overview {
+    border-bottom: solid 0.0625rem $divider;
+    padding: 0 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    .scoreBorder {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      background-color: $dark-grey;
+      height: 3rem;
+      width: 3rem;
+      border-radius: $br-large;
+      padding: 0.1875rem;
+
+      .score {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: $br-small;
+        background-color: $dark-grey;
+        color: $white;
+      }
+      .winner {
+        &.highlightText {
+          background-image: $logo-gradient;
+          background-clip: text;
+          color: transparent;
+        }
+      }
+    }
+  }
+  .game {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1rem 0;
+    font-weight: 600;
+    .indicatorBorder {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      height: 2rem;
+      width: 5rem;
+      padding: 0.125rem;
+      border-radius: 2rem;
+      background-color: $dark-grey;
+
+      .indicator {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: $white;
+        background-color: $dark-grey;
+        border-radius: $br-small;
+        border-radius: 2rem;
+      }
+    }
+
+    .text {
+      font-size: 1.125rem;
+      color: $white;
+    }
+  }
+  .highlight {
+    background-image: $gold-gradient;
+  }
+  .button {
+    flex: 1;
+  }
+  .description {
+    margin-top: 1rem;
+    text-align: center;
+  }
+  .divider {
+    margin-top: 1rem;
+    border-top: solid 0.0625rem $middle-grey;
+  }
+  .info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 0.5rem;
+    color: $white;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    > .icon {
+      margin-right: 0.5rem;
+    }
+  }
+}

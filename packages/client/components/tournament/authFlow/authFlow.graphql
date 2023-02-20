@@ -1,0 +1,48 @@
+mutation addParticipant(
+  $tournamentId: ID!
+  $requestingMod: Boolean
+  $elo: Int
+  $name: String
+) {
+  addParticipant(
+    tournamentId: $tournamentId
+    requestingMod: $requestingMod
+    elo: $elo
+    name: $name
+  ) {
+    id
+    isCheckedIn
+    isRegistered
+    isPlayer
+    isHost
+    isCurrentUser
+    requestingMod
+    deniedMod
+    kicked
+    team {
+      id
+      seed
+    }
+    roles {
+      type
+    }
+    user {
+      id
+      linkedAccounts {
+        avatar
+      }
+      gameUsers {
+        inGameName
+        elo
+        gameId
+      }
+    }
+  }
+}
+
+mutation checkinParticipant($tournamentId: ID!) {
+  checkinParticipant(tournamentId: $tournamentId) {
+    id
+    isCheckedIn
+  }
+}

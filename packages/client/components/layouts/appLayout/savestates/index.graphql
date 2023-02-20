@@ -1,0 +1,15 @@
+mutation createSavestate($title: String) {
+  createSavestate(title: $title)
+}
+
+mutation restoreSavestate($title: String!) {
+  restoreSavestate(title: $title)
+}
+
+mutation deleteSavestate($title: String!) {
+  deleteSavestate(title: $title)
+}
+
+query getSavestates {
+  savestates
+}

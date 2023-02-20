@@ -1,0 +1,35 @@
+@import 'style/variables';
+
+.navigation {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: $matt-black;
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  border-radius: $br-large 0 0 $br-large;
+
+  .itemList {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 1.5rem 1rem;
+
+    > :not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+.navItem {
+  height: 1.5rem;
+  margin-right: 0.25rem;
+  cursor: pointer;
+
+  &:hover {
+    color: $secondary;
+  }
+}

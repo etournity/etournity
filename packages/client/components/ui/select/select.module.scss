@@ -1,0 +1,251 @@
+@import 'style/variables';
+
+$font-size: 0.875rem;
+$padding: 0.6rem;
+
+.hidden {
+  visibility: hidden;
+}
+
+div.container {
+  position: relative;
+  width: 16rem;
+  color: $input-font-color;
+
+  .clickDetector {
+    cursor: text;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &:hover {
+    .input {
+      background: $plastic;
+      box-shadow: $box-shadow;
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $plastic;
+        }
+      }
+    }
+  }
+
+  .relativeWrapper {
+    position: relative;
+
+    .optionsWrapper {
+      border-radius: $br-small;
+      z-index: 2;
+      position: absolute;
+      width: 100%;
+      display: none;
+      top: -0.25rem;
+      cursor: pointer;
+      box-shadow: $box-shadow;
+      max-height: 13rem;
+      overflow-y: auto;
+
+      a .show {
+        display: block;
+      }
+
+      .option {
+        width: 100%;
+        padding: 0.6rem;
+        transition-duration: 250ms;
+        transition-property: background, box-shadow, border;
+        background: $plastic;
+
+        &:not(:last-child) {
+          border-bottom: 0.125rem solid $void;
+        }
+
+        &:hover {
+          box-shadow: $box-shadow;
+          background: $matt-black;
+        }
+      }
+    }
+  }
+
+  .iconWrapper {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 1rem;
+    cursor: pointer;
+  }
+
+  .input {
+    font-size: $font-size;
+    margin: 0.25rem 0;
+    width: 100%;
+    font-weight: 600;
+    background: $void;
+    padding: $padding;
+    transition-duration: 250ms;
+    transition-property: background, box-shadow, border;
+    border: 0.125rem solid transparent;
+    border-radius: $br-large;
+
+    &:focus {
+      background: $plastic;
+      outline: none;
+      border: 0.125rem solid $primary;
+      box-shadow: 0 0.25rem 0.75rem rgba(172, 247, 240, 0.25);
+
+      & ~ .relativeWrapper {
+        .optionsWrapper {
+          display: block;
+        }
+      }
+
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $plastic;
+        }
+      }
+    }
+    &:disabled {
+      color: $input-font-disabled;
+      -webkit-text-fill-color: $input-font-disabled; // Safari disabled color fix
+
+      &.selected {
+        color: $input-font-color;
+        -webkit-text-fill-color: $input-font-color;
+      }
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $void;
+        }
+      }
+
+      &:hover {
+        box-shadow: none;
+      }
+    }
+    &.success {
+      animation-name: pulse;
+      animation-duration: 400ms;
+      animation-direction: alternate;
+      animation-iteration-count: 2;
+
+      @keyframes pulse {
+        from {
+          background: $void;
+          boder: 0.125rem solid transparent;
+          box-shadow: none;
+        }
+        to {
+          background: $plastic;
+          border: 0.125rem solid $success;
+          box-shadow: 0 0.25rem 0.75rem rgba(0, 211, 59, 0.25);
+        }
+      }
+
+      & ~ .labelWrapper {
+        .stroke {
+          animation-name: stroke-pulse;
+          animation-duration: 400ms;
+          animation-direction: alternate;
+          animation-iteration-count: 2;
+
+          @keyframes stroke-pulse {
+            from {
+              background: $void;
+            }
+            to {
+              background: $plastic;
+            }
+          }
+        }
+
+        .label {
+          animation-name: label-pulse;
+          animation-duration: 400ms;
+          animation-direction: alternate;
+          animation-iteration-count: 2;
+
+          @keyframes label-pulse {
+            from {
+              color: $input-font-color;
+            }
+            to {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+    &.error {
+      background: $plastic;
+      border: 0.125rem solid $error;
+      box-shadow: 0 0.25rem 0.75rem change-color($error, $alpha: 0.25);
+
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $plastic;
+        }
+        .label {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .labelWrapper {
+    position: absolute;
+    left: 0.35rem;
+    top: -0.25rem;
+
+    .strokeContainer {
+      position: relative;
+      .stroke {
+        transition-duration: 250ms;
+        background-color: $void;
+        width: 100%;
+        position: absolute;
+        height: 0.1225rem;
+        top: 0.5rem;
+        &.hidden {
+          width: 0;
+        }
+      }
+
+      .label {
+        user-select: none;
+        overflow: hidden;
+        white-space: nowrap;
+        transition-duration: 250ms;
+        padding: 0 0.0625rem;
+        position: relative;
+        z-index: 1;
+        font-weight: 600;
+        font-size: 0.625rem;
+        width: 100%;
+        &.disabled {
+          color: $input-font-disabled;
+        }
+        &.hidden {
+          width: 0;
+          opacity: 0;
+        }
+      }
+    }
+  }
+}
+
+.errorText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $error;
+  text-shadow: 0 0 0.25rem #000, 0 0 0.25rem $error;
+  margin-bottom: 0;
+}

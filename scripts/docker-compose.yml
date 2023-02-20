@@ -1,0 +1,21 @@
+version: '3'
+services:
+  # POSTGRES
+  postgres:
+    deploy:
+      resources:
+        limits:
+          memory: 2048M
+    image: postgres:13-alpine
+    ports:
+      - '5432:5432/tcp'
+    environment:
+      POSTGRES_USER: etournity
+      POSTGRES_PASSWORD: etournity
+      PGPASSWORD: etournity
+  # REDIS
+  redis:
+    image: redis:6-alpine
+    command: --port 6380
+    ports:
+      - '6380:6380'

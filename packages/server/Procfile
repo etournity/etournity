@@ -1,0 +1,1 @@
+web: cd packages/server && yarn generate && yarn start

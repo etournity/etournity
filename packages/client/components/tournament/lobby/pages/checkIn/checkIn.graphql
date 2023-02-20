@@ -1,0 +1,16 @@
+mutation CreateReadyCheck($matchId: ID!, $participantId: ID!) {
+  createReadyCheck(matchId: $matchId, participantId: $participantId) {
+    id
+    participant {
+      id
+      isCreator(matchId: $matchId)
+      isReady(matchId: $matchId)
+    }
+    match {
+      id
+      readyChecks {
+        id
+      }
+    }
+  }
+}

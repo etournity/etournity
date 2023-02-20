@@ -1,0 +1,22 @@
+{
+  "name": "@etournity/shared",
+  "version": "1.6.0",
+  "private": true,
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "yarn tsc --outDir dist",
+    "test:types": "yarn tsc --noEmit --skipLibCheck",
+    "test": "exit 0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/material": "^5.4.4",
+    "@types/react": "^18.0.5",
+    "@types/react-dom": "^18.0.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "type-fest": "^2.12.2",
+    "typescript": "^4.6.3"
+  }
+}

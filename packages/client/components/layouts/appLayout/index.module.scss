@@ -1,0 +1,99 @@
+@import 'style/variables';
+
+.saves {
+  .save {
+    display: flex;
+    margin-bottom: 0.5rem;
+
+    :first-child {
+      margin-right: 1rem;
+    }
+
+    :last-child {
+      cursor: pointer;
+    }
+  }
+}
+
+#__next {
+  position: relative;
+}
+.layout {
+  background-color: $charcoal;
+  position: relative;
+
+  .divider {
+    height: 0.0625rem;
+    background-color: $divider;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4rem;
+
+      > .left,
+      .right {
+        display: flex;
+        flex: 1;
+      }
+
+      .left > a > img {
+        height: 1.5rem;
+        padding: 0 1.5rem;
+      }
+      .right {
+        justify-content: flex-end;
+      }
+    }
+
+    .content {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+      padding: 0 0.25rem;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+}
+@include breakpoint(xs) {
+  .layout {
+    .main {
+      min-height: 100vh;
+    }
+  }
+}
+@include breakpoint(md) {
+  .layout {
+    .main {
+      min-height: calc(100vh + 3.5rem);
+
+      .content {
+        padding: 0 2rem;
+      }
+    }
+  }
+}
+@include breakpoint(lg) {
+  .layout {
+    .content {
+      padding: 0 4rem;
+    }
+    .shortcut {
+      &.mobile {
+        display: none;
+      }
+      &.desktop {
+        display: flex;
+      }
+    }
+  }
+}

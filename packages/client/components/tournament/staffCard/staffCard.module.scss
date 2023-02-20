@@ -1,0 +1,82 @@
+@import 'style/variables';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 0;
+  width: 8rem;
+  transition: background-color 0.1s linear;
+  user-select: none;
+  border-radius: $br-large;
+  &:hover {
+    background-color: $matt-black;
+    box-shadow: $box-shadow;
+    .upper .menu {
+      visibility: visible;
+    }
+  }
+
+  .upper {
+    align-self: stretch;
+    display: flex;
+    justify-content: space-between;
+    height: 1.5rem;
+
+    .spacer {
+      width: 1.5rem;
+    }
+    .role {
+      font-size: 0.6875rem;
+      line-height: 0.875rem;
+      text-align: center;
+      color: $middle-grey;
+      margin-bottom: 0.5rem;
+    }
+    .menu {
+      visibility: hidden;
+      & span {
+        color: $error;
+        padding: 0.25rem;
+        cursor: pointer;
+        transition: background-color 0.1s linear;
+        &:hover {
+          background-color: $plastic;
+        }
+      }
+    }
+  }
+  .discordName {
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    color: $white;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    user-select: text;
+  }
+  .discriminator {
+    font-size: 0.75rem;
+    line-height: 0.9375rem;
+    color: $middle-grey;
+    user-select: text;
+  }
+  .ingameName {
+    display: flex;
+    align-items: center;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    color: $middle-grey;
+    user-select: text;
+    margin-top: 0.125rem;
+
+    &.hidden {
+      visibility: hidden;
+    }
+    span {
+      margin-left: 0.0625rem;
+    }
+  }
+}

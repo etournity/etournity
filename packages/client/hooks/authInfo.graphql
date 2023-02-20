@@ -1,0 +1,54 @@
+query AuthInfo {
+  authInfo @client {
+    authenticated
+    expires
+    userId
+  }
+}
+query getUserInfo($userId: ID!) {
+  user(userId: $userId) {
+    id
+    displayName
+    roles
+    permissions
+    hideAlphaDisclaimer
+    createdAt
+    updatedAt
+    currentMatch {
+      id
+      status
+      opponents {
+        id
+        name
+      }
+    }
+    currentHost {
+      id
+      tournament {
+        id
+        status
+      }
+    }
+    currentParticipant {
+      id
+      kicked
+      roles {
+        id
+        type
+      }
+      tournament {
+        id
+        title
+      }
+      team {
+        id
+      }
+    }
+    linkedAccounts {
+      userId
+      avatar
+      username
+      discriminator
+    }
+  }
+}

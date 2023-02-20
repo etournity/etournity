@@ -1,0 +1,156 @@
+mutation resetMatch($matchId: ID!, $ticketId: ID, $verdict: String) {
+  resetMatch(matchId: $matchId, ticketId: $ticketId, verdict: $verdict) {
+    id
+    status
+    gameLobbyCode
+    supportLink
+    inGame
+    noShowTimer
+    tickets {
+      id
+    }
+    round {
+      id
+      format
+      stage {
+        id
+        tournamentId
+      }
+    }
+    readyChecks {
+      id
+      participant {
+        id
+      }
+      lobbyRole
+    }
+    opponents {
+      id
+      name
+      participantsReady(matchId: $matchId)
+      allScoresSubmitted(matchId: $matchId)
+      leaderId
+      participants {
+        id
+        isCreator(matchId: $matchId)
+        isReady(matchId: $matchId)
+        kicked
+        user {
+          id
+          linkedAccounts {
+            avatar
+          }
+        }
+      }
+    }
+    matchGames {
+      id
+      status
+      number
+      submissionsEqual
+      finalResults {
+        teamId
+        score
+      }
+      submissions {
+        id
+        teamId
+        resubmitted
+        matchGame {
+          id
+          number
+        }
+        results {
+          teamId
+          score
+        }
+      }
+    }
+  }
+}
+
+mutation setMatchWinner(
+  $matchId: ID!
+  $winnerId: ID!
+  $ticketId: ID
+  $verdict: String
+) {
+  setMatchWinner(
+    matchId: $matchId
+    winnerId: $winnerId
+    ticketId: $ticketId
+    verdict: $verdict
+  ) {
+    id
+    status
+    matchGames {
+      id
+      number
+      status
+      result {
+        id
+        teamId
+        score
+      }
+    }
+  }
+}
+
+mutation resolvePlayerReport(
+  $ticketId: ID!
+  $participantId: ID!
+  $verdict: String
+) {
+  resolvePlayerReport(
+    ticketId: $ticketId
+    participantId: $participantId
+    verdict: $verdict
+  ) {
+    id
+    resolved
+    verdict
+    matchBlocked
+    assignee {
+      id
+    }
+  }
+}
+
+mutation setMatchResults(
+  $matchId: ID!
+  $matchGameResults: [MatchResultInput!]!
+  $ticketId: ID
+  $verdict: String
+) {
+  setMatchResults(
+    matchId: $matchId
+    matchGameResults: $matchGameResults
+    ticketId: $ticketId
+    verdict: $verdict
+  ) {
+    id
+    status
+    matchGames {
+      id
+      number
+      status
+      result {
+        id
+        teamId
+        score
+      }
+    }
+  }
+}
+
+mutation closeTicket($ticketId: ID!, $verdict: String) {
+  closeTicket(ticketId: $ticketId, verdict: $verdict) {
+    id
+    resolved
+    matchBlocked
+    verdict
+    assignee {
+      id
+    }
+  }
+}

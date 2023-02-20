@@ -1,0 +1,66 @@
+@import 'style/variables';
+
+$margin: 0.125rem;
+
+.notifRoot {
+  position: relative;
+}
+
+.actionNotiv {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: calc(100% - 2 * $margin);
+  margin: 0 $margin;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+
+  transition: transform 0.2s;
+  &.isActive {
+    transform: translateY(100%);
+  }
+  .relativeWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    height: 1.25rem;
+    border-radius: 0 0 0.625rem 0.625rem;
+    overflow: hidden;
+    background-color: $muiNeutral30;
+    color: $white;
+  }
+  .progressBack,
+  .progressFront {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > label {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .progressBack {
+    width: 100%;
+    color: $muiOnError;
+    background-color: $muiError;
+  }
+  .progressFront {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background-color: $muiNeutral30;
+    color: $white;
+    transition: clip-path 0.2s;
+  }
+}
+.timerIcon {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+}

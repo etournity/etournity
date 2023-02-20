@@ -1,0 +1,138 @@
+@import 'style/variables';
+
+.roundAction {
+  height: 2rem;
+  width: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0.6875rem;
+
+  .text {
+    padding-top: 0.25rem;
+    color: $middle-grey;
+    font-size: 0.5625rem;
+    line-height: 0.6875rem;
+  }
+
+  .upperWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lock,
+  .open {
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $steel;
+  }
+
+  .lock {
+    border: 0.0625rem solid $error;
+    &:hover {
+      box-shadow: $box-shadow__error;
+    }
+  }
+
+  .circle {
+    cursor: pointer;
+  }
+
+  .open {
+    background: $steel;
+    transform: rotate(90deg);
+    position: relative;
+
+    .icon {
+      position: absolute;
+      left: 0.58125rem;
+      stroke: $steel;
+      stroke-width: 1;
+      z-index: 5;
+    }
+
+    .lineInCircle {
+      height: 100%;
+      background: $white;
+      width: 0.125rem;
+    }
+  }
+
+  .lineRight,
+  .lineLeft {
+    background: $middle-grey;
+    width: 1rem;
+    height: 0.125rem;
+  }
+
+  &.done {
+    .open {
+      background: $steel;
+    }
+    .icon {
+      stroke: $steel;
+    }
+    .lineRight,
+    .lineLeft,
+    .lineInCircle {
+      background: $primary-disabled;
+    }
+    .circle {
+      cursor: default;
+    }
+  }
+  &.active {
+    .open {
+      background: $steel;
+    }
+    .icon {
+      stroke: $steel;
+    }
+    .lineRight,
+    .lineLeft,
+    .lineInCircle {
+      background: $primary;
+    }
+    .circle {
+      cursor: default;
+    }
+  }
+  &.locked {
+    .lock {
+      background: $steel;
+    }
+    .lineRight,
+    .lineLeft {
+      background: $middle-grey;
+    }
+  }
+  &.activeLocked {
+    .lock {
+      background: $steel;
+    }
+    .lineRight {
+      background: $middle-grey;
+    }
+    .lineLeft {
+      background: $primary;
+    }
+  }
+  &.unlocked {
+    .open {
+      background: $plastic;
+    }
+    .icon {
+      stroke: $plastic;
+    }
+    .lineRight,
+    .lineLeft,
+    .lineInCircle {
+      background: $middle-grey;
+    }
+  }
+}

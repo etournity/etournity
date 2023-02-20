@@ -1,0 +1,8 @@
+@import 'style/variables';
+.discordButton {
+  background: $muiPrimary;
+  color: $muiOnPrimary;
+  transition: all 0.2s;
+  border-radius: 2.5rem;
+  width: fit-content;
+}

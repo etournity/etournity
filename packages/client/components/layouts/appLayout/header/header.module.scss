@@ -1,0 +1,47 @@
+@import 'style/variables';
+
+$header-size: 4rem;
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: $muiSurface4;
+  height: $header-size;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: $box-shadow;
+  z-index: 10;
+  .left {
+    display: flex;
+    height: 100%;
+    .home {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: $header-size;
+      > img {
+        height: 2.5rem;
+        width: 2.5rem;
+      }
+    }
+  }
+  .right {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    .tournamentsButton {
+      padding: 0.625rem 1rem;
+      border-radius: 6.25rem;
+      border: 0.125rem solid #e0e3e0;
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
+      white-space: nowrap;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+@import 'style/variables';
+
+$width: 50rem;
+
+.wrapper {
+  width: $width;
+  margin: 2rem 0;
+  h3 {
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  a {
+    color: #00a8ff;
+  }
+  table,
+  th,
+  td {
+    border: 1px solid $ash-black;
+    border-collapse: collapse;
+    padding: 0.25rem 0.5rem;
+    font-weight: 500;
+  }
+
+  th {
+    width: calc($width/3);
+  }
+  ol {
+    li > div > p:first-of-type {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+  }
+}

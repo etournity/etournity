@@ -1,0 +1,11 @@
+mutation addLobbyCode($matchId: ID!, $lobbycode: String!) {
+  addLobbyCode(matchId: $matchId, lobbycode: $lobbycode) {
+    id
+    gameLobbyCode
+    matchGames {
+      id
+      number
+      status
+    }
+  }
+}

@@ -1,0 +1,45 @@
+query getTournaments($userHasParticipantRoles: [ParticipantRoleType!]) {
+  tournaments(userHasParticipantRoles: $userHasParticipantRoles) {
+    id
+    title
+    date
+    checkinStart
+    checkinEnd
+    game {
+      title
+    }
+    gameMode {
+      name
+    }
+    hostUser {
+      displayName
+      id
+      linkedAccounts {
+        id
+        avatar
+      }
+    }
+    stages {
+      type
+    }
+    platforms {
+      name
+    }
+    region {
+      name
+    }
+    language {
+      name
+    }
+    playersCount
+    maxPlayers
+    description
+    status
+    completedRounds
+    roundsCount
+    activeRound {
+      id
+    }
+    userRoles
+  }
+}

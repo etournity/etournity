@@ -1,0 +1,30 @@
+@import 'style/variables';
+.reportWrapper {
+  position: absolute;
+  bottom: 4rem;
+  right: 4rem;
+  .reportTooltip {
+    --margin: 1rem;
+    .tooltipContent {
+      font-size: 0.875rem;
+      font-weight: 600;
+    }
+  }
+  .report {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    border-radius: 50%;
+    background: $steel;
+    transition-duration: 200ms;
+    border: 2px solid $steel;
+    cursor: pointer;
+    box-shadow: $box-shadow;
+    &:hover {
+      border: 2px solid $error;
+      box-shadow: $box-shadow__error;
+    }
+  }
+}

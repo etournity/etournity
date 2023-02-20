@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap');
+@import url('https://use.typekit.net/rgf8fim.css');
+@import 'style/variables';
+$material-design-icons-font-directory-path: '~material-design-icons-iconfont/dist/fonts/';
+
+@import '~material-design-icons-iconfont/src/material-design-icons';
+
+body {
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, 'Noto Sans',
+    'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+  color: $white;
+  input {
+    color: $white;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+style {
+  visibility: hidden;
+}
+.action-button:not(:last-of-type) {
+  margin-right: 8px;
+}
+
+.action-button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+p {
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+a {
+  color: $white;
+  &:hover {
+    color: $white;
+  }
+}
+
+#nprogress .bar {
+  background: $muiPrimary;
+}
+
+#nprogress .spinner {
+  bottom: 15px;
+  top: initial;
+}
+
+::selection {
+  background: #00e0e5;
+}

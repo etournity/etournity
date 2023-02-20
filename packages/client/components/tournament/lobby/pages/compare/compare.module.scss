@@ -1,0 +1,30 @@
+@import 'style/variables';
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+
+  .row {
+    margin-bottom: 1rem;
+  }
+  .conflict {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 0.0625rem solid $white;
+
+    .text {
+      text-align: center;
+      font-weight: 600;
+      margin: 1rem 0;
+    }
+  }
+  .noConflict {
+    display: flex;
+    flex-direction: column;
+  }
+  .button {
+    flex: 1;
+  }
+}

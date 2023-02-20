@@ -1,0 +1,13 @@
+query getLanguages {
+  languages {
+    code
+    name
+  }
+}
+
+query getRegions {
+  regions {
+    code
+    name
+  }
+}

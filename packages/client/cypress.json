@@ -1,0 +1,26 @@
+{
+  "projectId": "jm7s5h",
+  "baseUrl": "http://localhost:8080",
+  "video": false,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
+  "fixturesFolder": "cypress/fixtures",
+  "integrationFolder": "cypress/integration",
+  "pluginsFile": "cypress/plugins/index.js",
+  "screenshotsFolder": "cypress/screenshots",
+  "videosFolder": "cypress/videos",
+  "downloadsFolder": "cypress/downloads",
+  "supportFile": "cypress/support/index.js",
+  "nodeVersion": "system",
+  "component": {
+    "componentFolder": "components",
+    "testFiles": "**/*.spec.{js,jsx,ts,tsx}",
+    "viewportHeight": 1920,
+    "viewportWidth": 1080
+  },
+  "experimentalSourceRewriting": true,
+  "retries": {
+    "runMode": 2,
+    "openMode": 0
+  }
+}

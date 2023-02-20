@@ -1,0 +1,55 @@
+@import 'style/variables';
+
+.wrapper {
+  &:not(:last-child) {
+    .radio {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .radio {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background: inherit;
+
+    input {
+      display: none;
+      &.checked {
+        ~ .input {
+          border: 0.25rem solid $primary;
+        }
+      }
+      &:not(.checked) {
+        ~ .label {
+          filter: brightness(0.6);
+        }
+      }
+    }
+    .input {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      background: $matt-black;
+      border: 0.0625rem solid $white;
+      transition: border 0.1s linear;
+    }
+    .label {
+      margin-left: 0.5rem;
+      color: $white;
+      font-size: 0.75rem;
+      line-height: 0.9375rem;
+      font-weight: 600;
+      color: $white;
+    }
+  }
+  .childrenContainer {
+    transition: height 0.1s linear;
+    overflow: hidden;
+    .children {
+      margin-left: 1rem;
+      height: 0;
+
+      overflow: hidden;
+    }
+  }
+}

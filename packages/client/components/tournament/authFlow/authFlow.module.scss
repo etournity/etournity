@@ -1,0 +1,45 @@
+@import 'style/variables';
+
+.authFlowModal {
+  display: flex;
+  height: 32.5rem;
+  min-width: 19.5rem;
+  flex-direction: column;
+  position: relative;
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+    align-self: stretch;
+
+    .wrapper {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      flex-direction: column;
+      align-self: stretch;
+    }
+    .spacer {
+      height: 1.5rem;
+    }
+    .discordButton {
+      align-self: center;
+    }
+    .input {
+      margin-top: 1rem;
+    }
+
+    .eloCheck {
+      font-weight: 600;
+      font-size: 0.875rem;
+      line-height: 1.0625rem;
+      text-decoration-line: underline;
+      margin-top: 0.5rem;
+      cursor: pointer;
+      color: $muiPrimary;
+    }
+  }
+}

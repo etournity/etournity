@@ -1,0 +1,44 @@
+mutation changeStatus($matchId: ID!, $status: MatchStatus!) {
+  changeStatus(matchId: $matchId, status: $status) {
+    id
+    status
+  }
+}
+
+mutation createSystemTicket(
+  $matchId: ID!
+  $ticketType: TicketType!
+  $reportedId: ID
+  $message: String
+  $matchBlocked: Boolean
+) {
+  createSystemTicket(
+    matchId: $matchId
+    ticketType: $ticketType
+    reportedId: $reportedId
+    message: $message
+    matchBlocked: $matchBlocked
+  ) {
+    id
+    type
+    message
+    verdict
+    resolved
+    matchBlocked
+    matchId
+    reporter {
+      id
+      displayName
+    }
+    reported {
+      id
+      displayName
+    }
+    assignee {
+      id
+      displayName
+    }
+    matchId
+    tournamentId
+  }
+}

@@ -1,0 +1,14 @@
+@import 'style/variables';
+.group {
+  &.initial {
+    .radio {
+      label {
+        input:not(:checked) {
+          ~ :last-child {
+            filter: none;
+          }
+        }
+      }
+    }
+  }
+}

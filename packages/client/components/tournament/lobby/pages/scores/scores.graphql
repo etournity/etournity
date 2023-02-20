@@ -1,0 +1,34 @@
+mutation createSubmissions($data: [SubmissionCreateInput!]) {
+  createSubmissions(data: $data) {
+    id
+    teamId
+    resubmitted
+    matchGame {
+      id
+      number
+      status
+      submissionsEqual
+      finalResults {
+        id
+        teamId
+        score
+      }
+      match {
+        id
+        inGame
+      }
+    }
+    results {
+      id
+      teamId
+      score
+    }
+  }
+}
+
+mutation setMatchGameStatus($matchGameId: ID!) {
+  setMatchGameStatus(matchGameId: $matchGameId) {
+    id
+    status
+  }
+}

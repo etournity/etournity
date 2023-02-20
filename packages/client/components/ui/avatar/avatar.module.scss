@@ -1,0 +1,19 @@
+.avatar {
+  background: #232323;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.avatar > * {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.avatarFallback {
+  width: 50%;
+  height: 50%;
+}

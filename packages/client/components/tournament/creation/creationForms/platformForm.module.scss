@@ -1,0 +1,28 @@
+@import 'style/variables';
+
+.platforms {
+  display: grid;
+  margin: 1rem 1.2rem 0;
+
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+
+  > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  &.disabled {
+    opacity: 0.5;
+    filter: grayscale(100%);
+    pointer-events: none;
+  }
+
+  .checkbox {
+    display: flex;
+    align-items: center;
+
+    .platformIcon {
+      margin: 0 0.5rem;
+    }
+  }
+}

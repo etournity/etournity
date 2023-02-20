@@ -1,0 +1,14 @@
+# This file is used to define graph types that only exist locally.
+# This schema will be merged with the backend schema when running codegen to generate all necessary types.
+
+# Declare new types used with @client here
+type authInfo {
+  authenticated: Boolean!
+  expires: DateTime!
+  userId: String!
+}
+
+# Merge newly declared types with the base Query type
+extend type Query {
+  authInfo: authInfo!
+}

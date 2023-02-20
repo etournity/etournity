@@ -1,0 +1,26 @@
+@import 'style/variables';
+
+.card {
+  width: 25rem;
+
+  .hidden {
+    display: none;
+  }
+
+  .buttonRow {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 1rem;
+
+    &.hidden {
+      display: none;
+    }
+
+    > Button {
+      margin-right: 1rem;
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+}

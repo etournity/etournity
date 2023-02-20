@@ -1,0 +1,161 @@
+@import 'style/variables';
+
+.wrapper {
+  flex: 1;
+  max-width: 75rem;
+  min-width: 25em;
+
+  > div {
+    border-radius: $br-large;
+  }
+
+  > :not(:last-child) {
+    margin-bottom: 0.3rem;
+  }
+
+  > :not(.content) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $matt-black;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .header {
+    height: 3.8rem;
+    justify-content: space-between;
+
+    .cancel {
+      font-size: 1rem;
+      margin-left: 0.6rem;
+    }
+  }
+
+  .title {
+    height: 3rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    > * {
+      transition-duration: 200ms;
+      overflow: hidden;
+      border-radius: $br-large;
+    }
+
+    .gameModePage {
+      max-height: 40rem;
+
+      &.collapsed {
+        max-height: 0;
+      }
+
+      p {
+        font-size: 1.5rem;
+        font-weight: 600;
+        &:not(:first-child) {
+          margin-top: 0.2rem;
+        }
+      }
+
+      > div {
+        background-color: $steel;
+        padding: 1rem;
+        border-radius: $br-large;
+
+        &:not(:last-child) {
+          margin-bottom: 0.3rem;
+        }
+      }
+
+      > div:nth-child(1) {
+        > :nth-child(2) {
+          height: 17.875rem;
+        }
+      }
+
+      > div:nth-child(2) {
+        > :nth-child(2) {
+          height: 11rem;
+        }
+      }
+    }
+
+    .mainPage {
+      background-color: $plastic;
+
+      &.collapsed {
+        max-height: 0;
+      }
+    }
+
+    .summary {
+      background-color: $plastic;
+      padding: 4rem;
+
+      &.collapsed {
+        max-height: 0;
+        padding: 0;
+      }
+    }
+  }
+
+  .hidden {
+    opacity: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .footer {
+    justify-content: flex-end;
+    padding: 0.5rem;
+    .button {
+      font-size: 1rem;
+    }
+
+    .mainBtnDiv {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      .mainBtnErrorText {
+        color: $error;
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    > :last-child {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+}
+
+.noAccess {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+
+  > svg {
+    margin-bottom: 1rem;
+  }
+  > button {
+    margin-top: 1.5rem;
+  }
+  > span {
+    font-size: 1rem;
+    &:first-of-type {
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+  }
+}

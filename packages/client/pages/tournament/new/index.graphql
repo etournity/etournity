@@ -1,0 +1,52 @@
+query getGames {
+  games {
+    id
+    title
+    image {
+      url
+    }
+  }
+}
+
+mutation createTournament($data: TournamentCreateInput!) {
+  createTournament(data: $data) {
+    id
+    title
+    date
+    game {
+      title
+    }
+    gameMode {
+      name
+    }
+    hostUser {
+      id
+      displayName
+      linkedAccounts {
+        id
+        avatar
+      }
+    }
+    stages {
+      type
+    }
+    platforms {
+      name
+    }
+    region {
+      name
+    }
+    language {
+      name
+    }
+    playersCount
+    maxPlayers
+    description
+    status
+    completedRounds
+    roundsCount
+    activeRound {
+      id
+    }
+  }
+}

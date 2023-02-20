@@ -1,0 +1,6 @@
+mutation addToInGame($matchId: ID!) {
+  addToInGame(matchId: $matchId) {
+    id
+    inGame
+  }
+}

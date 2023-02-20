@@ -1,0 +1,53 @@
+@import 'style/variables';
+.wrapper {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  flex-direction: column;
+  padding: 1rem 0;
+  .linkWrapper {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    align-items: center;
+    background-image: $gradient;
+    padding: 1rem 1.75rem;
+    margin: 0 1rem;
+    color: $steel;
+    border-radius: $br-large;
+    max-width: 21rem;
+    .link {
+      background: none;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      color: $steel;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex: 1;
+      > p {
+        max-width: 15rem;
+        overflow: hidden;
+      }
+      &:hover {
+        transition: 0.2s;
+        color: $middle-grey;
+        > svg > path {
+          transition: 0.2s;
+          fill: $middle-grey;
+        }
+      }
+      &::selection {
+        background: none;
+        color: $steel;
+      }
+    }
+  }
+  .info {
+    color: $white;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}

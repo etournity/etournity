@@ -1,0 +1,83 @@
+@import 'style/variables';
+.tabs {
+  > :last-child {
+    border-top: 0.125rem solid $plastic;
+  }
+  .myTickets,
+  .closed {
+    margin-left: auto;
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    .blocking {
+      position: absolute;
+      top: 0;
+      left: -1rem;
+      width: calc(100% + 2rem);
+      font-size: 0.5625rem;
+      line-height: 0.625rem;
+      padding: 0.125rem 0;
+      background: $error;
+      color: $void;
+      border-bottom-left-radius: 0.125rem;
+      border-bottom-right-radius: 0.125rem;
+    }
+    .title {
+      padding: 1rem 0;
+    }
+  }
+}
+
+.issue {
+  max-height: 4rem;
+  .assignee {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1.125rem;
+    font-size: 1rem;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    .assigneeButton {
+      padding: 0.25rem 0.5rem;
+      line-height: 1.5rem;
+      font-size: 0.875rem;
+    }
+
+    .user {
+      display: flex;
+      max-width: 12rem;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      &:hover {
+        background-color: $plastic;
+        cursor: pointer;
+      }
+      > span {
+        margin-left: 0.25rem;
+        line-height: 1rem;
+        font-size: 0.875rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+.empty {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.verdictModal {
+  padding: 1.5rem;
+  .verdictModalContent {
+    margin-top: 1rem;
+    min-height: 5rem;
+  }
+}

@@ -1,0 +1,134 @@
+query TournamentInfo($tournamentId: ID!) {
+  tournament(tournamentId: $tournamentId) {
+    id
+    title
+    description
+    game {
+      id
+      title
+    }
+    gameMode {
+      name
+    }
+    status
+    date
+    discordLink
+    streamLink
+    hostUser {
+      id
+      displayName
+      linkedAccounts {
+        avatar
+      }
+    }
+    winnerTeam {
+      name
+    }
+    platforms {
+      name
+    }
+    region {
+      name
+    }
+    language {
+      name
+    }
+    rules
+    prizePool
+    maxPlayers
+    checkinStart
+    checkinEnd
+    publishedAt
+    participants {
+      id
+      isCheckedIn
+      isRegistered
+      isPlayer
+      isHost
+      isCurrentUser
+      requestingMod
+      deniedMod
+      kicked
+      team {
+        id
+        seed
+      }
+      roles {
+        id
+        type
+      }
+      user {
+        id
+        linkedAccounts {
+          avatar
+        }
+        gameUsers {
+          inGameName
+          elo
+          gameId
+        }
+      }
+    }
+  }
+}
+
+query TournamentStagesInfo($tournamentId: ID!) {
+  tournamentStages(tournamentId: $tournamentId) {
+    id
+    title
+    type
+    rounds {
+      id
+      format
+      number
+      locked
+      status
+      matches {
+        id
+        number
+        status
+        opponents {
+          id
+          name
+          seed
+          avatar
+        }
+        matchGames {
+          finalResults {
+            teamId
+            score
+          }
+        }
+      }
+    }
+  }
+}
+
+query userParticipants {
+  userParticipants {
+    id
+    checkedInAt
+    isPlayer
+    isHost
+    tournament {
+      id
+      status
+      checkinStart
+      checkinEnd
+    }
+  }
+}
+
+mutation removeParticipant($tournamentId: ID!) {
+  removeParticipant(tournamentId: $tournamentId) {
+    id
+    checkedInAt
+    registeredAt
+    isPlayer
+    isCheckedIn
+    roles {
+      id
+      type
+    }
+  }
+}

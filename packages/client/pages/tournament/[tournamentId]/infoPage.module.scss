@@ -1,0 +1,55 @@
+.infoPage {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  margin-bottom: 1.5rem;
+
+  &.isMobile {
+    margin-bottom: 5rem;
+  }
+
+  .bannerContainer {
+    width: 100vw;
+    max-height: 26.5625rem;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    .banner {
+      height: 100%;
+      max-height: inherit;
+    }
+  }
+  .body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 70.5rem;
+    width: 100%;
+    padding: 0 1rem;
+
+    .upperBody {
+      display: flex;
+      align-items: center;
+      margin: 1.5rem 0;
+    }
+
+    .lowerBody {
+      column-count: 2;
+      column-gap: 1rem;
+      > * {
+        display: inline-block;
+        width: 100%;
+        break-inside: avoid;
+        column-span: none;
+        margin-bottom: 1rem;
+      }
+
+      &.mobile {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

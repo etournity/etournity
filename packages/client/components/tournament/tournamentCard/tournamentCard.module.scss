@@ -1,0 +1,151 @@
+@import 'style/variables';
+.card {
+  position: relative;
+  border-radius: 0.625rem;
+  cursor: pointer;
+  padding: 0.125rem;
+
+  background-image: linear-gradient(
+    130deg,
+    transparent 0% 33%,
+    $muiTertiary 66%,
+    $muiSecondary 83.5%,
+    $muiPrimary 100%
+  );
+  background-position: 0% 0%;
+  background-size: 300% 300%;
+  transition: background-position 350ms ease;
+
+  &:hover {
+    background-position: 100% 100%;
+    box-shadow: $muiBoxShadow2;
+  }
+  .cardContent {
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    .picture {
+      flex: 1;
+      position: relative;
+      border-radius: 0.5rem 0.5rem 0 0;
+      .statusChip {
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 0.5rem 0 0.25rem 0;
+      }
+      .dateChip {
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-radius: 0 0 0 0.25rem;
+      }
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 0.75rem;
+      background-color: $muiSurface2;
+      border-radius: 0 0 0.5rem 0.5rem;
+      .infoGrid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.125rem;
+        margin-bottom: 0.5rem;
+        .infoPaper {
+          display: flex;
+          align-items: center;
+          padding: 0.375rem 0.5rem;
+          flex: 1 1 calc(50% - 0.125rem);
+          white-space: nowrap;
+          overflow: hidden;
+          background-color: $muiSurface3;
+          color: $muiOnSurfaceVariant;
+          &:nth-child(2n) {
+            flex-direction: row-reverse;
+            .infoIcon {
+              margin-right: 0;
+              margin-left: 0.5rem;
+            }
+          }
+          .infoIcon {
+            margin-right: 0.5rem;
+            width: 1rem;
+            height: 1rem;
+          }
+          .infoLabel {
+            overflow: hidden;
+            text-overflow: ellipsis;
+          }
+        }
+      }
+      .titleAndHost {
+        flex: 1;
+
+        display: flex;
+        align-items: center;
+        .avatar {
+          margin-right: 0.5rem;
+        }
+        .host {
+          color: $muiNeutral40;
+        }
+      }
+
+      .rolesInfo {
+        position: absolute;
+        bottom: 0.125rem;
+        right: 0.125rem;
+        padding: 0.375rem;
+        border-radius: inherit;
+        > svg {
+          height: 1.25rem;
+          width: 1.25rem;
+        }
+      }
+    }
+  }
+}
+
+@include breakpoint(sm) {
+  .card {
+    .cardContent {
+      flex-direction: row;
+      .picture {
+        border-radius: 0.5rem 0 0 0.5rem;
+      }
+      .info {
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+    }
+  }
+}
+@include breakpoint(md) {
+  .card {
+    .cardContent {
+      flex-direction: column;
+      .picture {
+        border-radius: 0.5rem 0.5rem 0 0;
+      }
+      .info {
+        border-radius: 0 0 0.5rem 0.5rem;
+      }
+    }
+  }
+}
+@include breakpoint(lg) {
+  .card {
+    .cardContent {
+      flex-direction: row;
+      .picture {
+        border-radius: 0.5rem 0 0 0.5rem;
+      }
+      .info {
+        border-radius: 0 0.5rem 0.5rem 0;
+      }
+    }
+  }
+}

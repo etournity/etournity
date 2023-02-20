@@ -1,0 +1,49 @@
+@use '../input/input.module.scss';
+@import 'style/variables';
+
+div.container {
+  .input {
+    position: relative;
+    font-weight: normal;
+    width: 100%;
+    color: white;
+    padding: 0.5rem;
+    > div {
+      overflow-y: scroll;
+    }
+    :focus {
+      outline: 0;
+    }
+
+    // placeholder
+    [data-mce-placeholder]::before {
+      color: $dark-grey;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    > :first-child {
+      height: 8rem;
+    }
+
+    &:focus-within {
+      background: $plastic;
+      outline: none;
+      border: 0.125rem solid $primary;
+      box-shadow: 0 0.25rem 0.75rem rgba(172, 247, 240, 0.25);
+
+      & ~ .labelWrapper {
+        .stroke {
+          background-color: $plastic;
+        }
+      }
+    }
+    .attribution {
+      position: absolute;
+      bottom: 0;
+      right: 0.25rem;
+      font-size: 0.75rem;
+      color: $middle-grey;
+    }
+  }
+}

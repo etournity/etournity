@@ -1,0 +1,23 @@
+@import 'style/variables';
+.wrapper {
+  > :not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  .calcWrapper {
+    display: flex;
+    align-items: center;
+
+    p {
+      white-space: nowrap;
+      font-size: 1rem;
+    }
+
+    .equals {
+      font-size: 2rem;
+    }
+
+    > *:not(:last-child) {
+      margin-right: 0.7rem;
+    }
+  }
+}

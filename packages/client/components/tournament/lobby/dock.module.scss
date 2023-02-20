@@ -1,0 +1,354 @@
+@import 'style/variables';
+.dock {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: var(--base-font-size);
+
+  .center {
+    background: $matt-black;
+    box-shadow: $box-shadow;
+    border-radius: $br-large;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    z-index: 1;
+    min-width: 20rem;
+    max-width: 25rem;
+
+    .top {
+      border-bottom: solid 0.0625rem $divider;
+      h1 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+        padding: 1rem 0;
+        margin: 0;
+        color: $white;
+      }
+    }
+
+    .main {
+      min-height: 14rem;
+      display: flex;
+      flex-direction: column;
+      .step {
+        padding: 1rem 1rem 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        > div {
+          display: flex;
+          align-items: center;
+          .stepNumber {
+            display: inline-flex;
+            background: $white;
+            line-height: 2rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            justify-content: center;
+            color: $matt-black;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+          }
+          .stepTitle {
+            color: $white;
+            font-size: 1rem;
+            font-weight: 700;
+            margin: 0;
+          }
+        }
+        .tooltip {
+          margin-right: 1rem;
+        }
+      }
+
+      .info {
+        padding: 0 1rem;
+        display: flex;
+        flex: 1;
+      }
+      .instructionButton {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin: 0 1rem 0.625rem;
+        font-size: 1rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+        border-radius: $br-small;
+        &:hover {
+          box-shadow: $box-shadow;
+          background-color: $steel;
+        }
+        &.open {
+          background-color: $primary;
+          box-shadow: $box-shadow;
+          color: $steel;
+          &:hover {
+            background-color: $primary-hover;
+          }
+        }
+        > svg {
+          margin: 0 0.25rem;
+        }
+      }
+    }
+
+    .lobbyCode {
+      border-top: solid 0.0625rem $divider;
+      display: flex;
+      justify-content: center;
+      padding: 0.75rem 0;
+      span {
+        font-size: 1.5rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+        letter-spacing: 0.25rem;
+      }
+    }
+  }
+
+  .left,
+  .right {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    flex-grow: 1;
+    height: inherit;
+    max-width: 27rem;
+    .teamIcon {
+      background: $steel;
+      border-radius: $br-small;
+      > * {
+        border-radius: $br-small;
+      }
+    }
+
+    .team {
+      display: flex;
+      flex: 1;
+      padding: 0.8rem;
+      align-items: stretch;
+      margin-top: 7rem;
+      background: $steel;
+    }
+
+    .info {
+      display: flex;
+      flex-direction: column;
+      margin: 0 1rem;
+      padding: 0.5rem 0;
+      justify-content: space-between;
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        h1,
+        h2 {
+          width: fit-content;
+          margin: 0;
+        }
+
+        h1 {
+          color: $white;
+          font-size: 1.5rem;
+          line-height: 2rem;
+          font-weight: 700;
+          max-width: 15rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        h2 {
+          color: $white;
+          font-size: 1.1rem;
+          margin-bottom: 0.5rem;
+          font-weight: 700;
+        }
+      }
+
+      .status {
+        display: flex;
+        align-items: center;
+
+        span {
+          margin: 0 0.5rem;
+          font-size: 0.9rem;
+          font-weight: 600;
+        }
+        .waitingStatus {
+          position: relative;
+          > :last-child {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+      }
+    }
+  }
+
+  .right .team,
+  .right .info .status {
+    flex-direction: row-reverse;
+  }
+
+  .right .team {
+    border-top-right-radius: 0.3125rem;
+    border-bottom-right-radius: 0.3125rem;
+    .info .details {
+      align-items: flex-end;
+    }
+    .status span {
+      text-align: end;
+    }
+    &.teamBorder {
+      border: solid 0.125rem $secondary;
+      border-left: none;
+    }
+  }
+  .left .team {
+    border-top-left-radius: 0.3125rem;
+    border-bottom-left-radius: 0.3125rem;
+    &.teamBorder {
+      border: solid 0.125rem $primary;
+      border-right: none;
+    }
+  }
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.instructions {
+  background-color: $matt-black;
+  border: solid 0.25rem $primary;
+  border-radius: $br-large;
+  background-clip: border-box;
+  box-shadow: $box-shadow;
+  z-index: 2;
+  display: flex;
+  align-self: center;
+  justify-content: space-between;
+  align-items: stretch;
+  max-width: 40rem;
+  width: 100%;
+  height: 15rem;
+  margin-top: 2rem;
+  .imageWrapper {
+    display: flex;
+    flex: 1;
+    align-self: stretch;
+    justify-content: center;
+    max-width: 50%;
+    background: $plastic;
+    border-radius: $br-large;
+    margin: 1rem 0;
+
+    img {
+      min-width: 10rem;
+      max-height: 13rem;
+      object-fit: contain;
+      text-align: center;
+    }
+  }
+
+  div.content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0.5rem;
+    margin-left: 0.5rem;
+    max-width: 50%;
+    flex: 1;
+    span.pageIndicator {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0;
+      text-align: end;
+      color: $white;
+    }
+  }
+  div.wide {
+    max-width: none;
+    width: inherit;
+  }
+
+  div.description {
+    color: $white;
+    margin-left: 1rem;
+  }
+
+  button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    margin-right: 0.5rem;
+    transition: background-color 0.2s linear;
+    &:hover {
+      background-color: $steel;
+    }
+    &:last-child {
+      margin-right: 0;
+      margin-left: 0.5rem;
+    }
+    svg {
+      stroke-width: 0.25rem;
+      color: black;
+    }
+  }
+  .hidden {
+    visibility: hidden;
+  }
+  div.step {
+    display: flex;
+    margin-bottom: 0.5rem;
+
+    span {
+      background: $primary-focus;
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+      line-height: 1.5rem;
+      border-radius: 50%;
+      text-align: center;
+      vertical-align: center;
+      margin-right: 0.5rem;
+    }
+    h3 {
+      margin: 0;
+    }
+  }
+}
+.disclaimerWrapper {
+  display: flex;
+  height: 11rem;
+  margin-bottom: 1rem;
+  align-items: flex-end;
+  justify-content: center;
+  .disclaimer {
+    min-width: 15rem;
+    max-width: 20rem;
+    height: min-content;
+    background-color: $matt-black;
+    padding: 1rem;
+    border-radius: 0.625rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 0.9375rem;
+    text-align: center;
+    color: $white;
+    .title {
+      color: $secondary;
+      letter-spacing: 0.1875rem;
+    }
+  }
+}

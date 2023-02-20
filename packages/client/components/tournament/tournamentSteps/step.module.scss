@@ -1,0 +1,73 @@
+@import 'style/variables';
+.line {
+  height: 0.25rem;
+  background: $middle-grey;
+  width: 0.125rem;
+}
+
+.row {
+  display: flex;
+  & > * {
+    margin: 0;
+  }
+  width: 100%;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: $middle-grey;
+  color: $ash-black;
+  height: 1.125rem;
+  width: 1.125rem;
+  font-size: 0.75rem;
+  line-height: 0.9375rem;
+  font-weight: 700;
+}
+
+.text {
+  font-weight: bold;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+  text-align: right;
+  width: 100%;
+  margin-right: 0.5rem;
+  color: $middle-grey;
+}
+
+.numLineDiv {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.upcoming {
+  p {
+    color: $middle-grey;
+  }
+  div > div {
+    background: $middle-grey;
+  }
+}
+
+.active {
+  p {
+    color: $primary;
+    text-decoration: underline;
+  }
+  div > .number {
+    background: $primary;
+  }
+}
+
+.done {
+  p {
+    color: $primary-disabled;
+  }
+  div > div {
+    background: $primary-disabled;
+  }
+}

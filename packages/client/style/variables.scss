@@ -1,0 +1,281 @@
+@use 'sass:color';
+
+// Main Colors
+$primary: #acf7f0;
+$primary-accent: #8ed2cc;
+$primary-hover: #7cfff3;
+$primary-focus: #4eb7ad;
+$primary-disabled: #547a77;
+
+$secondary: #f0acf7;
+$secondary-accent: #d08bd7;
+$secondary-dark: #983fa1;
+
+$tertiary: #f7f0ac;
+
+// Blacks
+$void: #0f0f0f;
+$charcoal: #1c1c1c;
+$plastic: #232323;
+$steel: #303030;
+$matt-black: #393939;
+$ash-black: #484848;
+
+// Whites and Greys
+$white: #efefef;
+$middle-grey: #8f8f8f;
+$dark-grey: #6b6b6b;
+
+// Gradients
+$yellow-red-gradient: linear-gradient(90deg, $tertiary 0%, $secondary 100%);
+$logo-gradient: linear-gradient(
+  95deg,
+  $tertiary 5%,
+  $primary 50%,
+  $secondary 95%
+);
+$gradient: linear-gradient(70deg, $primary 0%, $secondary 100%);
+$gold-gradient: linear-gradient(-80deg, #bca251 0%, #fefaf0 40%, #e9d28a 100%);
+
+// Status
+$success: #53e72e;
+$success__disabled: #39711a;
+$error: #f44040;
+$error__disabled: color.adjust($error, $lightness: -20%, $saturation: -20%);
+
+// Components
+$divider: #b4b4b4;
+$input-font-color: #ababab;
+$input-font-disabled: #3f3f3f;
+
+// Effects
+$box-shadow: 0 0 0.75rem rgba(0, 0, 0, 0.25);
+$box-shadow__primary: 0 0 0.75rem color.change($primary, $alpha: 0.33);
+$selected-shadow__primary: 0 0.25rem 0.75rem
+  color.change($primary, $alpha: 0.25);
+$box-shadow__secondary: 0 0 0.75rem color.change($secondary, $alpha: 0.33);
+$selected-shadow__secondary: 0 0.25rem 0.75rem
+  color.change($secondary, $alpha: 0.25);
+$box-shadow__tertiary: 0 0 0.75rem color.change($tertiary, $alpha: 0.33);
+$selected-shadow__tertiary: 0 0.25rem 0.75rem
+  color.change($tertiary, $alpha: 0.25);
+
+$box-shadow__error: 0 0 0.75rem color.change($error, $alpha: 0.33);
+
+// Border Radii
+$br-tiny: 0.0625rem;
+$br-small: 0.125rem;
+$br-large: 0.3125rem;
+
+// Header Spacer for #id references
+.idTarget {
+  &::before {
+    content: '';
+    display: block;
+    height: 4.5rem;
+    margin-top: -4.5rem;
+  }
+}
+
+.fabulousText {
+  background-image: repeating-linear-gradient(
+    45deg,
+    $primary,
+    $secondary,
+    $tertiary
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  background-size: 200%;
+  animation: rainbow 8s ease infinite;
+
+  @keyframes rainbow {
+    0% {
+      background-position: 0 50%;
+    }
+
+    50% {
+      background-position: 100% 25%;
+    }
+    100% {
+      background-position: 0 50%;
+    }
+  }
+}
+
+.errorText {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: $error;
+  text-shadow: 0 0 0.25rem #000, 0 0 0.25rem $error;
+  margin-bottom: 0;
+}
+
+// Breakpoints
+@mixin breakpoint($point) {
+  $xl-min: 1440px;
+  $lg-min: 1240px;
+  $md-min: 905px;
+  $sm-min: 600px;
+
+  @if $point == xl {
+    @media (min-width: $xl-min) {
+      @content;
+    }
+  } @else if $point == lg {
+    @media (min-width: $lg-min) {
+      @content;
+    }
+  } @else if $point == md {
+    @media (min-width: $md-min) {
+      @content;
+    }
+  } @else if $point == sm {
+    @media (min-width: $sm-min) {
+      @content;
+    }
+  } @else if $point == xs {
+    @media (min-width: 0) {
+      @content;
+    }
+  }
+}
+
+// MUI Variables
+
+$muiPrimary: #00e0b5;
+$muiOnPrimary: #00382b;
+$muiPrimaryContainer: #005140;
+$muiOnPrimaryContainer: #0dffd2;
+$muiSecondary: #b2cdc2;
+$muiOnSecondary: #1d352e;
+$muiSecondaryContainer: #344c44;
+$muiOnSecondaryContainer: #cee9de;
+$muiTertiary: #a9cbe2;
+$muiOnTertiary: #0e3446;
+$muiTertiaryContainer: #294b5e;
+$muiOnTertiaryContainer: #c4e7ff;
+$muiError: #ffb4a9;
+$muiErrorContainer: #930006;
+$muiOnError: #680003;
+$muiOnErrorContainer: #ffdad4;
+$muiBackground: #161818;
+$muiOnBackground: #e0e3e0;
+$muiSurface: #191c1b;
+$muiOnSurface: #e0e3e0;
+$muiSurfaceVariant: #3f4945;
+$muiOnSurfaceVariant: #bfc9c4;
+$muiSurface1: #202222;
+$muiSurface2: #252727;
+$muiSurface3: #292b2b;
+$muiSurface4: #2e3030;
+$muiSurface5: #323434;
+$muiOutline: #89938e;
+$muiInverseOnSurface: #191c1b;
+$muiInverseSurface: #e0e3e0;
+$muiInversePrimary: #006b55;
+$muiWhite: #ffffff;
+$muiBlack: #000000;
+
+$muiNeutral30: #444846;
+$muiNeutral40: #5c5f5d;
+
+$muiBoxShadow1: '0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3)';
+$muiBoxShadow2: '0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3)';
+$muiBoxShadow3: '0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3)';
+$muiBoxShadow4: '0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3)';
+$muiBoxShadow5: '0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3)';
+
+:export {
+  // Main Colors
+  primary: $primary;
+  primaryaccent: $primary-accent;
+  primaryhover: $primary-hover;
+  primaryfocus: $primary-focus;
+  primarydisabled: $primary-disabled;
+
+  secondary: $secondary;
+  secondaryAccent: $secondary-accent;
+  secondaryDark: $secondary-dark;
+
+  tertiary: $tertiary;
+
+  // Blacks
+
+  void: $void;
+  charcoal: $charcoal;
+  plastic: $plastic;
+  steel: $steel;
+  mattBlack: $matt-black;
+  ashBlack: $ash-black;
+
+  // Whites and Greys
+
+  white: $white;
+  middleGrey: $middle-grey;
+  darkGrey: $dark-grey;
+
+  // Gradients
+  yellowRedGradient: $yellow-red-gradient;
+  logoGradient: $logo-gradient;
+  gradient: $gradient;
+
+  // Status
+
+  success: $success;
+  successDisabled: $success__disabled;
+  error: $error;
+
+  // Components
+
+  divider: $divider;
+  inputFontColor: $input-font-color;
+  inputFontDisabled: $input-font-disabled;
+
+  // MUI Variables
+
+  muiPrimary: $muiPrimary;
+  muiOnPrimary: $muiOnPrimary;
+  muiPrimaryContainer: $muiPrimaryContainer;
+  muiOnPrimaryContainer: $muiOnPrimaryContainer;
+  muiSecondary: $muiSecondary;
+  muiOnSecondary: $muiOnSecondary;
+  muiSecondaryContainer: $muiSecondaryContainer;
+  muiOnSecondaryContainer: $muiOnSecondaryContainer;
+  muiTertiary: $muiTertiary;
+  muiOnTertiary: $muiOnTertiary;
+  muiTertiaryContainer: $muiTertiaryContainer;
+  muiOnTertiaryContainer: $muiOnTertiaryContainer;
+  muiError: $muiError;
+  muiErrorContainer: $muiErrorContainer;
+  muiOnError: $muiOnError;
+  muiOnErrorContainer: $muiOnErrorContainer;
+  muiBackground: $muiBackground;
+  muiOnBackground: $muiOnBackground;
+  muiSurface: $muiSurface;
+  muiOnSurface: $muiOnSurface;
+  muiSurfaceVariant: $muiSurfaceVariant;
+  muiOnSurfaceVariant: $muiOnSurfaceVariant;
+  muiSurface1: $muiSurface1;
+  muiSurface2: $muiSurface2;
+  muiSurface3: $muiSurface3;
+  muiSurface4: $muiSurface4;
+  muiSurface5: $muiSurface5;
+  muiOutline: $muiOutline;
+  muiInverseOnSurface: $muiInverseOnSurface;
+  muiInverseSurface: $muiInverseSurface;
+  muiInversePrimary: $muiInversePrimary;
+  muiWhite: $muiWhite;
+  muiBlack: $muiBlack;
+
+  muiNeutral30: $muiNeutral30;
+  muiNeutral40: $muiNeutral40;
+
+  muiBoxShadow1: $muiBoxShadow1;
+  muiBoxShadow2: $muiBoxShadow2;
+  muiBoxShadow3: $muiBoxShadow3;
+  muiBoxShadow4: $muiBoxShadow4;
+  muiBoxShadow5: $muiBoxShadow5;
+}

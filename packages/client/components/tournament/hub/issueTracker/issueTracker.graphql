@@ -1,0 +1,9 @@
+mutation setAssignee($ticketId: ID!, $assigneeId: ID!) {
+  setTicketAssignee(ticketId: $ticketId, assigneeId: $assigneeId) {
+    id
+    assignee {
+      id
+      displayName
+    }
+  }
+}

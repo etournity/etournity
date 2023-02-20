@@ -1,0 +1,9 @@
+import { %Object } from './%object.type'
+import { %ObjectQueries } from './%object.queries'
+import { %ObjectMutations } from './%object.mutations'
+
+export const %ObjectSchema = [
+	%Object,
+	%ObjectQueries,
+	%ObjectMutations
+]

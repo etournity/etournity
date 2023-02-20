@@ -1,0 +1,35 @@
+@import 'style/variables';
+
+.hostHubButton {
+  position: absolute;
+  top: -5rem;
+  right: 1.25rem;
+  background: $muiSurface1;
+  border-radius: 6.25rem;
+  text-transform: capitalize;
+  padding: 0.625rem 1.5rem;
+  color: $muiPrimary;
+  transition: all 0.2s;
+  > label {
+    cursor: inherit;
+  }
+
+  &:hover {
+    color: $muiPrimary;
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.04),
+        rgba(255, 255, 255, 0.04)
+      ),
+      linear-gradient(0deg, rgba(0, 224, 181, 0.08), rgba(0, 224, 181, 0.08)),
+      #1c1c1c;
+  }
+  &[disabled] {
+    background: linear-gradient(
+        0deg,
+        rgba(255, 255, 255, 0.12),
+        rgba(255, 255, 255, 0.12)
+      ),
+      #1c1c1c;
+  }
+}

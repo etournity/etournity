@@ -1,0 +1,22 @@
+@import 'style/variables';
+
+.tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: $br-large;
+  background: $ash-black;
+  width: fit-content;
+  padding: 6px 8px;
+
+  .icon {
+    margin-right: 0.25rem;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+    color: $white;
+  }
+}

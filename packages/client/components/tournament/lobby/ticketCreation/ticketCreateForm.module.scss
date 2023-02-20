@@ -1,0 +1,64 @@
+@import 'style/variables';
+
+.formWrapper {
+  padding: 1rem 0;
+}
+.infoWrapper {
+  color: $middle-grey;
+  font-size: 0.875rem;
+  line-height: 1.0625rem;
+  font-weight: 600;
+
+  .info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    .icon {
+      margin-right: 0.2rem;
+    }
+  }
+  > p {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    .knownIssues {
+      color: $primary;
+      text-decoration: underline;
+      font-weight: 700;
+
+      transition: color 0.2s;
+      &:hover {
+        color: $primary-hover;
+      }
+    }
+  }
+}
+
+.select {
+  transition: max-height 0.2s ease-in-out;
+  max-height: 3.5rem;
+
+  &.hidden {
+    overflow: hidden;
+    max-height: 0;
+  }
+}
+
+.loaderWrapper {
+  flex: 1;
+  display: flex;
+  min-height: 10rem;
+  padding: 2rem 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.emptyWrapper {
+  flex: 1;
+  min-height: 10rem;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

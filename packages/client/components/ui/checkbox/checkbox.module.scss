@@ -1,0 +1,60 @@
+@import 'style/variables';
+
+.container {
+  position: relative;
+  display: flex;
+
+  .label {
+    position: relative;
+    display: inline-block;
+    height: 1rem;
+    width: 1rem;
+    border: 0.0625rem solid $white;
+    border-radius: $br-small;
+    background: $matt-black;
+    cursor: pointer;
+
+    &:hover {
+      background: $ash-black;
+    }
+  }
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+
+    &:checked {
+      & ~ .checkmark {
+        opacity: 1;
+        path {
+          fill: $matt-black;
+        }
+      }
+      & ~ .label {
+        background: $primary;
+        border: 0.0625rem solid transparent;
+      }
+    }
+  }
+
+  .checkmark {
+    position: absolute;
+    top: 0.24rem;
+    left: 0.22rem;
+    opacity: 0;
+    height: 0.6rem;
+    width: 0.6rem;
+    pointer-events: none;
+  }
+
+  .children {
+    line-height: 1rem;
+    margin-left: 0.3rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

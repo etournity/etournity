@@ -1,0 +1,457 @@
+query HubInfo($tournamentId: ID!) {
+  tournament(tournamentId: $tournamentId) {
+    id
+    status
+    title
+    description
+    rules
+    maxPlayers
+    game {
+      id
+      title
+    }
+    gameMode {
+      id
+      name
+      teamSize
+    }
+    publishedAt
+    date
+    checkinEnd
+    checkinStart
+    noShow
+    supportLink
+    streamLink
+    prizePool
+    activeRound {
+      id
+      playersInRound
+    }
+    language {
+      name
+      code
+    }
+    region {
+      code
+      name
+    }
+    platforms {
+      code
+      name
+    }
+    stages {
+      type
+      rounds {
+        id
+        format
+        completedMatches
+        status
+        locked
+        number
+        matches {
+          id
+        }
+      }
+    }
+  }
+}
+query TournamentParticipants($tournamentId: ID!) {
+  participantsFromTournament(tournamentId: $tournamentId) {
+    id
+    requestingMod
+    isCurrentUser
+    isHost
+    isCheckedIn
+    kicked
+    team {
+      seed
+      avatar
+    }
+    user {
+      id
+      displayName
+      linkedAccounts {
+        avatar
+        username
+        discriminator
+      }
+      gameUsers {
+        id
+        inGameName
+        elo
+      }
+    }
+    roles {
+      type
+    }
+  }
+}
+query TournamentTickets($tournamentId: ID!) {
+  tournamentTickets(tournamentId: $tournamentId) {
+    id
+    type
+    number
+    assignee {
+      id
+      displayName
+      linkedAccounts {
+        avatar
+        username
+        discriminator
+      }
+    }
+    reporter {
+      id
+      linkedAccounts {
+        avatar
+        username
+        discriminator
+      }
+    }
+    reported {
+      id
+      displayName
+      linkedAccounts {
+        avatar
+        username
+        discriminator
+      }
+      participants {
+        id
+        tournamentId
+      }
+    }
+    message
+    verdict
+    resolved
+    matchBlocked
+    match {
+      id
+      supportLink
+      opponents {
+        id
+        name
+        participants {
+          id
+          userId
+        }
+      }
+      matchGames {
+        id
+        number
+        submissions {
+          id
+          teamId
+          matchGame {
+            number
+          }
+          results {
+            teamId
+            score
+          }
+        }
+      }
+    }
+
+    tournament {
+      id
+      hostUser {
+        id
+      }
+    }
+  }
+}
+
+mutation setRoundStatus($roundId: ID!, $status: RoundStatus, $locked: Boolean) {
+  setRoundStatus(roundId: $roundId, status: $status, locked: $locked) {
+    id
+    status
+    locked
+  }
+}
+
+mutation setStartTime($tournamentId: ID!, $startTime: DateTime) {
+  setStartTime(tournamentId: $tournamentId, startTime: $startTime) {
+    id
+    date
+  }
+}
+
+mutation setCheckIn(
+  $tournamentId: ID!
+  $startTime: DateTime
+  $endTime: DateTime
+) {
+  setCheckIn(
+    tournamentId: $tournamentId
+    startTime: $startTime
+    endTime: $endTime
+  ) {
+    id
+    checkinEnd
+    checkinStart
+  }
+}
+
+mutation updateTournament($tournamentId: ID!, $data: TournamentCreateInput!) {
+  updateTournament(tournamentId: $tournamentId, data: $data) {
+    id
+    status
+    title
+    description
+    rules
+    maxPlayers
+    game {
+      id
+      title
+    }
+    gameMode {
+      id
+      name
+      teamSize
+    }
+    publishedAt
+    date
+    checkinEnd
+    checkinStart
+    supportLink
+    streamLink
+    prizePool
+    activeRound {
+      id
+      playersInRound
+    }
+    language {
+      name
+      code
+    }
+    region {
+      code
+      name
+    }
+    platforms {
+      code
+      name
+    }
+    stages {
+      type
+      rounds {
+        id
+        format
+        completedMatches
+        status
+        locked
+        number
+        matches {
+          id
+        }
+      }
+    }
+  }
+}
+mutation deleteTournament($tournamentId: ID!) {
+  deleteTournament(tournamentId: $tournamentId) {
+    id
+    status
+    title
+    description
+    rules
+    maxPlayers
+    game {
+      id
+      title
+    }
+    gameMode {
+      id
+      name
+      teamSize
+    }
+    publishedAt
+    date
+    checkinEnd
+    checkinStart
+    supportLink
+    streamLink
+    prizePool
+    activeRound {
+      id
+      playersInRound
+    }
+    language {
+      name
+      code
+    }
+    region {
+      code
+      name
+    }
+    platforms {
+      code
+      name
+    }
+    stages {
+      type
+      rounds {
+        id
+        format
+        completedMatches
+        status
+        locked
+        number
+        matches {
+          id
+        }
+      }
+    }
+  }
+}
+
+subscription TournamentChanged($tournamentId: ID!) {
+  tournamentChanged(tournamentId: $tournamentId) {
+    id
+    status
+    description
+    rules
+    maxPlayers
+    game {
+      id
+      title
+    }
+    gameMode {
+      id
+      name
+      teamSize
+    }
+    publishedAt
+    date
+    checkinEnd
+    checkinStart
+    supportLink
+    streamLink
+    prizePool
+    activeRound {
+      id
+      playersInRound
+    }
+    language {
+      name
+      code
+    }
+    region {
+      code
+      name
+    }
+    platforms {
+      code
+      name
+    }
+    stages {
+      type
+      rounds {
+        id
+        format
+        completedMatches
+        status
+        locked
+        number
+        matches {
+          id
+        }
+      }
+    }
+  }
+}
+
+mutation setTournamentStatus(
+  $tournamentId: ID!
+  $status: TournamentStatus!
+  $ticketId: ID
+  $verdict: String
+) {
+  setTournamentStatus(
+    tournamentId: $tournamentId
+    status: $status
+    ticketId: $ticketId
+    verdict: $verdict
+  ) {
+    id
+    publishedAt
+    status
+  }
+}
+
+subscription TournamentTicketChanged($tournamentId: ID!) {
+  ticketChanged(tournamentId: $tournamentId) {
+    id
+    type
+    number
+    assignee {
+      id
+      displayName
+      linkedAccounts {
+        avatar
+        username
+        discriminator
+      }
+    }
+    reporter {
+      id
+      linkedAccounts {
+        avatar
+        username
+        discriminator
+      }
+    }
+    reported {
+      id
+      displayName
+      linkedAccounts {
+        avatar
+        username
+        discriminator
+      }
+      participants {
+        id
+        tournamentId
+      }
+    }
+    message
+    verdict
+    resolved
+    matchBlocked
+    match {
+      id
+      supportLink
+      opponents {
+        id
+        name
+        participants {
+          id
+          userId
+        }
+      }
+      matchGames {
+        id
+        number
+        submissions {
+          id
+          teamId
+          matchGame {
+            number
+          }
+          results {
+            teamId
+            score
+          }
+        }
+      }
+    }
+
+    tournament {
+      id
+      hostUser {
+        id
+      }
+    }
+  }
+}

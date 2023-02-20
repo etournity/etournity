@@ -1,0 +1,11 @@
+@import 'style/variables';
+.wrapper {
+  flex: 1;
+
+  h5 {
+    text-align: center;
+  }
+  .inputError {
+    color: $error;
+  }
+}

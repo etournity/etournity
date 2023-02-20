@@ -1,0 +1,11 @@
+@import 'style/variables';
+
+.tournamentSteps {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  :last-child > div :last-child {
+    visibility: hidden;
+  }
+}
