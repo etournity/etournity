@@ -5,29 +5,17 @@
 
 Welcome to Etournity!
 
-Etournity is the world’s most advanced (and probably only 😉) open source platform for esports tournaments. It’s built to be easily usable with no prior esports experience.
+Etournity is the world’s most advanced (and probably only 😉) open source platform for online esports tournaments. It’s built to be easily usable with no prior esports experience.
 
 Some of our testers have called it the “start.gg killer”, but you’re welcome to try that our for yourself on\
 [etournity.com](https://etournity.com)
 
-  <a href="https://github.com/JulianKarhof/etournity/actions?query=workflow%3A%22Node.js+CI%22">
-    <img src="https://github.com/JulianKarhof/etournity/workflows/Node.js%20CI/badge.svg" alt="Node.js CI">
-  </a>
-  
-  <a href="https://github.com/JulianKarhof/etournity/actions/workflows/develop-backend-build.yaml">
-    <img src="https://github.com/JulianKarhof/etournity/actions/workflows/develop-backend-build.yaml/badge.svg" alt="Backend Build">
-  </a>
-  
-   <a href="https://app.netlify.com/sites/angry-keller-f30cb4/deploys">
-    <img src="https://img.shields.io/netlify/d599abd4-97f8-45bc-96a6-5259067ba415" alt="Netlify Deploy Status">
+  <a href="https://securityheaders.com/?q=http%3A%2F%2Fetournity.com%2F&followRedirects=on">
+    <img src="https://img.shields.io/security-headers?url=http%3A%2F%2Fetournity.com%2F" alt="Security Headers">
   </a>
 
-  <a href="https://securityheaders.com/?q=http%3A%2F%2Fetournity.app%2F&followRedirects=on">
-    <img src="https://img.shields.io/security-headers?url=http%3A%2F%2Fetournity.app%2F" alt="Security Headers">
-  </a>
-
-  <a href="https://observatory.mozilla.org/analyze/etournity.app">
-    <img src="https://img.shields.io/mozilla-observatory/grade/etournity.app?publish" alt="Mozilla HTTP Observatory Grade">
+  <a href="https://observatory.mozilla.org/analyze/etournity.com">
+    <img src="https://img.shields.io/mozilla-observatory/grade/etournity.com?publish" alt="Mozilla HTTP Observatory Grade">
   </a>
   
   <img src="https://img.shields.io/badge/Powererd%20by-Electricity-brightgreen" alt="Powered by">  
