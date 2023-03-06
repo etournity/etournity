@@ -40,6 +40,9 @@ Some of our testers have called it the “start.gg killer”, but you’re welco
 
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
+- [Testing](/docs/TESTING.md)
+- [Validation](/docs/VALIDATION.md)
+- [RBAC](/docs/RBAC.md)
 - [License](#license)
 
 <br/>
