@@ -20,7 +20,6 @@ Some of our testers have called it the “start.gg killer”, but you’re welco
   
   <img src="https://img.shields.io/badge/Powererd%20by-Electricity-brightgreen" alt="Powered by">  
     
-  
 </div>
 <br/>
 
@@ -28,10 +27,12 @@ Some of our testers have called it the “start.gg killer”, but you’re welco
 
 - [Getting Started](#getting-started)
 - [Contributing](#contributing)
-- [Testing](/docs/TESTING.md)
 - [Validation](/docs/VALIDATION.md)
 - [RBAC](/docs/RBAC.md)
 - [License](#license)
+- Package specific documentation
+  - [Client](/packages/client/README.md)
+  - [Server](/packages/server/README.md)
 
 <br/>
 
@@ -86,9 +87,9 @@ Before jumping into the code, there are a couple of thigs we need to ensure:
 
   > To stop an instance running in the background, use `yarn db:stop-bg`.
 
-  > To reset the database, run `yarn db:down`.
+  > To reset the database, run `yarn db:reset`.
 
-  > To reseed the database, run `yarn db:reseed`
+  > To reseed the database, run `yarn db:reseed` (database is also automatically seeded on server start)
 
 - Apply the latest database migrations
 
@@ -112,13 +113,25 @@ Our workflow is based on [Trunk Based Development](https://trunkbaseddevelopment
 - We have one main branch, `main`, which is our single source of truth
 - `main` is **always** release ready
 - All work happens in [short-lived feature-branches](https://trunkbaseddevelopment.com/short-lived-feature-branches/) (short-lived = no more than 2 days)
-- Branch names follow `kebab-case` and have to be prefixed with `feat/`, `refactor/`, `fix/`, `hotfix/`, or `release/`\
+- Branch names follow `kebab-case` and have to be prefixed with `feat/`, `refactor/`, `chore/`, `fix/` or `hotfix/`\
   Example: `feat/my-awesome-feature`
 - Merge-Commits follow [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/#summary). See [Common Commit Types](./pull_request_template.md).
 - All tests need to pass and at least 1 review is required before a Pull Request can be merged
-- After a PR has been merged, the branch needs to be deleted (this happens automatically)
+- After a PR has been merged, the branch should be deleted (this happens automatically)
 
-For more information about releases, check out [RELEASES](./RELEASES.md)
+<br/>
+
+## Linting and Formatting
+
+We are using [Prettier](https://prettier.io/) and [Eslint](https://eslint.org/) as guidelines to keep our code nice and tidy.\
+We highly recommend you to set up formatting and linting in your code editor!
+
+**Eslint** makes sure we abide by the coding conventions we set.
+We are using recommended rules from eslint as well as several plugins and some of the rules are customized.\
+You can find all plugins and custom rules used in `.eslintrc.js`.
+
+**Prettier** is used to format and, as the name suggests, make the code base prettier. \
+Specifications for our repository can be found in `.prettierrc`.
 
 <br/>
 
