@@ -14,7 +14,7 @@ Example: chore(docs): update pull_request_template
 
 ## Types of changes
 
-What types of changes does your code introduce to Appium?
+What types of changes does your code introduce?
 _Put an `x` in the boxes that apply_
 
 - [ ] Bugfix (non-breaking change which fixes an issue)
