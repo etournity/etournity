@@ -244,8 +244,8 @@ type Platform {
 
 type Query {
   chatRoomMessages(chatRoomId: ID!): [ChatMessage!]!
-  gameUsers: [GameUser]
   games: [Game!]!
+  gameUsers: [GameUser]
   isCheckedIn(tournamentId: ID!): Boolean
   isRegistered(tournamentId: ID!): Boolean
   languages: [Language]
@@ -264,12 +264,12 @@ type Query {
   team(teamId: ID!): Team
   tickets: [Ticket]
   tournament(tournamentId: ID!): Tournament
-  tournamentStages(tournamentId: ID!): [Stage!]!
-  tournamentTickets(tournamentId: ID!): [Ticket!]!
   tournaments(
     """Filter returned tournaments by users participation or all if omitted."""
     userHasParticipantRoles: [ParticipantRoleType!]
   ): [Tournament]
+  tournamentStages(tournamentId: ID!): [Stage!]!
+  tournamentTickets(tournamentId: ID!): [Ticket!]!
   user(userId: ID!): User
   userAccounts: [UserAccount]
   userParticipants: [Participant]

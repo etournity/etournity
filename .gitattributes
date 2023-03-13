@@ -1,0 +1,7 @@
+.yarn/** linguist-vendored=true
+docs/** linguist-documentation=true
+
+yarn.lock linguist-generated=true
+.yarnrc linguist-generated=true
+**/generated/** linguist-generated=true
+packages/server/prisma/migrations/** linguist-generated=true
