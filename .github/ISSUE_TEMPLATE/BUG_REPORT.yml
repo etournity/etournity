@@ -46,6 +46,8 @@ body:
         - Safari
         - Microsoft Edge
         - Other
+    validations:
+      required: false
   - type: textarea
     id: logs
     attributes:
@@ -53,10 +55,10 @@ body:
       description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
       render: shell
   - type: input
-      id: contact
-      attributes:
-        label: Contact Details (optional)
-        description: How can we get in touch with you if we need more info?
-        placeholder: ex. email@example.com / discordname#0000
-      validations:
-        required: false
+    id: contact
+    attributes:
+      label: Contact Details (optional)
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com / discordname#0000
+    validations:
+      required: false
