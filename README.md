@@ -38,7 +38,25 @@ Some of our testers have called it the “start.gg killer”, but you’re welco
 
 # Getting Started
 
-## Requirements
+### New Feature Idea?
+
+Look into [our Github Discussions](https://github.com/etournity/etournity/discussions/categories/ideas) to see which new features / improvements are currently on our mind. Submit your own idea if you can't find a similar one that already exists!
+
+### Found a bug?
+
+1. Check the Issues page for similar reports\
+  a. If it was already reported: Comment\
+  b. If it wasn't reported yet: [Submit a Bug issue](https://github.com/etournity/etournity/issues/new?assignees=&labels=bug&template=BUG_REPORT.yml&title=%5BBug%5D%3A+), including as many details as you can think of.
+  
+### Join Discord!
+
+Talk/Chat with the community on the [Etournity Discord](https://discord.gg/ysm29w7Yxn) - we are friendly :)
+
+<br/>
+
+## Installation
+
+### Requirements
 
 Please ensure you have all of these installed before proceeding:
 
@@ -51,9 +69,7 @@ Please ensure you have all of these installed before proceeding:
 - [docker-compose](https://docs.docker.com/compose/install/)
 - [react-developer-tools (optional)](https://reactjs.org/blog/2015/09/02/new-react-developer-tools.html#installation)
 
-<br/>
-
-## Installation
+### Local Setup
 
 First of all, clone this repository:
 
