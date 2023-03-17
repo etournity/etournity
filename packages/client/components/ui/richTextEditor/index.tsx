@@ -1,4 +1,3 @@
-import classNames from 'classnames'
 import React from 'react'
 import styles from './richTextEditor.module.scss'
 import { Editor } from '@tinymce/tinymce-react'
@@ -19,7 +18,7 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
   onChange,
   ...rest
 }) => (
-  <div className={classNames(classNames, styles.container)} {...rest}>
+  <div className={styles.container} {...rest}>
     <div className={styles.input}>
       <Editor
         inline
@@ -55,6 +54,6 @@ export const RichTextEditor: React.FC<RichTextEditorProps> = ({
         </a>
       </span>
     </div>
-    <p className={classNames(styles.errorText)}>{validate?.(value)}</p>
+    <p className={styles.errorText}>{validate?.(value)}</p>
   </div>
 )
