@@ -12,6 +12,7 @@ body:
   - type: dropdown
     id: type
     attributes:
+      label: Bug Type
       options:
         - Visual
         - Content
@@ -32,7 +33,7 @@ body:
     attributes:
       label: Screenshots or videos
       description: Please add any screenshots or video of the issue by either copy & pasting or dragging & dropping into the field below.
-    validadtions:
+    validations:
       required: false
   - type: dropdown
     id: browsers
