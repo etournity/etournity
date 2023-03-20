@@ -128,5 +128,6 @@
   },
   "resolutions": {
     "@types/react": "17.0.1"
-  }
+  },
+  "packageManager": "yarn@3.2.0"
 }
