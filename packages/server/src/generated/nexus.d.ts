@@ -481,8 +481,8 @@ export interface NexusGenFieldTypes {
   }
   Query: { // field return type
     chatRoomMessages: NexusGenRootTypes['ChatMessage'][]; // [ChatMessage!]!
-    games: NexusGenRootTypes['Game'][]; // [Game!]!
     gameUsers: Array<NexusGenRootTypes['GameUser'] | null> | null; // [GameUser]
+    games: NexusGenRootTypes['Game'][]; // [Game!]!
     isCheckedIn: boolean | null; // Boolean
     isRegistered: boolean | null; // Boolean
     languages: Array<NexusGenRootTypes['Language'] | null> | null; // [Language]
@@ -501,9 +501,9 @@ export interface NexusGenFieldTypes {
     team: NexusGenRootTypes['Team'] | null; // Team
     tickets: Array<NexusGenRootTypes['Ticket'] | null> | null; // [Ticket]
     tournament: NexusGenRootTypes['Tournament'] | null; // Tournament
-    tournaments: Array<NexusGenRootTypes['Tournament'] | null> | null; // [Tournament]
     tournamentStages: NexusGenRootTypes['Stage'][]; // [Stage!]!
     tournamentTickets: NexusGenRootTypes['Ticket'][]; // [Ticket!]!
+    tournaments: Array<NexusGenRootTypes['Tournament'] | null> | null; // [Tournament]
     user: NexusGenRootTypes['User'] | null; // User
     userAccounts: Array<NexusGenRootTypes['UserAccount'] | null> | null; // [UserAccount]
     userParticipants: Array<NexusGenRootTypes['Participant'] | null> | null; // [Participant]
@@ -837,8 +837,8 @@ export interface NexusGenFieldTypeNames {
   }
   Query: { // field return type name
     chatRoomMessages: 'ChatMessage'
-    games: 'Game'
     gameUsers: 'GameUser'
+    games: 'Game'
     isCheckedIn: 'Boolean'
     isRegistered: 'Boolean'
     languages: 'Language'
@@ -857,9 +857,9 @@ export interface NexusGenFieldTypeNames {
     team: 'Team'
     tickets: 'Ticket'
     tournament: 'Tournament'
-    tournaments: 'Tournament'
     tournamentStages: 'Stage'
     tournamentTickets: 'Ticket'
+    tournaments: 'Tournament'
     user: 'User'
     userAccounts: 'UserAccount'
     userParticipants: 'Participant'
@@ -1267,14 +1267,14 @@ export interface NexusGenArgTypes {
     tournament: { // args
       tournamentId: string; // ID!
     }
-    tournaments: { // args
-      userHasParticipantRoles?: NexusGenEnums['ParticipantRoleType'][] | null; // [ParticipantRoleType!]
-    }
     tournamentStages: { // args
       tournamentId: string; // ID!
     }
     tournamentTickets: { // args
       tournamentId: string; // ID!
+    }
+    tournaments: { // args
+      userHasParticipantRoles?: NexusGenEnums['ParticipantRoleType'][] | null; // [ParticipantRoleType!]
     }
     user: { // args
       userId: string; // ID!
