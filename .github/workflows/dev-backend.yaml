@@ -4,8 +4,8 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
       - infra/actions-workflows # TODO remove after testing
+      - main
 
 jobs:
   deploy:
