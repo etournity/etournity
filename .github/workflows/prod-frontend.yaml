@@ -1,0 +1,30 @@
+name: Production Frontend Deploy
+
+on:
+  workflow_dispatch:
+  release:
+    types: [ published ]
+
+jobs:
+  deploy:
+    name: 'Deploy'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy to vercel
+        uses: BetaHuhn/deploy-to-vercel-action@v1
+        env:
+          DEBUG: '*'
+          GITHUB_TOKEN: ${{ secrets.VERCEL_GH_PAT }}
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_PROD }}
+        timeout-minutes: 15
