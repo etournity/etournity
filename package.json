@@ -1,7 +1,7 @@
 {
   "name": "etournity",
   "private": true,
-  "repository": "https://github.com/JulianKarhof/etournity.git",
+  "repository": "https://github.com/etournity/etournity.git",
   "author": "Julian Karhof <julian@karhof.net>",
   "workspaces": [
     "packages/*"
