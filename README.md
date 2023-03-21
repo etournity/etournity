@@ -7,7 +7,7 @@ Welcome to Etournity!
 
 Etournity is the world’s most advanced (and probably only 😉) open source platform for online esports tournaments. It’s built to be easily usable with no prior esports experience.
 
-Some of our testers have called it the “start.gg killer”, but you’re welcome to try that our for yourself on\
+Some of our testers have called it the “start.gg killer”, but you’re welcome to try that out for yourself on\
 [etournity.com](https://etournity.com)
 
   <a href="https://securityheaders.com/?q=http%3A%2F%2Fetournity.com%2F&followRedirects=on">
@@ -116,7 +116,7 @@ Before jumping into the code, there are a couple of thigs we need to ensure:
 <br/>
 
 Now the fun can finally begin!\
-Fire up your favourite terminal emulator, run `yarn dev` and everything should be up and runing perfectly.
+Fire up your favourite terminal emulator, run `yarn dev` and everything should be up and running perfectly.
 
 <br/>
 
@@ -124,7 +124,7 @@ Fire up your favourite terminal emulator, run `yarn dev` and everything should b
 
 ## Guidelines
 
-Our workflow is based on [Trunk Based Development](https://trunkbaseddevelopment.com/), for more information about the how and why, check out their website.
+Our workflow is based on [Trunk Based Development](https://trunkbaseddevelopment.com/), for more information about the how and why, check out their [website](https://trunkbaseddevelopment.com/).
 
 - We have one main branch, `main`, which is our single source of truth
 - `main` is **always** release ready
@@ -146,7 +146,7 @@ We highly recommend you to set up formatting and linting in your code editor!
 We are using recommended rules from eslint as well as several plugins and some of the rules are customized.\
 You can find all plugins and custom rules used in `.eslintrc.js`.
 
-**Prettier** is used to format and, as the name suggests, make the code base prettier. \
+**Prettier** is used to format and, as the name suggests, makes the code base prettier. \
 Specifications for our repository can be found in `.prettierrc`.
 
 <br/>
