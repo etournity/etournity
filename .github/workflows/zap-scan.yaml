@@ -1,0 +1,22 @@
+name: Zap Scan
+
+on:
+  schedule:
+    # Every Monday at 8AM UTC (4AM EST)
+    - cron: 0 8 * * 1
+  pull_request: #TODO Delete Line
+
+jobs:
+  zap_scan:
+    runs-on: ubuntu-latest
+    name: Scan the webapplication
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          ref: master
+      - name: ZAP Scan
+        uses: zaproxy/action-baseline@v0.4.0
+        with:
+          docker_name: 'owasp/zap2docker-stable'
+          target: 'https://etournity.com'
