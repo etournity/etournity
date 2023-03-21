@@ -1,6 +1,6 @@
 {
   "name": "@etournity/client",
-  "version": "1.6.0",
+  "version": "1.6.1",
   "private": true,
   "main": "index.tsx",
   "scripts": {
@@ -23,8 +23,8 @@
     "@babel/core": "7.12.7",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@etournity/rbac": "^1.6.0",
-    "@etournity/shared": "^1.6.0",
+    "@etournity/rbac": "^1.6.1",
+    "@etournity/shared": "^1.6.1",
     "@mui/icons-material": "^5.5.1",
     "@mui/material": "^5.4.3",
     "@next-safe/middleware": "^0.6.0",
