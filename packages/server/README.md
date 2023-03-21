@@ -62,16 +62,6 @@ The changes are automatically applied on server start. To do this manually use `
 
 > <b>Note:</b> Conventionally, we try to stick to 1 migration per branch. You can easily delete all migrations you made in a branch and do one last migration before merging.
 
-## ER-Model
-
-### Entity Realtion Diagram generated through DBeaver
-
-develop branch @ [8bbde86b7ee29eac9477090e733478ead444f264](https://github.com/JulianKarhof/etournity/commit/8bbde86b7ee29eac9477090e733478ead444f264)
-
-![Entity-Relation Diagram](ERDiagram.png)
-
-(screenshot taken @ 29.04.2021)
-
 ## Local Setup
 
 Our local setup is using Docker.
