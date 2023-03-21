@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - main
+      - infra/actions-workflows # TODO remove after testing
 
 jobs:
   deploy:
