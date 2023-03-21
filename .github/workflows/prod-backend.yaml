@@ -1,4 +1,4 @@
-name: Production ECS Deploy
+name: Production Backend Deploy
 
 on:
   workflow_dispatch:
