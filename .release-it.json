@@ -4,6 +4,10 @@
   },
   "npm": false,
   "plugins": {
-    "@release-it-plugins/workspaces": true
+    "@release-it-plugins/workspaces": true,
+    "@release-it/conventional-changelog": {
+      "preset": "conventionalcommits",
+      "infile": "CHANGELOG.md"
+    }
   }
 }
