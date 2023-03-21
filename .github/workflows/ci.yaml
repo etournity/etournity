@@ -1,0 +1,92 @@
+name: CI
+
+on:
+  workflow_dispatch:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    services:
+      postgres:
+        image: postgres:13-alpine
+        env:
+          POSTGRES_USER: etournity
+          POSTGRES_PASSWORD: etournity
+          PGPASSWORD: etournity
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        redis-version: [6]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup Node & Cache
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'yarn'
+
+      - name: Get next.js cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ github.workspace }}/packages/client/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Start Redis
+        uses: supercharge/redis-github-action@1.4.0
+        with:
+          redis-version: ${{ matrix.redis-version }}
+
+      - name: Install dependencies
+        run: yarn install
+
+      - name: Copy env files
+        run: cp ${{ github.workspace }}/packages/server/.env.ci ${{ github.workspace }}/packages/server/.env && cp ${{ github.workspace }}/packages/client/.env.ci ${{ github.workspace }}/packages/client/.env
+
+      - name: Generate Type Definitions
+        run: yarn generate
+
+      - name: Build the website
+        run: yarn build
+
+      - name: Migrate the database
+        run: yarn migrate
+
+      - name: Seed the database
+        run: yarn db:seed
+
+      - name: Start the website
+        run: yarn start & ./node_modules/.bin/wait-on http://localhost:8080 http://localhost:5000/.well-known/apollo/server-health --timeout 300000
+
+      - name: Run tests
+        run: yarn test:ci
+
+      - name: Storybooks Artifacts
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: sb_screenshots
+          path: ${{ github.workspace }}/tests/e2e/storybooks/__image_snapshots__/__diff_output__/
+
+      - name: Cypress Artifacts
+        uses: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cy_screenshots
+          path: ${{ github.workspace }}/packages/client/cypress/screenshots/

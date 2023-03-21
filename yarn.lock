@@ -2525,8 +2525,8 @@ __metadata:
     "@cypress/webpack-dev-server": ^1.7.0
     "@emotion/react": ^11.9.0
     "@emotion/styled": ^11.8.1
-    "@etournity/rbac": ^1.6.0
-    "@etournity/shared": ^1.6.0
+    "@etournity/rbac": ^1.6.1
+    "@etournity/shared": ^1.6.1
     "@mui/icons-material": ^5.5.1
     "@mui/material": ^5.4.3
     "@next-safe/middleware": ^0.6.0
@@ -2611,7 +2611,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@etournity/rbac@^1.6.0, @etournity/rbac@workspace:packages/rbac":
+"@etournity/rbac@^1.6.1, @etournity/rbac@workspace:packages/rbac":
   version: 0.0.0-use.local
   resolution: "@etournity/rbac@workspace:packages/rbac"
   dependencies:
@@ -2625,8 +2625,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@etournity/server@workspace:packages/server"
   dependencies:
-    "@etournity/rbac": ^1.6.0
-    "@etournity/shared": ^1.6.0
+    "@etournity/rbac": ^1.6.1
+    "@etournity/shared": ^1.6.1
     "@graphql-tools/schema": ^8.3.2
     "@prisma/client": 3.13.0
     "@sentry/node": ^6.19.6
@@ -2682,7 +2682,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@etournity/shared@^1.6.0, @etournity/shared@workspace:packages/shared":
+"@etournity/shared@^1.6.1, @etournity/shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "@etournity/shared@workspace:packages/shared"
   dependencies:
