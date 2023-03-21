@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## 1.6.1 (2023-03-21)
+
+**Note:** Version bump only for package @etournity/shared
+
+
+
+
+
 # [1.6.0](https://github.com/JulianKarhof/etournity/compare/v1.5.1...v1.6.0) (2022-11-30)
 
 
