@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.6.2](https://github.com/JulianKarhof/etournity/compare/v1.6.1...v1.6.2) (2023-03-21)
+## [1.6.2](https://github.com/etournity/etournity/compare/v1.6.1...v1.6.2) (2023-03-21)
 
 **Note:** Version bump only for package etournity
 
