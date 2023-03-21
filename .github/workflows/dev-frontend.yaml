@@ -2,7 +2,6 @@ name: Development Frontend Deploy
 
 on:
   workflow_dispatch:
-  pull_request: #TODO Delete Line
   push:
     branches:
       - main

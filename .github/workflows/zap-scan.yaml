@@ -4,7 +4,6 @@ on:
   schedule:
     # Every Monday at 8AM UTC (4AM EST)
     - cron: 0 8 * * 1
-  pull_request: #TODO Delete Line
 
 jobs:
   zap_scan:
