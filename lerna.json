@@ -14,6 +14,7 @@
   "packages": [
     "packages/**"
   ],
+  "changelogPreset": "./changelogPreset.config.js",
   "version": "1.6.2",
   "useWorkspaces": true
 }
