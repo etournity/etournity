@@ -3,14 +3,14 @@ Pull request title should be based on conventional commits (https://www.conventi
 
 <type>(<optional scope>): <description>
 
-types: feat, fix, chore, ci, refactor, test
+types: feat, fix, docs, infra, chore, style, refactor, test,
 
 Example: chore(docs): update pull_request_template
 -->
 
 ## Proposed changes
 
-<!-- Describe the big picture of your changes here to communicate to the maintainers why we should accept this pull request. If it fixes a bug or resolves a feature request, be sure to link to that issue. -->
+<!-- Describe the big picture of your changes here to communicate to the maintainers why they should accept this pull request. If it fixes a bug or resolves a feature request, be sure to link to that issue. -->
 
 ## Checklist
 
