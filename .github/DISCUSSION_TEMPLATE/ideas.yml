@@ -1,0 +1,34 @@
+title: '[Idea] '
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > Before opening a new discussion, please check for similar ideas and upvote or comment on them instead!
+
+        Thank you for your efforts to improve etournity!
+
+        Simply follow the steps below to submit your idea!
+
+        Don't worry if your idea is not very refined yet. You can always come back later and edit the discussion.
+
+        ### Want to suggest support for a new game?
+        Head over to the [Game Support](https://github.com/etournity/etournity/discussions/categories/game-support) Category.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: 1. Describe your idea
+  - type: textarea
+    id: benefit
+    attributes:
+      label: 2. Why / How does this idea improve etournity?
+  - type: input
+    id: domain
+    attributes:
+      label: 3. Domain
+      description: Specify what your proposed change(s) affects. (Example -> Tournament Discovery)
+  - type: input
+    id: userGroup
+    attributes:
+      label: 4. User Group
+      description: Specify who your proposed change(s) is relevant for. (Example -> First-time Organizers)
