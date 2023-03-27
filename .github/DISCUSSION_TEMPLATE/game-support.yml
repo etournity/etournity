@@ -1,0 +1,35 @@
+title: '[Game Support] <Game Title>'
+body:
+  - type: markdown
+    attributes:
+      value: |
+        > Before opening a new discussion, please check for similar ideas and upvote or comment on them instead!
+
+        Thank you for your efforts to improve etournity!
+
+        Simply follow the steps below to submit your idea!
+
+        1. Replace <Game Title> with the name of the game you want to be supported.
+
+  - type: input
+    id: genre
+    attributes:
+      label: 2. Genre
+  - type: textarea
+    id: solutions
+    attributes:
+      label: 3. How are tournaments for this game currently organized?
+      value: |
+        What is used to organize? (Example -> stat.gg, spreadsheets, Pen and Paper)
+        Which game modes are being played?
+        What are usual tournament formats? (Example -> Singe/Double Elimination, Swiss Style, ...)
+  - type: input
+    id: platforms
+    attributes:
+      label: 4. Platforms
+      description: Which platforms does the game support (Example -> PC, Switch, PlayStation)
+  - type: textarea
+    id: additionalInfo
+    attributes:
+      label: 5. Additional Information
+      description: Anything that might help. Information that makes implementing the game easier or needs to be discussed further.
