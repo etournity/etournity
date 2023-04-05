@@ -96,17 +96,19 @@ export const TournamentType = objectType({
       type: 'ParticipantRoleType',
 
       resolve: async (tournament, _, { user, prisma }) => {
-        const participantRoles = (
-          await prisma.participant.findFirst({
-            where: {
-              tournamentId: tournament.id,
-              userId: user.id,
-            },
-            select: {
-              roles: { select: { type: true } },
-            },
-          })
-        )?.roles
+        const participantRoles = user
+          ? (
+              await prisma.participant.findFirst({
+                where: {
+                  tournamentId: tournament.id,
+                  userId: user.id,
+                },
+                select: {
+                  roles: { select: { type: true } },
+                },
+              })
+            )?.roles
+          : null
 
         return participantRoles?.length
           ? participantRoles.map((role) => role.type)
