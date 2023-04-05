@@ -34,6 +34,7 @@ const Index: React.FC = () => {
         ParticipantRoleType.Moderator,
       ],
     },
+    skip: user === undefined,
     onError: (error) => handleError(error),
   })
   if (tournamentsLoading || participatingLoading) return <Loader />
