@@ -60,7 +60,7 @@ Talk/Chat with the community on the [Etournity Discord](https://discord.gg/ysm29
 
 Please ensure you have all of these installed before proceeding:
 
-- [node.js >=12.10](https://nodejs.org/en/download/current/)
+- [node.js >=12.10 <=18.x](https://nodejs.org/en/download/releases) (currently >19.x does not seem to work properly)
 - node.js c++ Build Tools\
   windows: `npm install --global windows-build-tools`\
   linux/macOS: `python2.7`, `gcc`, `make`
@@ -74,7 +74,7 @@ Please ensure you have all of these installed before proceeding:
 First of all, clone this repository:
 
 ```bash
-git clone https://github.com/JulianKarhof/etournity.git && cd etournity
+git clone https://github.com/etournity/etournity.git && cd etournity
 ```
 
 Before jumping into the code, there are a couple of thigs we need to ensure:
