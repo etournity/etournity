@@ -11,8 +11,8 @@ body:
 
         Don't worry if your idea is not very refined yet. You can always come back later and edit the discussion.
 
-        ### Want to suggest support for a new game?
-        Head over to the [Game Support](https://github.com/etournity/etournity/discussions/categories/game-support) Category.
+        #### Want to suggest support for a new game?
+        Head over to the **[Game Support](https://github.com/etournity/etournity/discussions/categories/game-support)** Category.
 
   - type: textarea
     id: description
