@@ -68,6 +68,7 @@ const App = ({
   pageProps,
 }: AppProps & {
   Component: AppComponent & NextComponentType
+  pageProps: any
 }) => {
   const apollo = useApollo(pageProps.initialApolloState)
 
