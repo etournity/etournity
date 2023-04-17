@@ -10,15 +10,17 @@ Etournity is the world’s most advanced (and probably only 😉) open source pl
 Some of our testers have called it the “start.gg killer”, but you’re welcome to try that out for yourself on\
 [etournity.com](https://etournity.com)
 
-  <a href="https://securityheaders.com/?q=http%3A%2F%2Fetournity.com%2F&followRedirects=on">
-    <img src="https://img.shields.io/security-headers?url=http%3A%2F%2Fetournity.com%2F" alt="Security Headers">
-  </a>
+  <img alt="GitHub" src="https://img.shields.io/github/license/etournity/etournity?color=3FB911">
 
   <a href="https://observatory.mozilla.org/analyze/etournity.com">
     <img src="https://img.shields.io/mozilla-observatory/grade/etournity.com?publish" alt="Mozilla HTTP Observatory Grade">
   </a>
+ 
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/etournity/etournity/prod-backend.yaml?label=backend%20build">
   
-  <img src="https://img.shields.io/badge/Powererd%20by-Electricity-brightgreen" alt="Powered by">  
+  <img alt="GitHub Workflow Status" src="https://img.shields.io/github/actions/workflow/status/etournity/etournity/prod-frontend.yaml?label=frontend%20build">
+  
+  <img src="https://img.shields.io/badge/Powererd%20by-Electricity-brightgreen" alt="Powered by">
     
 </div>
 <br/>
