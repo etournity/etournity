@@ -1,4 +1,4 @@
 {
-  "extends": "@tsconfig/node16",
+  "extends": "@tsconfig/recommended",
   "exclude": ["node_modules", "**/*.spec.ts", "dist/**/*"]
 }
