@@ -67,10 +67,11 @@
   }
 
   .createFab {
-    position: absolute;
-    bottom: 1rem;
+    position: fixed;
+    bottom: 6rem;
     right: 1rem;
     border-radius: 1rem;
+    z-index: 9;
   }
 }
 .search {

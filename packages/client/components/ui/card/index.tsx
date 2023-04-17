@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import styles from './card.module.scss'
 import classNames from 'classnames'
-import tinycolor, { mostReadable } from 'tinycolor2'
+import Tinycolor from 'tinycolor2'
 
 export interface CardProps {
   title?: ReactNode
@@ -22,8 +22,8 @@ export const Card: React.FC<CardProps> = ({
   disabled = false,
   ...rest
 }) => {
-  const headerTextColor = mostReadable(
-    tinycolor(headerColor),
+  const headerTextColor = Tinycolor.mostReadable(
+    new Tinycolor(headerColor),
     [styles.white, styles.steel],
     {
       level: 'AAA',
