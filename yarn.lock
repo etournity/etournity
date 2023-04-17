@@ -2538,7 +2538,6 @@ __metadata:
     "@testing-library/jest-dom": ^5.11.6
     "@testing-library/react": ^11.2.2
     "@tinymce/tinymce-react": ^3.12.6
-    "@tsconfig/recommended": 1.0.1
     "@types/classnames": ^2.2.11
     "@types/lodash": ^4.14.175
     "@types/mixpanel-browser": ^2.38.0
@@ -2549,7 +2548,6 @@ __metadata:
     "@types/react-dom": ^17.0.1
     "@types/react-router-dom": 5.1.9
     "@types/react-scroll": ^1.8.3
-    "@types/tinycolor2": ^1.4.3
     "@types/yup": 0.29.9
     canvas: ^2.8.0
     chromatic: ^5.7.1
@@ -2591,7 +2589,6 @@ __metadata:
     storybook-addon-apollo-client: ^4.0.9
     storybook-addon-next-router: ^3.0.8
     style-loader: ^1.3.0
-    tinycolor2: 1.6.0
     tls: ^0.0.1
     tsconfig-paths-webpack-plugin: ^3.3.0
     type-fest: ^2.12.2
@@ -2628,7 +2625,6 @@ __metadata:
     "@prisma/client": 3.13.0
     "@sentry/node": ^6.19.6
     "@sentry/tracing": ^6.19.6
-    "@tsconfig/node12": 1.0.7
     "@types/bull": ^3.15.7
     "@types/connect-redis": ^0.0.18
     "@types/cookie-parser": 1.4.2
@@ -8751,13 +8747,6 @@ __metadata:
   version: 1.0.9
   resolution: "@tsconfig/node10@npm:1.0.9"
   checksum: a33ae4dc2a621c0678ac8ac4bceb8e512ae75dac65417a2ad9b022d9b5411e863c4c198b6ba9ef659e14b9fb609bbec680841a2e84c1172df7a5ffcf076539df
-  languageName: node
-  linkType: hard
-
-"@tsconfig/node12@npm:1.0.7":
-  version: 1.0.7
-  resolution: "@tsconfig/node12@npm:1.0.7"
-  checksum: e58704bf5132ca95e39935bbb1825e81ca40e12ec6be5446c54b9e612b5b8c16e81a5ab0e706f8c74883210adf25e4d34115dc38457991aefea37003a72ecad8
   languageName: node
   linkType: hard
 
@@ -17508,11 +17497,11 @@ __metadata:
     "@lerna-lite/run": ^1.17.0
     "@netlify/plugin-nextjs": ^4.7.0
     "@next/eslint-plugin-next": ^11.1.2
-    "@tsconfig/node12": 1.0.7
     "@tsconfig/recommended": 1.0.1
     "@types/jest": ^27.4.0
     "@types/react-test-renderer": ^17.0.1
     "@types/shelljs": 0.8.8
+    "@types/tinycolor2": ^1.4.3
     "@typescript-eslint/eslint-plugin": 4.8.1
     "@typescript-eslint/parser": 4.8.1
     babel-eslint: 10.1.0
@@ -17549,6 +17538,7 @@ __metadata:
     react-test-renderer: ^17.0.1
     shelljs: 0.8.5
     shx: 0.3.3
+    tinycolor2: 1.6.0
     ts-jest: ^27.1.3
     ts-node: ^10.2.1
     type-fest: ^2.12.2

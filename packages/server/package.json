@@ -21,7 +21,6 @@
     "@prisma/client": "3.13.0",
     "@sentry/node": "^6.19.6",
     "@sentry/tracing": "^6.19.6",
-    "@tsconfig/node12": "1.0.7",
     "@types/connect-redis": "^0.0.18",
     "@types/cookie-parser": "1.4.2",
     "@types/cron": "^1.7.2",

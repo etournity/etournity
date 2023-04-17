@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import chalk from 'chalk'
 import dayjs from 'dayjs'
-import tinycolor from 'tinycolor2'
+import Tinycolor from 'tinycolor2'
 
 enum Level {
   DEBUG = 'debug',
@@ -71,7 +71,7 @@ export class Logger {
     const styledLevel = levelColor.bold(
       `[${level.toUpperCase().padEnd(5, ' ')}]`
     )
-    const pathColor = tinycolor(stringToColor(finalPath.split('/')[0]))
+    const pathColor = new Tinycolor(stringToColor(finalPath.split('/')[0]))
       .brighten(10)
       .lighten(5)
       .toHex()

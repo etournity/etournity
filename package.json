@@ -64,6 +64,7 @@
     "dotenv": "8.2.0",
     "dotenv-cli": "4.0.0",
     "graphql": "15.4.0",
+    "tinycolor2": "1.6.0",
     "type-fest": "^2.12.2"
   },
   "devDependencies": {
@@ -83,11 +84,11 @@
     "@lerna-lite/cli": "^1.17.0",
     "@lerna-lite/run": "^1.17.0",
     "@next/eslint-plugin-next": "^11.1.2",
-    "@tsconfig/node12": "1.0.7",
     "@tsconfig/recommended": "1.0.1",
     "@types/jest": "^27.4.0",
     "@types/react-test-renderer": "^17.0.1",
     "@types/shelljs": "0.8.8",
+    "@types/tinycolor2": "^1.4.3",
     "@typescript-eslint/eslint-plugin": "4.8.1",
     "@typescript-eslint/parser": "4.8.1",
     "babel-eslint": "10.1.0",
