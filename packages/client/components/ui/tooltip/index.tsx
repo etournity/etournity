@@ -1,7 +1,7 @@
 import React, { ReactElement, ReactNode } from 'react'
 import classNames from 'classnames'
 import styles from './tooltip.module.scss'
-import Tinycolor, { mostReadable } from 'tinycolor2'
+import Tinycolor from 'tinycolor2'
 
 export interface TooltipProps {
   content: ReactNode
@@ -25,7 +25,7 @@ export const Tooltip: React.FC<TooltipProps> = ({
   width,
   disabled,
 }) => {
-  const textColor = mostReadable(
+  const textColor = Tinycolor.mostReadable(
     new Tinycolor(backgroundColor),
     [styles.white, styles.steel],
     {
