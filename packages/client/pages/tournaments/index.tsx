@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TournamentCard } from '../../components/tournament/tournamentCard'
 import styles from './index.module.scss'
 import { ParticipantRoleType, useGetTournamentsQuery } from '@generated/graphql'
@@ -9,13 +9,17 @@ import { Box, Button, Paper, Tab, Tabs, Fab } from '@mui/material'
 import { TournamentSearch } from '@components/tournament/tournamentSearch'
 import { AddRounded } from '@mui/icons-material'
 import { useWindowSize } from '@hooks/useWindowSize'
+import Fuse from 'fuse.js'
 
 const Index: React.FC = () => {
   const auth = useAuth()
   const user = auth?.user
   const { breakpoint, isMobile } = useWindowSize()
   const [currentTab, setCurrentTab] = useState(1)
-
+  const [tournamentSearch, setTournamentSearch] = useState<string>('')
+  const [renderedTournaments, setRenderedTournaments] = useState<
+    Array<JSX.Element | null>
+  >([])
   const {
     data: tournamentsData,
     loading: tournamentsLoading,
@@ -37,31 +41,51 @@ const Index: React.FC = () => {
     skip: user === undefined,
     onError: (error) => handleError(error),
   })
+
+  useEffect(() => {
+    const renderTournaments = (participating?: boolean) => {
+      const tournaments = participating
+        ? participatingData?.tournaments
+        : tournamentsData?.tournaments
+
+      if (!tournaments?.length) return null
+
+      const fuse = new Fuse(tournaments, {
+        includeScore: true,
+        threshold: 0.6,
+        keys: ['title', 'hostUser.displayName'],
+      })
+
+      const searchedTournaments =
+        tournamentSearch.length > 0
+          ? fuse
+              .search(tournamentSearch.toString())
+              .map((result) => result.item)
+          : tournaments
+      return searchedTournaments?.map((element) => {
+        if (!element) return null
+        return (
+          <TournamentCard
+            key={element.id}
+            tournament={element}
+            backgroundSrc="/assets/images/thisIsABanner.png"
+            toHub={element.hostUser.id === user?.id}
+            data-cy="tournamentCard"
+          />
+        )
+      })
+    }
+
+    setRenderedTournaments(renderTournaments(currentTab === 2) ?? [])
+  }, [
+    currentTab,
+    tournamentSearch,
+    user?.id,
+    participatingData?.tournaments,
+    tournamentsData?.tournaments,
+  ])
+
   if (tournamentsLoading || participatingLoading) return <Loader />
-
-  const getTournaments = (participating?: boolean) => {
-    const tournaments = participating
-      ? participatingData?.tournaments
-      : tournamentsData?.tournaments
-
-    if (!tournaments?.length) return null
-
-    return tournaments?.map((element) => {
-      if (!element) return null
-      return (
-        <TournamentCard
-          key={element.id}
-          tournament={element}
-          backgroundSrc="/assets/images/thisIsABanner.png"
-          toHub={element.hostUser.id === user?.id}
-          data-cy="tournamentCard"
-        />
-      )
-    })
-  }
-
-  const showParticipatingTournaments = getTournaments(true)
-  const showTournaments = getTournaments()
 
   return (
     <Box className={styles.discovery}>
@@ -70,7 +94,10 @@ const Index: React.FC = () => {
         process.env.ETY_ENV !== 'production' && (
           <Box className={styles.searchAndFilter}>
             <Paper className={styles.search}>
-              <TournamentSearch />
+              <TournamentSearch
+                value={tournamentSearch}
+                onChange={(e) => setTournamentSearch(e.target.value)}
+              />
             </Paper>
 
             <Paper className={styles.filter}>
@@ -81,7 +108,10 @@ const Index: React.FC = () => {
       <Box className={styles.tournamentLists}>
         {breakpoint === 'lg' && process.env.ETY_ENV !== 'production' && (
           <Paper className={styles.search}>
-            <TournamentSearch />
+            <TournamentSearch
+              value={tournamentSearch}
+              onChange={(e) => setTournamentSearch(e.target.value)}
+            />
           </Paper>
         )}
         <Box className={styles.navigation}>
@@ -110,9 +140,7 @@ const Index: React.FC = () => {
           )}
         </Box>
 
-        <Box className={styles.tournamentList}>
-          {currentTab === 1 ? showTournaments : showParticipatingTournaments}
-        </Box>
+        <Box className={styles.tournamentList}>{renderedTournaments}</Box>
       </Box>
       {isMobile && (
         <Fab
