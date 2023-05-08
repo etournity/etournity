@@ -69,7 +69,7 @@ const Index: React.FC = () => {
       const fuse = new Fuse(tournaments, {
         includeScore: true,
         threshold: 0.6,
-        keys: ['title', 'hostUser.displayName'],
+        keys: ['title', 'hostUser.displayName', 'game.title'],
       })
 
       const searchedTournaments =
