@@ -9,7 +9,7 @@ import React from 'react'
 import styles from './tournamentCard.module.scss'
 import Link from 'next/link'
 import { Except } from 'type-fest'
-import { Avatar, Box, Chip, Paper, Typography } from '@mui/material'
+import { Avatar, Box, BoxProps, Chip, Paper, Typography } from '@mui/material'
 import { Icon } from '@components/ui/icon'
 
 import DnsOutlined from '@mui/icons-material/DnsOutlined'
@@ -21,7 +21,8 @@ import { TournamentStatusChip } from '../tournamentHeader/tournamentStatusChip'
 import { InfoTag } from './infoTag'
 import { RoleInfo } from './roleInfo'
 import dayjs from 'dayjs'
-export interface TournamentCardProps {
+import classNames from 'classnames'
+export interface TournamentCardProps extends BoxProps {
   tournament: TournamentCardInput
   toHub?: boolean
   backgroundSrc?: string
@@ -83,10 +84,11 @@ export const TournamentCard: React.FC<TournamentCardProps> = ({
   tournament,
   toHub,
   backgroundSrc,
+  className,
   ...rest
 }) => (
   <Link passHref href={`/tournament/${tournament.id}${toHub ? '/hub' : ''}`}>
-    <Box className={styles.card} {...rest}>
+    <Box className={classNames(styles.card, className)} {...rest}>
       <Paper className={styles.cardContent}>
         <Box className={styles.picture}>
           <TournamentStatusChip
