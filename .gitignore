@@ -47,9 +47,6 @@ public/storybook
 # Savestates
 packages/server/saves/
 
-# Local Netlify folder
-.netlify
-
 # Cypress generated files
 tests/cypress/screenshots/
 tests/cypress/videos/
