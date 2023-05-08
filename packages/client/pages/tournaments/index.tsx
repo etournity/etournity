@@ -10,10 +10,10 @@ import { TournamentSearch } from '@components/tournament/tournamentSearch'
 import { AddRounded } from '@mui/icons-material'
 import { useWindowSize } from '@hooks/useWindowSize'
 import Fuse from 'fuse.js'
+import { Empty } from '@components/ui/empty'
 
 const Index: React.FC = () => {
-  const auth = useAuth()
-  const user = auth?.user
+  const { user } = useAuth()
   const { breakpoint, isMobile } = useWindowSize()
   const [currentTab, setCurrentTab] = useState(1)
   const [tournamentSearch, setTournamentSearch] = useState<string>('')
@@ -43,12 +43,28 @@ const Index: React.FC = () => {
   })
 
   useEffect(() => {
-    const renderTournaments = (participating?: boolean) => {
+    const renderTournaments = (
+      participating?: boolean
+    ): Array<JSX.Element | null> => {
       const tournaments = participating
         ? participatingData?.tournaments
         : tournamentsData?.tournaments
 
-      if (!tournaments?.length) return null
+      if (!tournaments?.length) {
+        if (participating) {
+          return [
+            <Paper key="not_participating">
+              <Empty title="You are not participating in any tournaments..." />
+            </Paper>,
+          ]
+        }
+
+        return [
+          <Paper key="no_tournaments">
+            <Empty title="Unable to find tournaments..." />
+          </Paper>,
+        ]
+      }
 
       const fuse = new Fuse(tournaments, {
         includeScore: true,
@@ -62,6 +78,15 @@ const Index: React.FC = () => {
               .search(tournamentSearch.toString())
               .map((result) => result.item)
           : tournaments
+
+      if (!searchedTournaments?.length) {
+        return [
+          <Paper key="not_search_match">
+            <Empty title="No tournaments match you current search..." />
+          </Paper>,
+        ]
+      }
+
       return searchedTournaments?.map((element) => {
         if (!element) return null
         return (
@@ -84,8 +109,6 @@ const Index: React.FC = () => {
     participatingData?.tournaments,
     tournamentsData?.tournaments,
   ])
-
-  if (tournamentsLoading || participatingLoading) return <Loader />
 
   return (
     <Box className={styles.discovery}>
@@ -140,7 +163,13 @@ const Index: React.FC = () => {
           )}
         </Box>
 
-        <Box className={styles.tournamentList}>{renderedTournaments}</Box>
+        <Box className={styles.tournamentList}>
+          {tournamentsLoading || participatingLoading ? (
+            <Loader />
+          ) : (
+            renderedTournaments
+          )}
+        </Box>
       </Box>
       {isMobile && (
         <Fab
