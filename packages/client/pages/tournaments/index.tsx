@@ -116,24 +116,22 @@ const Index: React.FC = () => {
 
   return (
     <Box className={styles.discovery}>
-      {!isMobile &&
-        breakpoint !== 'lg' &&
-        process.env.ETY_ENV !== 'production' && (
-          <Box className={styles.searchAndFilter}>
-            <Paper className={styles.search}>
-              <TournamentSearch
-                value={tournamentSearch}
-                onChange={(e) => setTournamentSearch(e.target.value)}
-              />
-            </Paper>
+      {!isMobile && breakpoint !== 'lg' && (
+        <Box className={styles.searchAndFilter}>
+          <Paper className={styles.search}>
+            <TournamentSearch
+              value={tournamentSearch}
+              onChange={(e) => setTournamentSearch(e.target.value)}
+            />
+          </Paper>
 
-            <Paper className={styles.filter}>
-              {'Filters (Coming Soon) \u2122'}
-            </Paper>
-          </Box>
-        )}
+          <Paper className={styles.filter}>
+            {'Filters (Coming Soon) \u2122'}
+          </Paper>
+        </Box>
+      )}
       <Box className={styles.tournamentLists}>
-        {breakpoint === 'lg' && process.env.ETY_ENV !== 'production' && (
+        {breakpoint === 'lg' && (
           <Paper className={styles.search}>
             <TournamentSearch
               value={tournamentSearch}
