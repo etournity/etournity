@@ -22,7 +22,11 @@
       height: 15rem;
     }
   }
-
+  .empty {
+    flex: 1;
+    padding: 3rem;
+    border-radius: 0.5rem;
+  }
   .tournamentLists {
     flex: 3;
     display: flex;
@@ -48,18 +52,18 @@
       row-gap: 0.75rem;
       column-gap: 1rem;
       flex-wrap: wrap;
-      > * {
+      > .tournamentCard {
         flex: 1 0 100%;
       }
       @include breakpoint(md) {
         row-gap: 1rem;
-        > * {
+        > .tournamentCard {
           flex: 0 0 calc(50% - 0.5rem);
         }
       }
       @include breakpoint(lg) {
         row-gap: 0.625rem;
-        > * {
+        > .tournamentCard {
           flex: 1 0 100%;
         }
       }

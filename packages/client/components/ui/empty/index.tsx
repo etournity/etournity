@@ -1,12 +1,11 @@
 import React, { ReactNode } from 'react'
 import styles from './empty.module.scss'
-import { Icon } from '../icon/'
+import { Box, Typography } from '@mui/material'
 
 export interface EmptyProps {
   children?: ReactNode
   description?: string
   title?: string
-  noTitle?: boolean
   icon?: ReactNode
   actions?: ReactNode | ReactNode[]
 }
@@ -15,23 +14,15 @@ export const Empty: React.FC<EmptyProps> = ({
   children,
   description,
   title,
-  noTitle,
   icon,
   actions,
 }) => (
-  <div className={styles.wrapper}>
-    {icon ?? (
-      <Icon
-        variant="windCircle"
-        rotate="right"
-        size={5}
-        color={styles.middleGrey}
-      />
-    )}
-    {!noTitle && <p className={styles.title}>{title ?? 'NOTHING IN HERE'}</p>}
-    <div className={styles.description}>
-      {children ?? description ?? 'NOTHING IN HERE'}
-    </div>
-    {actions && <div className={styles.actions}>{actions}</div>}
-  </div>
+  <Box className={styles.wrapper}>
+    {icon}
+    <Typography className={styles.title}>{title} </Typography>
+    <Box className={styles.description}>
+      {children ?? <Typography>{description}</Typography>}
+    </Box>
+    {actions && <Box className={styles.actions}>{actions}</Box>}
+  </Box>
 )

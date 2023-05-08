@@ -53,14 +53,14 @@ const Index: React.FC = () => {
       if (!tournaments?.length) {
         if (participating) {
           return [
-            <Paper key="not_participating">
+            <Paper key="not_participating" className={styles.empty}>
               <Empty title="You are not participating in any tournaments..." />
             </Paper>,
           ]
         }
 
         return [
-          <Paper key="no_tournaments">
+          <Paper key="no_tournaments" className={styles.empty}>
             <Empty title="Unable to find tournaments..." />
           </Paper>,
         ]
@@ -81,8 +81,11 @@ const Index: React.FC = () => {
 
       if (!searchedTournaments?.length) {
         return [
-          <Paper key="not_search_match">
-            <Empty title="No tournaments match you current search..." />
+          <Paper key="not_search_match" className={styles.empty}>
+            <Empty
+              title="No tournaments match you current search..."
+              description="Create a tournament to liven up the place!"
+            />
           </Paper>,
         ]
       }
@@ -93,6 +96,7 @@ const Index: React.FC = () => {
           <TournamentCard
             key={element.id}
             tournament={element}
+            className={styles.tournamentCard}
             backgroundSrc="/assets/images/thisIsABanner.png"
             toHub={element.hostUser.id === user?.id}
             data-cy="tournamentCard"
