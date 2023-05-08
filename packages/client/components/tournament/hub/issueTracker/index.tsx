@@ -127,7 +127,7 @@ export const IssueTracker: React.FC<IssueTrackerProps> = ({
         maxHeight="29rem"
         emptyPlaceholder={
           <div className={styles.empty}>
-            <Empty noTitle description="No tickets issued." />
+            <Empty description="No tickets issued." />
           </div>
         }
       >
