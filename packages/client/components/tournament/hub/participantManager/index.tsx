@@ -245,7 +245,6 @@ export const ParticipantManager: React.FC<ParticipantManagerProps> = ({
           emptyPlaceholder={
             <div className={styles.empty}>
               <Empty
-                noTitle
                 description={
                   playerCount === 0 ? 'No Players Yet' : 'No Results'
                 }

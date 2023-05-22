@@ -3,54 +3,42 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-## [1.6.2](https://github.com/etournity/etournity/compare/v1.6.1...v1.6.2) (2023-03-21)
+## [1.7.0](https://github.com/etournity/etournity/compare/v1.6.3...v1.7.0) (2023-05-08)
 
 **Note:** Version bump only for package @etournity/client
 
+## [1.6.3](https://github.com/etournity/etournity/compare/v1.6.2...v1.6.3) (2023-04-18)
 
+**Note:** Version bump only for package @etournity/client
 
+## [1.6.2](https://github.com/etournity/etournity/compare/v1.6.1...v1.6.2) (2023-03-21)
 
+**Note:** Version bump only for package @etournity/client
 
 ## 1.6.1 (2023-03-21)
 
 **Note:** Version bump only for package @etournity/client
 
-
-
-
-
 # [1.6.0](https://github.com/JulianKarhof/etournity/compare/v1.5.1...v1.6.0) (2022-11-30)
-
 
 ### Bug Fixes
 
 * **Chat:** Input Hidden on mobile ([#1258](https://github.com/JulianKarhof/etournity/issues/1258)) ([2adec63](https://github.com/JulianKarhof/etournity/commit/2adec633492e0936ae688bbc142b3cb7fadb837d))
 * **styles:** font and theming improvements ([#1260](https://github.com/JulianKarhof/etournity/issues/1260)) ([7284551](https://github.com/JulianKarhof/etournity/commit/7284551f3f0fc81b60d81a0edd4ef252935da33b))
 
-
 ### Features
 
 * **discovery:** Improvements to reflect requirements ([#1261](https://github.com/JulianKarhof/etournity/issues/1261)) ([681592d](https://github.com/JulianKarhof/etournity/commit/681592d598e24cea8472746af14726f2a39b883e))
 * **Discovery:** Rework TournamentList ([#1259](https://github.com/JulianKarhof/etournity/issues/1259)) ([fd5841b](https://github.com/JulianKarhof/etournity/commit/fd5841baf8a19f1a775319fc9318f566cff75d89))
 
-
-
-
-
 ## [1.5.1](https://github.com/JulianKarhof/etournity/compare/v1.5.0...v1.5.1) (2022-08-09)
-
 
 ### Bug Fixes
 
 * **brackets:** Brackets not being draggable ([#1251](https://github.com/JulianKarhof/etournity/issues/1251)) ([36221c6](https://github.com/JulianKarhof/etournity/commit/36221c676ef0f6ba35984b61913f2a8b06e01ce5))
 * **Brackets:** Fix drag and zoom ([#1253](https://github.com/JulianKarhof/etournity/issues/1253)) ([a76d134](https://github.com/JulianKarhof/etournity/commit/a76d134dfb7e1f952639f70b7b2381d41c62a6b2))
 
-
-
-
-
 # [1.5.0](https://github.com/JulianKarhof/etournity/compare/v1.4.1...v1.5.0) (2022-08-04)
-
 
 ### Bug Fixes
 
@@ -59,36 +47,24 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **InfoPage:** Registration state fixes ([#1227](https://github.com/JulianKarhof/etournity/issues/1227)) ([d92c1ed](https://github.com/JulianKarhof/etournity/commit/d92c1ed4696a2077f033e781d7a327778845c5e3))
 * **Navigation:** Userbar styling fixes ([#1230](https://github.com/JulianKarhof/etournity/issues/1230)) ([5867644](https://github.com/JulianKarhof/etournity/commit/586764423197d71852b12059dab20d82ae5200e0))
 
-
 ### Features
 
 * **Brackets:** Rework Brackets Gui ([#1228](https://github.com/JulianKarhof/etournity/issues/1228)) ([b02992e](https://github.com/JulianKarhof/etournity/commit/b02992e299cc7a878c848acb52f0a8aaa68166b1))
 * **Chat:** Base Chat Implementation ([#1215](https://github.com/JulianKarhof/etournity/issues/1215)) ([7a5bcbc](https://github.com/JulianKarhof/etournity/commit/7a5bcbc252fcd37bfb082cdca00768ae7a87479f))
 * **Chat:** Log-in Prompt ([#1229](https://github.com/JulianKarhof/etournity/issues/1229)) ([98ca84a](https://github.com/JulianKarhof/etournity/commit/98ca84a8dae16ba6853805098ff177a32959e52e))
 
-
-
-
-
 ## [1.4.1](https://github.com/JulianKarhof/etournity/compare/v1.4.0...v1.4.1) (2022-07-07)
-
 
 ### Bug Fixes
 
 * ratelimiter jwt extraction ([#1211](https://github.com/JulianKarhof/etournity/issues/1211)) ([6ac750f](https://github.com/JulianKarhof/etournity/commit/6ac750f4cc53d1f641013711c979755ddbf8855a))
 * remove savestates on develop ([#1212](https://github.com/JulianKarhof/etournity/issues/1212)) ([ed69a99](https://github.com/JulianKarhof/etournity/commit/ed69a99fcff94725c6b7d355ddca9e084f737d10))
 
-
 ### Features
 
 * **InfoPage:** Timezone Indicator ([#1222](https://github.com/JulianKarhof/etournity/issues/1222)) ([7265ffa](https://github.com/JulianKarhof/etournity/commit/7265ffacd3ed35979a32669dc4a24b093faf2fee))
 
-
-
-
-
 # [1.4.0](https://github.com/JulianKarhof/etournity/compare/v1.3.1...v1.4.0) (2022-06-24)
-
 
 ### Features
 
@@ -96,25 +72,15 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **InfoPage:** MUI Rework ([#1181](https://github.com/JulianKarhof/etournity/issues/1181)) ([63d5832](https://github.com/JulianKarhof/etournity/commit/63d5832edc2cf45946f236f9ce3a146823eea9d3))
 * **Navigation:** Add Discord name to dropdown ([#1208](https://github.com/JulianKarhof/etournity/issues/1208)) ([526881f](https://github.com/JulianKarhof/etournity/commit/526881ff471be1774c9848f3f11a0f5bc545b7d1))
 
-
-
-
-
 ## [1.3.1](https://github.com/JulianKarhof/etournity/compare/v1.3.0...v1.3.1) (2022-06-02)
 
 **Note:** Version bump only for package @etournity/client
 
-
-
-
-
 # [1.3.0](https://github.com/JulianKarhof/etournity/compare/v1.2.1...v1.3.0) (2022-06-02)
-
 
 ### Bug Fixes
 
 * **deploy:** Netlify Function Timeout ([#1194](https://github.com/JulianKarhof/etournity/issues/1194)) ([f438ff5](https://github.com/JulianKarhof/etournity/commit/f438ff5401169406c1d01e187e6cb4e8b8c710b4))
-
 
 ### Features
 
@@ -126,12 +92,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **Subscriptions:** Add updateAll var to publish ([#1187](https://github.com/JulianKarhof/etournity/issues/1187)) ([f2b8cd8](https://github.com/JulianKarhof/etournity/commit/f2b8cd8880a0c87ba017be8438204b4b1296e56b))
 * **theme:** Add Typography Variants ([#1169](https://github.com/JulianKarhof/etournity/issues/1169)) ([3b94623](https://github.com/JulianKarhof/etournity/commit/3b94623b7415616d0f504851bb34fbd5007441ea))
 
-
-
-
-
 # [1.2.0](https://github.com/JulianKarhof/etournity/compare/v1.1.1...v1.2.0) (2022-04-29)
-
 
 ### Bug Fixes
 
@@ -142,28 +103,17 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **deploy:** Fix netlify production deploy issue ([#1135](https://github.com/JulianKarhof/etournity/issues/1135)) ([eab5fcc](https://github.com/JulianKarhof/etournity/commit/eab5fcc27da099f23980ed01e406a9f7a42db8a8))
 * **Landingpage:** fix styling and typo ([#1137](https://github.com/JulianKarhof/etournity/issues/1137)) ([8958d20](https://github.com/JulianKarhof/etournity/commit/8958d20739e4856d8a8032318a66096c60f2591a))
 
-
 ### Features
 
 * **Creation:** Make match disqualification timer customizable ([#1132](https://github.com/JulianKarhof/etournity/issues/1132)) ([405632b](https://github.com/JulianKarhof/etournity/commit/405632b8f4be1a5f2dd52f1315bd9b926fad5e68))
 
-
-
-
-
 ## [1.1.1](https://github.com/JulianKarhof/etournity/compare/v1.1.0...v1.1.1) (2022-04-08)
-
 
 ### Bug Fixes
 
 * **CSP:** Add missing discord frame-src directive ([4ae1e09](https://github.com/JulianKarhof/etournity/commit/4ae1e09b24c56ed3e726fb6a47fc164515f73b14))
 
-
-
-
-
 # [1.1.0](https://github.com/JulianKarhof/etournity/compare/v1.0.2...v1.1.0) (2022-04-08)
-
 
 ### Bug Fixes
 
@@ -172,37 +122,22 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **InfoPage:** Fix page crash when providing malformed links ([#1125](https://github.com/JulianKarhof/etournity/issues/1125)) ([4f73c48](https://github.com/JulianKarhof/etournity/commit/4f73c48f5158bb59b4b5efa39a9bd4113a0993a7))
 * **landingpage:** Fix background gradient and logo placement ([#1131](https://github.com/JulianKarhof/etournity/issues/1131)) ([922f235](https://github.com/JulianKarhof/etournity/commit/922f235fcc29a9f516cec49c07c1b69a3e2233f5))
 
-
 ### Features
 
 * **client:** LandingPage ([#1089](https://github.com/JulianKarhof/etournity/issues/1089)) ([d9a1ce3](https://github.com/JulianKarhof/etournity/commit/d9a1ce33af26255b86a8d6c977bcf0e639c1b2a0))
 
-
-
-
-
 ## [1.0.2](https://github.com/JulianKarhof/etournity/compare/v1.0.1...v1.0.2) (2022-03-29)
-
 
 ### Bug Fixes
 
 * Inconsistent homepage tests ([#1108](https://github.com/JulianKarhof/etournity/issues/1108)) ([13f1bac](https://github.com/JulianKarhof/etournity/commit/13f1bac371b837dab8a180448eb55045efc78320))
 * **TournamentList:** Organizing Tab when not signed in ([#1107](https://github.com/JulianKarhof/etournity/issues/1107)) ([280d0c6](https://github.com/JulianKarhof/etournity/commit/280d0c6bfd82fced801ed49022a984bd6f0cb6b5))
 
-
-
-
-
 ## [1.0.1](https://github.com/JulianKarhof/etournity/compare/v1.0.0...v1.0.1) (2022-03-28)
 
 **Note:** Version bump only for package @etournity/client
 
-
-
-
-
 # [1.0.0](https://github.com/JulianKarhof/etournity/compare/v0.6.10...v1.0.0) (2022-03-28)
-
 
 ### Bug Fixes
 
@@ -212,7 +147,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * CSP directives ([#1097](https://github.com/JulianKarhof/etournity/issues/1097)) ([2188084](https://github.com/JulianKarhof/etournity/commit/2188084660d27a25d1a3a0f3a7330aa249fdbfc3))
 * mixpanel type dependency ([f80b227](https://github.com/JulianKarhof/etournity/commit/f80b227f54b382ef24df678265bb25068d427bc2))
 
-
 ### Features
 
 * Public Alpha preperations ([#1103](https://github.com/JulianKarhof/etournity/issues/1103)) ([f0455ca](https://github.com/JulianKarhof/etournity/commit/f0455ca6dc12dbdbde3a0bb4231d55f24ff98786))
@@ -220,18 +154,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **test:** Cypress artifacts and run recording ([#1086](https://github.com/JulianKarhof/etournity/issues/1086)) ([9591d21](https://github.com/JulianKarhof/etournity/commit/9591d211da8dbb70630da4f850266da6fd49d96e))
 * **Theming:** Move theme to shared package ([#1033](https://github.com/JulianKarhof/etournity/issues/1033)) ([dd406f3](https://github.com/JulianKarhof/etournity/commit/dd406f381fd6607973bc2d4c8c3cfedd6576a2eb))
 
-
-
-
-
 ## [0.6.10](https://github.com/JulianKarhof/etournity/compare/v0.6.9...v0.6.10) (2022-03-17)
-
 
 ### Bug Fixes
 
 * **client:** wording changes in Hub and Creation ([#1032](https://github.com/JulianKarhof/etournity/issues/1032)) ([97a526c](https://github.com/JulianKarhof/etournity/commit/97a526cf90549c5964207afc73388a49a9a5dcbc))
 * **next:** Set target to experimental-serverless-trace ([#1082](https://github.com/JulianKarhof/etournity/issues/1082)) ([2b98aad](https://github.com/JulianKarhof/etournity/commit/2b98aad8f6e96dbf305278d109ad98b8effe0505))
-
 
 ### Features
 
@@ -243,12 +171,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **Matchlobby:** Add draw state to Results screen ([#1081](https://github.com/JulianKarhof/etournity/issues/1081)) ([5e98edf](https://github.com/JulianKarhof/etournity/commit/5e98edffd676532903110901c5d35eb1c6bf0e4a))
 * **Matchlobby:** Display LobbyCode to match outsiders ([#1075](https://github.com/JulianKarhof/etournity/issues/1075)) ([1ca007f](https://github.com/JulianKarhof/etournity/commit/1ca007fdce2eee521072e015a8cfb8750d343193))
 
-
-
-
-
 ## [0.6.9](https://github.com/JulianKarhof/etournity/compare/v0.6.8...v0.6.9) (2022-02-11)
-
 
 ### Bug Fixes
 
@@ -258,12 +181,7 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **InfoPage:** HostHubButton ducks when TournamnetStatusBar visible ([#995](https://github.com/JulianKarhof/etournity/issues/995)) ([cdd218d](https://github.com/JulianKarhof/etournity/commit/cdd218dfd3bdbabf9f60f969a69008fa3a8a2451))
 * **stability:** Fix Race-Conditions ([#988](https://github.com/JulianKarhof/etournity/issues/988)) ([c9097d9](https://github.com/JulianKarhof/etournity/commit/c9097d9da4929d8b416b7e4e071e5d53aa1b4d56))
 
-
-
-
-
 ## [0.6.8](https://github.com/JulianKarhof/etournity/compare/v0.6.7...v0.6.8) (2022-02-09)
-
 
 ### Bug Fixes
 
@@ -291,83 +209,48 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **general:** Dev Run 9 Fixes ([#925](https://github.com/JulianKarhof/etournity/issues/925)) ([f771117](https://github.com/JulianKarhof/etournity/commit/f7711175e5a1a03ab5ba7d6e3b98bafb1f213ee9))
 * **server:** Reset NoShow Timer When Match Resets ([#982](https://github.com/JulianKarhof/etournity/issues/982)) ([de0fb9a](https://github.com/JulianKarhof/etournity/commit/de0fb9ad627ba80b283c87a3fd82139a65bb27e3))
 
-
 ### Features
 
 * **client:** Add Loading States to Key Actions ([#974](https://github.com/JulianKarhof/etournity/issues/974)) ([a265a46](https://github.com/JulianKarhof/etournity/commit/a265a46ab2757a778318e012ddec0c4dca67e178))
 * **client:** TournamentStatusBar Component ([#953](https://github.com/JulianKarhof/etournity/issues/953)) ([7a03f27](https://github.com/JulianKarhof/etournity/commit/7a03f27acf8abb7c32bbf9dc6114726fd74770f2))
 
-
-
-
-
 ## [0.6.7](https://github.com/JulianKarhof/etournity/compare/v0.6.6...v0.6.7) (2022-01-17)
-
 
 ### Bug Fixes
 
 * **general:** Dev Run 3 Fixes ([#860](https://github.com/JulianKarhof/etournity/issues/860)) ([10bef3d](https://github.com/JulianKarhof/etournity/commit/10bef3dff520d038e2917cf8792f164e91afed95))
 * **general:** Various Small Bugs ([#828](https://github.com/JulianKarhof/etournity/issues/828)) ([adb072d](https://github.com/JulianKarhof/etournity/commit/adb072d5076111c42da7929adfe4daca6aa83eb5))
 
-
-
-
-
 ## [0.6.6](https://github.com/JulianKarhof/etournity/compare/v0.6.5...v0.6.6) (2022-01-07)
-
 
 ### Features
 
 * **auth:** Add JWT Token Verification To Websocket Endpoint ([#827](https://github.com/JulianKarhof/etournity/issues/827)) ([d83ec7f](https://github.com/JulianKarhof/etournity/commit/d83ec7f1c760a609057195d3e57ce765430d8af1))
 
-
-
-
-
 ## [0.6.5](https://github.com/JulianKarhof/etournity/compare/v0.6.4...v0.6.5) (2022-01-07)
-
 
 ### Bug Fixes
 
 * CSP Preventing Some Files From Loading ([#826](https://github.com/JulianKarhof/etournity/issues/826)) ([b992379](https://github.com/JulianKarhof/etournity/commit/b992379b08cf3776ddd8aa1d08e7104c563d86ad))
 
-
-
-
-
 ## [0.6.4](https://github.com/JulianKarhof/etournity/compare/v0.6.3...v0.6.4) (2022-01-06)
-
 
 ### Bug Fixes
 
 * **client:** Fix Player List ([#820](https://github.com/JulianKarhof/etournity/issues/820)) ([7db6aff](https://github.com/JulianKarhof/etournity/commit/7db6aff3be0cba4bbb260d9fd047c665d0dee01f))
 * **client:** Improve Report Modal validation ([#823](https://github.com/JulianKarhof/etournity/issues/823)) ([f493e5f](https://github.com/JulianKarhof/etournity/commit/f493e5fe1e7b6d2e1db8724e0aeaf44dc536f1de))
 
-
-
-
-
 ## [0.6.3](https://github.com/JulianKarhof/etournity/compare/v0.6.2...v0.6.3) (2022-01-04)
 
 **Note:** Version bump only for package @etournity/client
 
-
-
-
-
 ## [0.6.1](https://github.com/JulianKarhof/etournity/compare/v0.6.0...v0.6.1) (2022-01-04)
-
 
 ### Bug Fixes
 
 * **client:** Cookie Banner CSP ([#817](https://github.com/JulianKarhof/etournity/issues/817)) ([cf6320f](https://github.com/JulianKarhof/etournity/commit/cf6320f5bcdefff74653bd9a8c3d8f5de7456092))
 
-
-
-
-
 # [0.6.0](https://github.com/JulianKarhof/etournity/compare/v0.5.0...v0.6.0) (2022-01-04)
-
 
 ### Bug Fixes
 
@@ -375,18 +258,12 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **client:** Replace CSP Lib ([#815](https://github.com/JulianKarhof/etournity/issues/815)) ([224c10f](https://github.com/JulianKarhof/etournity/commit/224c10f256347d193a10df0e46b4931ab8986eba))
 * **client:** Resolve Bracket Display Issues ([#800](https://github.com/JulianKarhof/etournity/issues/800)) ([f96b80f](https://github.com/JulianKarhof/etournity/commit/f96b80f184b8d51eca2752b0b8b91fb379909e3e))
 
-
 ### Features
 
 * **client:**  MatchStatus improvements ([#796](https://github.com/JulianKarhof/etournity/issues/796)) ([265e2ae](https://github.com/JulianKarhof/etournity/commit/265e2aec6f385b3cb92d74ea33e8fc61e179bdbe))
 * **deploy:** Initial Terraform Setup ([#797](https://github.com/JulianKarhof/etournity/issues/797)) ([4847711](https://github.com/JulianKarhof/etournity/commit/48477112bb088d2a318f87daa1327ff207b888aa))
 
-
-
-
-
 # [0.5.0](https://github.com/JulianKarhof/etournity/compare/v0.4.3...v0.5.0) (2021-12-03)
-
 
 ### Bug Fixes
 
@@ -411,7 +288,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **client:** Tournament List Improvements ([#689](https://github.com/JulianKarhof/etournity/issues/689)) ([e54e35d](https://github.com/JulianKarhof/etournity/commit/e54e35d59adf20987ee7c33c34fdcaaa8be7176b))
 * **client:** Various Issues With the Select Component ([#754](https://github.com/JulianKarhof/etournity/issues/754)) ([5e821ef](https://github.com/JulianKarhof/etournity/commit/5e821ef1f4e0f82348c03c7813877c4477368e48))
 
-
 ### Features
 
 * **client:** Bracket Generation Edge-Case Handling ([#787](https://github.com/JulianKarhof/etournity/issues/787)) ([870408c](https://github.com/JulianKarhof/etournity/commit/870408cc66cdda1b613a179b9c7272fc12921ffe))
@@ -425,44 +301,25 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **client:** Update DataHandler ([#768](https://github.com/JulianKarhof/etournity/issues/768)) ([3ed55b5](https://github.com/JulianKarhof/etournity/commit/3ed55b500c50cbc1effed93bac4084b06aa47b9e))
 * **server:** Automatic Tournament Progression ([#704](https://github.com/JulianKarhof/etournity/issues/704)) ([bfdcc9b](https://github.com/JulianKarhof/etournity/commit/bfdcc9b4bac5464b3351a0c934a142cc15d36e4a))
 
-
-
-
-
 ## [0.4.3](https://github.com/JulianKarhof/etournity/compare/v0.4.2...v0.4.3) (2021-09-27)
-
 
 ### Bug Fixes
 
 * **client:** Infopage Overflow ([#700](https://github.com/JulianKarhof/etournity/issues/700)) ([da1487d](https://github.com/JulianKarhof/etournity/commit/da1487dd82f4d6eed91b58bbb7da8468bb0241d7))
 * **deploy:** Netlify Deploy Script Error ([#693](https://github.com/JulianKarhof/etournity/issues/693)) ([def77b0](https://github.com/JulianKarhof/etournity/commit/def77b073f26a568bae37b1a9980a7282946471a))
 
-
-
-
-
 ## [0.4.2](https://github.com/JulianKarhof/etournity/compare/v0.4.1...v0.4.2) (2021-09-25)
-
 
 ### Bug Fixes
 
 * **client:** Remove Console Logs ([#687](https://github.com/JulianKarhof/etournity/issues/687)) ([dd070bd](https://github.com/JulianKarhof/etournity/commit/dd070bdaf8ec3ed0faa0a635a5e131ef97441a64))
 * **deploy:** Change Publish Dir in Netlify Deploy & Add Missing Deps ([51d0eab](https://github.com/JulianKarhof/etournity/commit/51d0eabe340da5aa375bba37bc24d4ff664cd77c))
 
-
-
-
-
 ## [0.4.1](https://github.com/JulianKarhof/etournity/compare/v0.4.0...v0.4.1) (2021-09-23)
 
 **Note:** Version bump only for package @etournity/client
 
-
-
-
-
 # [0.4.0](https://github.com/JulianKarhof/etournity/compare/v0.3.1...v0.4.0) (2021-09-23)
-
 
 ### Bug Fixes
 
@@ -481,7 +338,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * **client:** Submission System Bugs ([#512](https://github.com/JulianKarhof/etournity/issues/512)) ([878e5d7](https://github.com/JulianKarhof/etournity/commit/878e5d71fb017d2138c3e285e039c8925f3f9e6f))
 * alignment, add roundness and better css ([#624](https://github.com/JulianKarhof/etournity/issues/624)) ([f92156a](https://github.com/JulianKarhof/etournity/commit/f92156a2b095887a0fd3a40e3353b90d2660fece))
 * **deploy:** Backend & Frontend Build Failing ([#521](https://github.com/JulianKarhof/etournity/issues/521)) ([defa896](https://github.com/JulianKarhof/etournity/commit/defa896b54d318e2d050c0e6140d3e7687bc9be1))
-
 
 ### Features
 
@@ -570,10 +426,6 @@ See [Conventional Commits](https://conventionalcommits.org) for commit guideline
 * graphql subscriptions ([#307](https://github.com/JulianKarhof/etournity/issues/307)) ([20607c6](https://github.com/JulianKarhof/etournity/commit/20607c6635bd718ad43d871eb3df811317ea5ba6))
 * **server:** move comparison logic to backend ([#262](https://github.com/JulianKarhof/etournity/issues/262)) ([b6bd1e7](https://github.com/JulianKarhof/etournity/commit/b6bd1e7c937ad14ef755a37bc6e37bc905e750a3))
 * **server:** Rework Permissions ([#681](https://github.com/JulianKarhof/etournity/issues/681)) ([4125df3](https://github.com/JulianKarhof/etournity/commit/4125df38cd9d6f87f08ff68ff594f6000e6940ea))
-
-
-
-
 
 ## [0.3.1](https://github.com/JulianKarhof/etournity/compare/v0.3.0...v0.3.1) (2021-02-05)
 

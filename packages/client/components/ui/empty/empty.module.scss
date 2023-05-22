@@ -6,25 +6,21 @@
   align-items: center;
 
   .title {
-    font-weight: 900;
-    font-size: 1.5rem;
-    line-height: 1.8125rem;
-    letter-spacing: 0.69rem;
-    text-indent: 0.69rem;
-    margin-top: 1.5rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.25rem;
     margin-bottom: 0;
   }
 
   .description {
     color: $middle-grey;
-    font-weight: 900;
-    font-size: 1.5rem;
-    line-height: 1.8125rem;
-    margin-top: 1rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    margin-top: 0.5rem;
   }
 
   .actions {
-    margin-top: 1rem;
     :not(:last-child) {
       margin-right: 0.5rem;
     }

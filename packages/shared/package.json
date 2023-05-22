@@ -1,6 +1,6 @@
 {
   "name": "@etournity/shared",
-  "version": "1.6.1",
+  "version": "1.6.3",
   "private": true,
   "main": "dist/index.js",
   "scripts": {

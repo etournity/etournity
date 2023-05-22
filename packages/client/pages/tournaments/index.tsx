@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TournamentCard } from '../../components/tournament/tournamentCard'
 import styles from './index.module.scss'
 import { ParticipantRoleType, useGetTournamentsQuery } from '@generated/graphql'
@@ -9,13 +9,17 @@ import { Box, Button, Paper, Tab, Tabs, Fab } from '@mui/material'
 import { TournamentSearch } from '@components/tournament/tournamentSearch'
 import { AddRounded } from '@mui/icons-material'
 import { useWindowSize } from '@hooks/useWindowSize'
+import Fuse from 'fuse.js'
+import { Empty } from '@components/ui/empty'
 
 const Index: React.FC = () => {
-  const auth = useAuth()
-  const user = auth?.user
+  const { user } = useAuth()
   const { breakpoint, isMobile } = useWindowSize()
   const [currentTab, setCurrentTab] = useState(1)
-
+  const [tournamentSearch, setTournamentSearch] = useState<string>('')
+  const [renderedTournaments, setRenderedTournaments] = useState<
+    Array<JSX.Element | null>
+  >([])
   const {
     data: tournamentsData,
     loading: tournamentsLoading,
@@ -37,51 +41,102 @@ const Index: React.FC = () => {
     skip: user === undefined,
     onError: (error) => handleError(error),
   })
-  if (tournamentsLoading || participatingLoading) return <Loader />
 
-  const getTournaments = (participating?: boolean) => {
-    const tournaments = participating
-      ? participatingData?.tournaments
-      : tournamentsData?.tournaments
+  useEffect(() => {
+    const renderTournaments = (
+      participating?: boolean
+    ): Array<JSX.Element | null> => {
+      const tournaments = participating
+        ? participatingData?.tournaments
+        : tournamentsData?.tournaments
 
-    if (!tournaments?.length) return null
+      if (!tournaments?.length) {
+        if (participating) {
+          return [
+            <Paper key="not_participating" className={styles.empty}>
+              <Empty title="You are not participating in any tournaments..." />
+            </Paper>,
+          ]
+        }
 
-    return tournaments?.map((element) => {
-      if (!element) return null
-      return (
-        <TournamentCard
-          key={element.id}
-          tournament={element}
-          backgroundSrc="/assets/images/thisIsABanner.png"
-          toHub={element.hostUser.id === user?.id}
-          data-cy="tournamentCard"
-        />
-      )
-    })
-  }
+        return [
+          <Paper key="no_tournaments" className={styles.empty}>
+            <Empty title="Unable to find tournaments..." />
+          </Paper>,
+        ]
+      }
 
-  const showParticipatingTournaments = getTournaments(true)
-  const showTournaments = getTournaments()
+      const fuse = new Fuse(tournaments, {
+        includeScore: true,
+        threshold: 0.6,
+        keys: ['title', 'hostUser.displayName', 'game.title'],
+      })
+
+      const searchedTournaments =
+        tournamentSearch.length > 0
+          ? fuse
+              .search(tournamentSearch.toString())
+              .map((result) => result.item)
+          : tournaments
+
+      if (!searchedTournaments?.length) {
+        return [
+          <Paper key="not_search_match" className={styles.empty}>
+            <Empty
+              title="No tournaments match you current search..."
+              description="Create a tournament to liven up the place!"
+            />
+          </Paper>,
+        ]
+      }
+
+      return searchedTournaments?.map((element) => {
+        if (!element) return null
+        return (
+          <TournamentCard
+            key={element.id}
+            tournament={element}
+            className={styles.tournamentCard}
+            backgroundSrc="/assets/images/thisIsABanner.png"
+            toHub={element.hostUser.id === user?.id}
+            data-cy="tournamentCard"
+          />
+        )
+      })
+    }
+
+    setRenderedTournaments(renderTournaments(currentTab === 2) ?? [])
+  }, [
+    currentTab,
+    tournamentSearch,
+    user?.id,
+    participatingData?.tournaments,
+    tournamentsData?.tournaments,
+  ])
 
   return (
     <Box className={styles.discovery}>
-      {!isMobile &&
-        breakpoint !== 'lg' &&
-        process.env.ETY_ENV !== 'production' && (
-          <Box className={styles.searchAndFilter}>
-            <Paper className={styles.search}>
-              <TournamentSearch />
-            </Paper>
-
-            <Paper className={styles.filter}>
-              {'Filters (Coming Soon) \u2122'}
-            </Paper>
-          </Box>
-        )}
-      <Box className={styles.tournamentLists}>
-        {breakpoint === 'lg' && process.env.ETY_ENV !== 'production' && (
+      {!isMobile && breakpoint !== 'lg' && (
+        <Box className={styles.searchAndFilter}>
           <Paper className={styles.search}>
-            <TournamentSearch />
+            <TournamentSearch
+              value={tournamentSearch}
+              onChange={(e) => setTournamentSearch(e.target.value)}
+            />
+          </Paper>
+
+          <Paper className={styles.filter}>
+            {'Filters (Coming Soon) \u2122'}
+          </Paper>
+        </Box>
+      )}
+      <Box className={styles.tournamentLists}>
+        {breakpoint === 'lg' && (
+          <Paper className={styles.search}>
+            <TournamentSearch
+              value={tournamentSearch}
+              onChange={(e) => setTournamentSearch(e.target.value)}
+            />
           </Paper>
         )}
         <Box className={styles.navigation}>
@@ -111,7 +166,11 @@ const Index: React.FC = () => {
         </Box>
 
         <Box className={styles.tournamentList}>
-          {currentTab === 1 ? showTournaments : showParticipatingTournaments}
+          {tournamentsLoading || participatingLoading ? (
+            <Loader />
+          ) : (
+            renderedTournaments
+          )}
         </Box>
       </Box>
       {isMobile && (

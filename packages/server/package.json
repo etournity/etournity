@@ -1,6 +1,6 @@
 {
   "name": "@etournity/server",
-  "version": "1.6.1",
+  "version": "1.6.3",
   "private": true,
   "main": "index.ts",
   "scripts": {
@@ -15,8 +15,8 @@
     "test:types": "yarn tsc --noEmit --skipLibCheck"
   },
   "dependencies": {
-    "@etournity/rbac": "^1.6.1",
-    "@etournity/shared": "^1.6.1",
+    "@etournity/rbac": "^1.6.3",
+    "@etournity/shared": "^1.6.3",
     "@graphql-tools/schema": "^8.3.2",
     "@prisma/client": "3.13.0",
     "@sentry/node": "^6.19.6",
