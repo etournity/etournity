@@ -29,7 +29,7 @@ export const closeStaleProcessor: ProcessCallbackFunction<null> = async (
           notIn: [TournamentStatus.CANCELLED, TournamentStatus.FINISHED],
         },
         updatedAt: { lt: dayjs().subtract(7, 'days').toDate() },
-        date: { lt: dayjs().toDate() },
+        date: { lt: dayjs().subtract(1, 'day').toDate() },
       },
     },
     select: {
