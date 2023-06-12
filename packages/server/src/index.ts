@@ -26,6 +26,10 @@ import { WebSocketServer } from 'ws'
 import { useServer } from 'graphql-ws/lib/use/ws'
 import * as Tracing from '@sentry/tracing'
 import { extractJWT } from './helpers/cookies'
+import {
+  closeStaleProcessor,
+  closeStaleQueue,
+} from './queues/staleTournaments.queue'
 
 const logger = new Logger()
 
@@ -228,6 +232,17 @@ async function startServer() {
   app.use(auth.authenticate())
   app.use(globalRateLimiterMiddleware)
 
+  // Set-up check for stale tournaments to run every monday at 04:00 AM
+  void closeStaleQueue.process('closeStaleTournaments', closeStaleProcessor)
+  closeStaleQueue
+    .add('closeStaleTournaments', {}, { repeat: { cron: '0 4 * * 1' } })
+    .then(() => {
+      logger.info('Added closeStaleTournaments to bull queue', 'server')
+    })
+    .catch((e) => {
+      logger.error(e, 'server')
+    })
+
   app.post('/sentry', (req) => {
     const options: http.RequestOptions = {
       method: 'POST',
@@ -256,6 +271,7 @@ You, victim of one.</pre>`)
   redisClient.on('connect', function () {
     logger.info('Connected to redis successfully', 'redis')
   })
+
   httpServer.listen({ port: PORT }, () => {
     logger.info(`🔌 Subscriptions ready at port ${PORT}`)
     logger.info(`🚀 Server ready at port ${PORT}`)
