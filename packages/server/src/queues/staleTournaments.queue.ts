@@ -9,6 +9,15 @@ export const closeStaleQueue = new Queue('staleTournaments', REDIS_URL, {
     removeOnFail: { age: 86400 }, // Jobs will be kept for 1 day
   },
 })
+/**
+ * Sets stale tournaments to "Finished" status.
+ *
+ * Stale tournament are defined as:
+ * - status -> not in "Finished" or "Cancelled" status
+ * - updatedAt -> no update in the last 7 days
+ * - date -> start date is in the past
+ *
+ */
 export const closeStaleProcessor: ProcessCallbackFunction<null> = async (
   _,
   done
@@ -19,7 +28,8 @@ export const closeStaleProcessor: ProcessCallbackFunction<null> = async (
         status: {
           notIn: [TournamentStatus.CANCELLED, TournamentStatus.FINISHED],
         },
-        updatedAt: { lte: dayjs().subtract(3, 'days').toDate() },
+        updatedAt: { lt: dayjs().subtract(7, 'days').toDate() },
+        date: { lt: dayjs().toDate() },
       },
     },
     select: {
