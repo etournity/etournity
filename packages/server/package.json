@@ -1,6 +1,6 @@
 {
   "name": "@etournity/server",
-  "version": "1.6.3",
+  "version": "1.7.1",
   "private": true,
   "main": "index.ts",
   "scripts": {
