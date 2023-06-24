@@ -38,6 +38,7 @@
     "@storybook/addon-links": "6.2.2",
     "@storybook/preset-scss": "1.0.3",
     "@storybook/react": "^6.5.3",
+    "@svgr/webpack": "^8.0.1",
     "@tinymce/tinymce-react": "^3.12.6",
     "@types/classnames": "^2.2.11",
     "@types/lodash": "^4.14.175",
