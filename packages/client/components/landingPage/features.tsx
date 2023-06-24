@@ -3,7 +3,13 @@ import styles from './features.module.scss'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
 
-const FeatureCard = ({ title, description, icon }) => (
+interface FeatureCardProps {
+  title: string
+  description: string
+  icon: string
+}
+
+const FeatureCard = ({ title, description, icon }: FeatureCardProps) => (
   <Card className={styles.card}>
     <img className={styles.cardIcon} src={`assets/landingpage/${icon}`} />
     <Box className={styles.cardText}>
