@@ -1,0 +1,40 @@
+@import "style/variables";
+
+
+.container{
+  padding-bottom: 64px;
+  text-align: center;
+
+  .title{
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 40px;
+    font-family: Metropolis;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:12px;
+    &::before, &::after{
+      content: "";
+      display: block;
+      width: 20vw;
+      height:1px;
+      margin:0 40px;
+    }
+    &::before{
+      background: linear-gradient(to left, $muiPrimary, $muiSurface1);
+    }
+    &::after{
+      background: linear-gradient(to right, $muiPrimary, $muiSurface1);
+    }
+  }
+
+  .description{
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+    font-family: Metropolis;
+  }
+}

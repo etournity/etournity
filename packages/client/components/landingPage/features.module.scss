@@ -4,57 +4,21 @@
   text-align: center;
 }
 
-.top{
-  padding-bottom: 64px;
-  &Title{
-    font-size: 32px;
-    font-weight: 600;
-    line-height: 40px;
-    font-family: Metropolis;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom:12px;
-    &::before, &::after{
-      content: "";
-      display: block;
-      width: 20vw;
-      height:1px;
-      margin:0 40px;
-    }
-    &::before{
-      background: linear-gradient(to left, $muiPrimary, $muiSurface1);
-    }
-    &::after{
-      background: linear-gradient(to right, $muiPrimary, $muiSurface1);
-    }
-  }
-
-  &Description{
-    font-size: 16px;
-    line-height: 24px;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-    font-family: Metropolis;
-  }
-}
-
 .bottom{
   display: grid;
   grid-gap: 24px 0;
   justify-items: center;
 
   @include breakpoint(xs){
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(1, auto);
   }
 
   @include breakpoint(md){
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, auto);
   }
 
   @include breakpoint(lg){
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: repeat(3, auto);
   }
 
 }
@@ -64,7 +28,7 @@
   width: 300px;
   height: 262px;
   border-radius: 8px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.30), 0px 8px 12px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.30), 0 8px 12px 6px rgba(0, 0, 0, 0.15);
 
   &Text{
     padding: 24px 24px 48px;

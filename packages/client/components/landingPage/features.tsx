@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './features.module.scss'
 import Box from '@mui/material/Box'
 import Card from '@mui/material/Card'
+import SectionTitle from './sectionTitle'
 
 interface FeatureCardProps {
   title: string
@@ -11,7 +12,11 @@ interface FeatureCardProps {
 
 const FeatureCard = ({ title, description, icon }: FeatureCardProps) => (
   <Card className={styles.card}>
-    <img className={styles.cardIcon} src={`assets/landingpage/${icon}`} />
+    <img
+      className={styles.cardIcon}
+      src={`assets/landingpage/${icon}`}
+      alt={icon}
+    />
     <Box className={styles.cardText}>
       <h1 className={styles.cardTitle}>{title}</h1>
       <p className={styles.cardDescription}>{description}</p>
@@ -21,12 +26,10 @@ const FeatureCard = ({ title, description, icon }: FeatureCardProps) => (
 
 const Features = () => (
   <Box className={styles.features}>
-    <Box className={styles.top}>
-      <h1 className={styles.topTitle}>All you need in one place</h1>
-      <p className={styles.topDescription}>
-        Take control of your tournament creation with these tools.
-      </p>
-    </Box>
+    <SectionTitle
+      title="All you need in one place"
+      description="Take control of your tournament creation with these tools."
+    />
 
     <Box className={styles.bottom}>
       <FeatureCard

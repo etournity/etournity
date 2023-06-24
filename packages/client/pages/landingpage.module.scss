@@ -2,12 +2,17 @@
 @import "style/variables";
 
 .landingPage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   > div{
     //border: white 1px solid;
+    width: 80vw;
+    position:relative;
   }
 }
 
 .spacer{
-  width: 100vw;
   height: 120px;
 }

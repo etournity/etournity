@@ -262,6 +262,7 @@ const darkTheme = responsiveFontSizes(
     typography: {
       fontFamily: [
         'proxima-nova', // Default
+        'Metropolis',
         'BlinkMacSystemFont',
         '"Segoe UI"',
         'Roboto',
