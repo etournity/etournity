@@ -6,10 +6,14 @@
   text-align: center;
 
   .title{
-    font-size: 32px;
     font-weight: 600;
     line-height: 40px;
     font-family: Metropolis;
+
+    font-size: 24px;
+    @include breakpoint(md){
+      font-size: 32px;
+    }
 
     display: flex;
     justify-content: center;
@@ -23,18 +27,22 @@
       margin:0 40px;
     }
     &::before{
-      background: linear-gradient(to left, $muiPrimary, $muiSurface1);
+      background: linear-gradient(to left, $muiPrimary, $charcoal);
     }
     &::after{
-      background: linear-gradient(to right, $muiPrimary, $muiSurface1);
+      background: linear-gradient(to right, $muiPrimary, $charcoal);
     }
   }
 
   .description{
-    font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.5px;
     font-weight: 400;
     font-family: Metropolis;
+
+    font-size: 12px;
+    @include breakpoint(md){
+      font-size: 16px;
+    }
   }
 }

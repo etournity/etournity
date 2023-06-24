@@ -9,7 +9,7 @@
   grid-gap: 24px 0;
   justify-items: center;
 
-  @include breakpoint(xs){
+  @include breakpoint(sm){
     grid-template-columns: repeat(1, auto);
   }
 

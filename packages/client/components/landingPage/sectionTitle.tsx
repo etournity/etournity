@@ -4,11 +4,16 @@ import React from 'react'
 
 interface SectionTitleProps {
   title: string
-  description: string
+  description?: string
+  className?: string
 }
 
-const SectionTitle = ({ title, description }: SectionTitleProps) => (
-  <Box className={styles.container}>
+const SectionTitle = ({
+  title,
+  description = '',
+  className = '',
+}: SectionTitleProps) => (
+  <Box className={`${styles.container} ${className}`}>
     <h1 className={styles.title}>{title}</h1>
     <p className={styles.description}>{description}</p>
   </Box>
