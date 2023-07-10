@@ -1,0 +1,26 @@
+@import "style/variables";
+
+.button{
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-weight: 600;
+  font-family: Metropolis;
+
+  font-size: 12px;
+  @include breakpoint(sm){
+    font-size: 14px;
+  }
+}
+
+.color{
+  &primary{
+    background-color: $muiPrimary;
+    border: none;
+    color:$muiOnPrimary;
+  }
+  &plain{
+    background-color: transparent;
+    border: 1px solid $muiOutline;
+    color: $muiPrimary;
+  }
+}
