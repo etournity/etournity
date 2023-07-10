@@ -1,9 +1,21 @@
 import React from 'react'
 import styles from './landingpage.module.scss'
 import Box from '@mui/material/Box'
-import { Header, Features, FindLobby, MoreInfo } from '@components/landingPage'
+import {
+  Header,
+  Features,
+  FindLobby,
+  MoreInfo,
+  OpenSource,
+} from '@components/landingPage'
 
-const Spacer = () => <Box className={styles.spacer} />
+const Spacer = ({ className = '' }: LandingPageSectionProps) => (
+  <Box className={`${styles.spacer} ${className}`} />
+)
+
+export interface LandingPageSectionProps {
+  className?: string
+}
 
 const LandingPage = () => (
   <Box className={styles.landingPage}>
@@ -16,8 +28,10 @@ const LandingPage = () => (
     <FindLobby />
     <Spacer />
 
-    <MoreInfo />
-    <Spacer />
+    <MoreInfo className={styles.sectionDark}/>
+    <Spacer className={styles.sectionDark}/>
+
+    <OpenSource className={styles.sectionDark}/>
   </Box>
 )
 

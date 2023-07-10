@@ -1,5 +1,7 @@
 @import "style/variables";
 
+$bg-glow-height: 320px;
+
 .findLobby{
   .image{
     width: 100%;
@@ -42,13 +44,24 @@
     content: "";
     position: absolute;
     left: -50vw;
-    top:0;
-    transform: translateY(75%);
+    top:25%;
     display: block;
     width: 200vw;
-    height: 320px;
+    height: $bg-glow-height;
     background: linear-gradient(180deg, rgba(0, 224, 181, 0.00) 0%, rgba(0, 224, 181, 0.72) 100%);
     z-index: 1;
+  }
+
+  &::after{
+    content: "";
+    position: absolute;
+    display: block;
+    width: 200vw;
+    height: 100%;
+    left: -50vw;
+    top:calc(25% + #{$bg-glow-height});
+    background-color: $charcoal;
+    z-index: 0;
   }
 }
 

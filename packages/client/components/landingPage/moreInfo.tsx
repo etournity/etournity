@@ -3,9 +3,10 @@ import styles from './moreInfo.module.scss'
 import Box from '@mui/material/Box'
 import SectionTitle from '@components/landingPage/sectionTitle'
 import InfoCard from './infoCard'
+import { LandingPageSectionProps } from '@app/pages'
 
-const MoreInfo = () => (
-  <Box>
+const MoreInfo = ({ className = '' }: LandingPageSectionProps) => (
+  <Box className={className}>
     <SectionTitle
       className={styles.titleWrapper}
       title="More of what we offer"

@@ -1,18 +1,35 @@
 @use "sass:string";
 @import "style/variables";
+$bg-glow-height: 320px;
 
 .landingPage{
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background: $muiSurface1;
+  padding: 0 30vw;
 
-  > div{
+  > div {
     //border: white 1px solid;
     width: 80vw;
-    position:relative;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sectionDark::after{
+    content: "";
+    position:absolute;
+    display: block;
+    left:-50%;
+    top:0;
+    width: 200vw;
+    height: 100%;
+    background-color: $charcoal;
+    z-index: -1;
   }
 }
 
 .spacer{
   height: 120px;
+  background: transparent;
 }
