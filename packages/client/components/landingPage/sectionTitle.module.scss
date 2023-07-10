@@ -3,7 +3,9 @@
 
 .container{
   padding-bottom: 64px;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   .title{
     font-weight: 600;
@@ -34,6 +36,12 @@
     }
   }
 
+  .visible{
+    &::before, &::after{
+      animation: fadeIn 800ms ease-in-out forwards;
+    }
+  }
+
   .description{
     line-height: 24px;
     letter-spacing: 0.5px;
@@ -44,5 +52,16 @@
     @include breakpoint(md){
       font-size: 16px;
     }
+  }
+}
+
+@keyframes fadeIn{
+  from {
+    //background: linear-gradient(to left, $muiPrimary 0%, $charcoal 1%);
+    width: 0;
+  }
+  to{
+    //background: linear-gradient(to left, $muiPrimary, $charcoal);
+    width: 20vw;
   }
 }

@@ -34,3 +34,21 @@
         font-size: 57px;
     }
 }
+
+.description{
+  font-weight: 400;
+  font-family: Metropolis;
+
+  font-size: 12px;
+
+  @include breakpoint(sm) {
+    font-size: 14px;
+  }
+  @include breakpoint(md) {
+      font-size: 16px;
+  }
+}
+
+.buttonWrapper{
+  margin-top: 24px;
+}
