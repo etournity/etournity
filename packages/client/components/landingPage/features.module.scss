@@ -68,7 +68,11 @@
         padding-top: 200px;
         grid-gap: 38px 0;
     }
-
+    25% {
+      opacity: 0;
+      padding-top: 200px;
+      grid-gap: 38px 0;
+    }
     100% {
         padding: 0;
         transform: translateY(0);

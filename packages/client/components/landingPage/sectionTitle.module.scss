@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
 
   .title{
     font-weight: 600;
@@ -56,10 +57,13 @@
 }
 
 @keyframes fadeIn{
-  from {
+  0% {
     width: 0;
   }
-  to{
+  25%{
+    width: 0;
+  }
+  100%{
     width: 20vw;
   }
 }
