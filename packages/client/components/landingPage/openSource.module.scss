@@ -10,7 +10,7 @@
 
 .preTitle{
   font-weight: 600;
-  font-family: Metropolis;
+  font-family: Metropolis, sans-serif;
 
   font-size: 14px;
   @include breakpoint(sm) {
@@ -23,7 +23,7 @@
 
 .title{
   font-weight: 900;
-  font-family: Metropolis;
+  font-family: Metropolis, sans-serif;
   color: $muiPrimary;
 
   font-size: 36px;
@@ -37,7 +37,7 @@
 
 .description{
   font-weight: 400;
-  font-family: Metropolis;
+  font-family: Metropolis, sans-serif;
 
   font-size: 12px;
 

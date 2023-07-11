@@ -2,6 +2,7 @@ import { RefObject, useEffect, useMemo, useState } from 'react'
 
 export default function useOnScreen(ref: RefObject<HTMLElement>) {
   const [isIntersecting, setIntersecting] = useState(false)
+  const [everShown, setEverShown] = useState(false)
 
   const observer = useMemo(() => {
     if (
@@ -27,5 +28,11 @@ export default function useOnScreen(ref: RefObject<HTMLElement>) {
     }
   }, [observer, ref])
 
-  return isIntersecting
+  useEffect(() => {
+    if (isIntersecting) {
+      setEverShown(true)
+    }
+  }, [isIntersecting])
+
+  return { isIntersecting, everShown }
 }

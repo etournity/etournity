@@ -28,10 +28,10 @@ const LandingPage = () => (
     <FindLobby />
     <Spacer />
 
-    <MoreInfo className={styles.sectionDark}/>
-    <Spacer className={styles.sectionDark}/>
+    <MoreInfo className={styles.sectionDark} />
+    <Spacer className={styles.sectionDark} />
 
-    <OpenSource className={styles.sectionDark}/>
+    <OpenSource className={styles.sectionDark} />
   </Box>
 )
 

@@ -44,7 +44,7 @@ $horizontalGap: 72px;
 
   &Title{
     font-weight: 600;
-    font-family: Metropolis;
+    font-family: Metropolis, sans-serif;
     margin-bottom: 12px;
     margin-top: 16px;
     font-size: 14px;
@@ -56,7 +56,7 @@ $horizontalGap: 72px;
 
   &Description{
     font-weight: 400;
-    font-family: Metropolis;
+    font-family: Metropolis, sans-serif;
     font-size: 12px;
 
     @include breakpoint(lg){
@@ -66,7 +66,8 @@ $horizontalGap: 72px;
 }
 
 .lines{
-  width: calc(66% + #{$horizontalGap});
+  width: 100%;
+  position: relative;
 
   @include breakpoint(xs){
     visibility: hidden;
@@ -75,4 +76,33 @@ $horizontalGap: 72px;
   @include breakpoint(sm){
     visibility: visible;
   }
+
+  &Wrapper{
+    position: relative;
+    width: calc(66% + #{$horizontalGap});
+
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+  }
+}
+
+.visible::before{
+  background: linear-gradient(to bottom, transparent, $charcoal 20%);
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+      height: 100%;
+    }
+    to {
+      height: 0;
+    }
 }

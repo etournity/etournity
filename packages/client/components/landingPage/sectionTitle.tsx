@@ -1,6 +1,6 @@
 import styles from '@components/landingPage/sectionTitle.module.scss'
 import Box from '@mui/material/Box'
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import useOnScreen from '@utils/useOnScreen'
 
 interface SectionTitleProps {
@@ -15,15 +15,7 @@ const SectionTitle = ({
   className = '',
 }: SectionTitleProps) => {
   const ref = React.useRef<HTMLDivElement>(null)
-  const [everShown, setEverShown] = useState(false)
-  const visible = useOnScreen(ref)
-
-  useEffect(() => {
-    if (visible) {
-      setEverShown(true)
-    }
-  }, [visible])
-
+  const { everShown } = useOnScreen(ref)
   const visibleClassName = everShown ? styles.visible : ''
 
   return (
