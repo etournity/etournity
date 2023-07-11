@@ -23,6 +23,10 @@
 
 }
 
+.visible{
+  animation: moveIn 1.5s ease-in-out forwards;
+}
+
 .card{
   background-color: $muiSurface2;
   width: 300px;
@@ -55,4 +59,19 @@
     background-color: $muiSurface4;
     border-radius: 8px;
   }
+}
+
+
+@keyframes moveIn {
+    0% {
+        opacity: 0;
+        padding-top: 200px;
+        grid-gap: 38px 0;
+    }
+
+    100% {
+        padding: 0;
+        transform: translateY(0);
+        grid-gap: 24px 0;
+    }
 }
