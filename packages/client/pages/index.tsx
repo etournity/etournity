@@ -7,6 +7,7 @@ import {
   FindLobby,
   MoreInfo,
   OpenSource,
+  Community,
 } from '@components/landingPage'
 
 const Spacer = ({ className = '' }: LandingPageSectionProps) => (
@@ -32,6 +33,8 @@ const LandingPage = () => (
     <Spacer className={styles.sectionDark} />
 
     <OpenSource className={styles.sectionDark} />
+
+    <Community />
   </Box>
 )
 

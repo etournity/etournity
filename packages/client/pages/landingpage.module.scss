@@ -6,11 +6,11 @@ $bg-glow-height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   background: $muiSurface1;
-  padding: 0 30vw;
+  padding: 0 10vw;
 
   > div {
-    //border: white 1px solid;
     width: 80vw;
     position: relative;
     z-index: 1;
