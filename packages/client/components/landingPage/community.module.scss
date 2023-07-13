@@ -1,0 +1,84 @@
+@import "style/variables";
+
+
+.community{
+  width: 100vw;
+  transform: translateX(-10vw);
+}
+
+.video{
+  width: 100vw;
+  aspect-ratio: 16/9;
+  z-index: -1;
+
+  @include breakpoint(lg){
+    transform: translateY(-25%);
+  }
+
+  &Wrapper{
+    position: relative;
+    width: 100vw;
+    max-height: 386px;
+    overflow-y: hidden;
+  }
+
+
+  &Overlay{
+    background-color: $muiPrimary;
+    opacity: 0.65;
+  }
+}
+
+.content, .videoOverlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  color: black;
+  font-family: Metropolis, sans-serif;
+  text-align: center;
+
+  > *{
+    max-width: 744px;
+    margin: 0 24px;
+  }
+
+  .title{
+    padding-bottom: 12px;
+    font-weight: 900;
+
+    font-size: 36px;
+    @include breakpoint(sm){
+      font-size: 45px;
+    }
+    @include breakpoint(md){
+      font-size: 57px;
+    }
+  }
+
+  .description{
+    font-weight: 400;
+    letter-spacing: 0.4px;
+
+    font-size: 12px;
+    @include breakpoint(sm){
+      font-size: 14px;
+    }
+    @include breakpoint(md){
+      font-size: 16px;
+    }
+  }
+
+}
+
+
