@@ -29,6 +29,27 @@ $bg-glow-height: 320px;
   }
 }
 
+.loading{
+  position: relative;
+  //height: 100vh;
+  //width: 100vw;
+  //overflow: hidden;
+  &::after{
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: $charcoal;
+    background-image: url("/assets/landingpage/loader.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100px;
+    z-index: 100;
+  }
+}
+
 .spacer{
   height: 120px;
   background: transparent;

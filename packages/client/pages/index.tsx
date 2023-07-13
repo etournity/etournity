@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styles from './landingpage.module.scss'
 import Box from '@mui/material/Box'
 import {
@@ -9,6 +9,7 @@ import {
   OpenSource,
   Community,
 } from '@components/landingPage'
+import useVideosLoaded from '@utils/useVideosLoaded'
 
 const Spacer = ({ className = '' }: LandingPageSectionProps) => (
   <Box className={`${styles.spacer} ${className}`} />
@@ -18,24 +19,33 @@ export interface LandingPageSectionProps {
   className?: string
 }
 
-const LandingPage = () => (
-  <Box className={styles.landingPage}>
-    <Header />
-    <Spacer />
+const LandingPage = () => {
+  const allVideosLoaded = useVideosLoaded()
+  const loadingClassName = allVideosLoaded ? '' : styles.loading
 
-    <Features />
-    <Spacer />
+  useEffect(() => {
+    if (typeof window !== 'undefined') window.scrollTo(0, 0)
+  }, [])
 
-    <FindLobby />
-    <Spacer />
+  return (
+    <Box className={`${styles.landingPage} ${loadingClassName}`}>
+      <Header />
+      <Spacer />
 
-    <MoreInfo className={styles.sectionDark} />
-    <Spacer className={styles.sectionDark} />
+      <Features />
+      <Spacer />
 
-    <OpenSource className={styles.sectionDark} />
+      <FindLobby />
+      <Spacer />
 
-    <Community />
-  </Box>
-)
+      <MoreInfo className={styles.sectionDark} />
+      <Spacer className={styles.sectionDark} />
+
+      <OpenSource className={styles.sectionDark} />
+
+      <Community />
+    </Box>
+  )
+}
 
 export default LandingPage
