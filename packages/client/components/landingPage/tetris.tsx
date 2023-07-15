@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { Unity, useUnityContext } from 'react-unity-webgl'
 import styles from './tetris.module.scss'
 import Box from '@mui/material/Box'
 import useOnScreen from '@utils/useOnScreen'
+import Button from '@components/landingPage/button'
+import { useRouter } from 'next/router'
 
 const Tetris = () => {
-  const [mousePosition, setMousePosition] = useState(0)
+  const router = useRouter()
 
   const { unityProvider, sendMessage, isLoaded } = useUnityContext({
     loaderUrl: '/assets/landingpage/tetris/Build/tetris.loader.js',
@@ -23,7 +25,7 @@ const Tetris = () => {
     } else {
       sendMessage('Board', 'PauseGame')
     }
-  }, [isIntersecting])
+  }, [isIntersecting, sendMessage])
 
   return (
     <Box className={styles.component}>
@@ -37,6 +39,17 @@ const Tetris = () => {
           What better way than to strive to be the best than with out community.
           Help us build the best tournament platform of tomorrow.{' '}
         </p>
+        <Box className={styles.buttonWrapper}>
+          <Button
+            color="primary"
+            onClick={() => router.push('/tournament/new')}
+          >
+            Create Tournament
+          </Button>
+          <Button color="plain" onClick={() => router.push('/tournaments')}>
+            Join Tournament
+          </Button>
+        </Box>
       </Box>
     </Box>
   )

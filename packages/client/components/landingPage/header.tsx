@@ -1,8 +1,12 @@
 import Box from '@mui/material/Box'
 import styles from './header.module.scss'
 import React, { useEffect } from 'react'
+import Button from '@components/landingPage/button'
+import { useRouter } from 'next/router'
 
 const Header = () => {
+  const router = useRouter()
+
   const [vidIndex, setVidIndex] = React.useState(0)
   const ref = React.useRef<HTMLVideoElement>(null)
 
@@ -46,6 +50,17 @@ const Header = () => {
           {'TOURNAMENT CREATION DONE '}
           <span className={styles.titleHighlight}>RIGHT</span>
         </h1>
+        <Box className={styles.buttonWrapper}>
+          <Button
+            color="primary"
+            onClick={() => router.push('/tournament/new')}
+          >
+            Create Tournament
+          </Button>
+          <Button color="plain" onClick={() => router.push('/tournaments')}>
+            Join Tournament
+          </Button>
+        </Box>
       </Box>
 
       <Box className={styles.banner}>

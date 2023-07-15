@@ -30,6 +30,7 @@ $bannerHeight: 120px;
 
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -52,6 +53,12 @@ $bannerHeight: 120px;
     &Highlight{
       color: $muiPrimary;
     }
+  }
+
+  .buttonWrapper{
+    padding-top: 36px;
+    display: flex;
+    gap: 36px;
   }
 }
 

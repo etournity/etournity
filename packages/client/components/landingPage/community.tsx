@@ -1,9 +1,16 @@
 import React from 'react'
 import styles from './community.module.scss'
 import Box from '@mui/material/Box'
+import Button from '@components/landingPage/button'
 
 const Community = () => {
   const videoId = '1_1Ojo39ySBrE0V-MeIYHId_q45dYG_G5'
+
+  const handleButtonClick = () => {
+    if (typeof window !== 'undefined') {
+      window.open('https://discord.com/invite/ysm29w7Yxn', '_blank')
+    }
+  }
 
   return (
     <Box className={styles.community}>
@@ -24,6 +31,14 @@ const Community = () => {
           stay up to date with everything Etournity join our Discord server and
           never miss out on anything.
         </p>
+        <Button
+          color="black"
+          className={styles.button}
+          onClick={handleButtonClick}
+        >
+          <img src="/assets/landingpage/discord.svg" alt="Disc" />
+          <p>Join Discord</p>
+        </Button>
       </Box>
     </Box>
   )
