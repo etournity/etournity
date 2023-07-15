@@ -6,7 +6,7 @@ import useOnScreen from '@utils/useOnScreen'
 import Button from '@components/landingPage/button'
 import { useRouter } from 'next/router'
 
-const Tetris = () => {
+const Tetris = ({ setLoaded }: { setLoaded: (load: boolean) => void }) => {
   const router = useRouter()
 
   const { unityProvider, sendMessage, isLoaded } = useUnityContext({
@@ -18,6 +18,10 @@ const Tetris = () => {
 
   const ref = React.useRef<HTMLDivElement>(null)
   const { isIntersecting } = useOnScreen(ref)
+
+  useEffect(() => {
+    setLoaded(isLoaded || false)
+  }, [isLoaded, setLoaded])
 
   useEffect(() => {
     if (isIntersecting) {

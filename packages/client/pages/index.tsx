@@ -22,7 +22,8 @@ export interface LandingPageSectionProps {
 
 const LandingPage = () => {
   const allVideosLoaded = useVideosLoaded()
-  const loadingClassName = allVideosLoaded ? '' : styles.loading
+  const [tetrisLoaded, setTetrisLoaded] = React.useState(false)
+  const loadingClassName = allVideosLoaded && tetrisLoaded ? '' : styles.loading
 
   useEffect(() => {
     if (typeof window !== 'undefined') window.scrollTo(0, 0)
@@ -46,7 +47,7 @@ const LandingPage = () => {
 
       <Community />
 
-      <Tetris />
+      <Tetris setLoaded={(l) => setTetrisLoaded(l)} />
     </Box>
   )
 }
