@@ -2,7 +2,6 @@ import Box from '@mui/material/Box'
 import styles from './header.module.scss'
 import React, { useEffect } from 'react'
 
-// TODO Redo Header after redesign
 const Header = () => {
   const [vidIndex, setVidIndex] = React.useState(0)
   const ref = React.useRef<HTMLVideoElement>(null)

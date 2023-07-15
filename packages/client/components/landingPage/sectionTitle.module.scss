@@ -11,7 +11,6 @@
   .title{
     font-weight: 600;
     line-height: 40px;
-    font-family: Metropolis, sans-serif;
 
     font-size: 24px;
     @include breakpoint(md){
@@ -47,7 +46,6 @@
     line-height: 24px;
     letter-spacing: 0.5px;
     font-weight: 400;
-    font-family: Metropolis, sans-serif;
 
     font-size: 12px;
     @include breakpoint(md){

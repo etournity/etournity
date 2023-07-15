@@ -9,6 +9,7 @@ $bg-glow-height: 320px;
   align-items: center;
   background: $muiSurface1;
   padding: 0 10vw;
+  font-family: Metropolis, sans-serif;
 
   > div {
     width: 80vw;
@@ -31,9 +32,6 @@ $bg-glow-height: 320px;
 
 .loading{
   position: relative;
-  //height: 100vh;
-  //width: 100vw;
-  //overflow: hidden;
   &::after{
     content: "";
     display: block;

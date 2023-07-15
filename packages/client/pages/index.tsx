@@ -8,6 +8,7 @@ import {
   MoreInfo,
   OpenSource,
   Community,
+  Tetris,
 } from '@components/landingPage'
 import useVideosLoaded from '@utils/useVideosLoaded'
 
@@ -44,6 +45,8 @@ const LandingPage = () => {
       <OpenSource className={styles.sectionDark} />
 
       <Community />
+
+      <Tetris />
     </Box>
   )
 }

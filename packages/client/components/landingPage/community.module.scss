@@ -2,8 +2,7 @@
 
 
 .community{
-  width: 100vw;
-  transform: translateX(-10vw);
+  width: 100vw !important;
 }
 
 .video{
@@ -45,7 +44,6 @@
 
 
   color: black;
-  font-family: Metropolis, sans-serif;
   text-align: center;
 
   > *{

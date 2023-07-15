@@ -44,7 +44,6 @@ $horizontalGap: 72px;
 
   &Title{
     font-weight: 600;
-    font-family: Metropolis, sans-serif;
     margin-bottom: 12px;
     margin-top: 16px;
     font-size: 14px;
@@ -56,7 +55,6 @@ $horizontalGap: 72px;
 
   &Description{
     font-weight: 400;
-    font-family: Metropolis, sans-serif;
     font-size: 12px;
 
     @include breakpoint(lg){
