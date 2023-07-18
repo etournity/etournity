@@ -6,19 +6,14 @@
 }
 
 .video{
-  width: 100vw;
-  aspect-ratio: 16/9;
+  height: 386px;
   z-index: -1;
-
-  @include breakpoint(lg){
-    transform: translateY(-25%);
-  }
 
   &Wrapper{
     position: relative;
     width: 100vw;
-    max-height: 386px;
-    overflow-y: hidden;
+    height: 386px;
+    overflow: hidden;
   }
 
 

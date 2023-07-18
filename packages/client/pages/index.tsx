@@ -10,7 +10,6 @@ import {
   Community,
   Tetris,
 } from '@components/landingPage'
-import useVideosLoaded from '@utils/useVideosLoaded'
 
 const Spacer = ({ className = '' }: LandingPageSectionProps) => (
   <Box className={`${styles.spacer} ${className}`} />
@@ -21,16 +20,12 @@ export interface LandingPageSectionProps {
 }
 
 const LandingPage = () => {
-  const allVideosLoaded = useVideosLoaded()
-  const [tetrisLoaded, setTetrisLoaded] = React.useState(false)
-  const loadingClassName = allVideosLoaded && tetrisLoaded ? '' : styles.loading
-
   useEffect(() => {
     if (typeof window !== 'undefined') window.scrollTo(0, 0)
   }, [])
 
   return (
-    <Box className={`${styles.landingPage} ${loadingClassName}`}>
+    <Box className={`${styles.landingPage}`} data-cy="landingpage">
       <Header />
       <Spacer />
 
@@ -47,7 +42,7 @@ const LandingPage = () => {
 
       <Community />
 
-      <Tetris setLoaded={(l) => setTetrisLoaded(l)} />
+      <Tetris />
     </Box>
   )
 }

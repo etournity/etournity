@@ -12,7 +12,7 @@ const MoreInfo = ({ className = '' }: LandingPageSectionProps) => {
   const visibleClassName = everShown ? styles.visible : ''
 
   return (
-    <Box className={className}>
+    <Box className={className} data-cy="moreInfo">
       <SectionTitle
         className={styles.titleWrapper}
         title="More of what we offer"

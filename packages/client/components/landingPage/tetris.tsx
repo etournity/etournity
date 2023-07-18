@@ -6,10 +6,10 @@ import useOnScreen from '@utils/useOnScreen'
 import Button from '@components/landingPage/button'
 import { useRouter } from 'next/router'
 
-const Tetris = ({ setLoaded }: { setLoaded: (load: boolean) => void }) => {
+const Tetris = () => {
   const router = useRouter()
 
-  const { unityProvider, sendMessage, isLoaded } = useUnityContext({
+  const { unityProvider, sendMessage } = useUnityContext({
     loaderUrl: '/assets/landingpage/tetris/Build/tetris.loader.js',
     dataUrl: '/assets/landingpage/tetris/Build/tetris.data',
     frameworkUrl: '/assets/landingpage/tetris/Build/tetris.framework.js',
@@ -20,10 +20,6 @@ const Tetris = ({ setLoaded }: { setLoaded: (load: boolean) => void }) => {
   const { isIntersecting } = useOnScreen(ref)
 
   useEffect(() => {
-    setLoaded(isLoaded || false)
-  }, [isLoaded, setLoaded])
-
-  useEffect(() => {
     if (isIntersecting) {
       sendMessage('Board', 'ResumeGame')
     } else {
@@ -32,7 +28,7 @@ const Tetris = ({ setLoaded }: { setLoaded: (load: boolean) => void }) => {
   }, [isIntersecting, sendMessage])
 
   return (
-    <Box className={styles.component}>
+    <Box className={styles.component} data-cy="tetris">
       <Box ref={ref}>
         <Unity unityProvider={unityProvider} className={styles.tetris} />
       </Box>
@@ -46,11 +42,16 @@ const Tetris = ({ setLoaded }: { setLoaded: (load: boolean) => void }) => {
         <Box className={styles.buttonWrapper}>
           <Button
             color="primary"
+            data-cy="tetrisCreateButton"
             onClick={() => router.push('/tournament/new')}
           >
             Create Tournament
           </Button>
-          <Button color="plain" onClick={() => router.push('/tournaments')}>
+          <Button
+            color="plain"
+            data-cy="tetrisJoinButton"
+            onClick={() => router.push('/tournaments')}
+          >
             Join Tournament
           </Button>
         </Box>

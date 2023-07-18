@@ -11,7 +11,7 @@ const Features = () => {
   const visibleClassName = everShown ? styles.visible : ''
 
   return (
-    <Box className={styles.features}>
+    <Box className={styles.features} data-cy="features">
       <SectionTitle
         title="All you need in one place"
         description="Take control of your tournament creation with these tools."

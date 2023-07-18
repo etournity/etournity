@@ -12,12 +12,12 @@ const Header = () => {
 
   useEffect(() => {
     if (vidIndex === 1 && ref.current) {
-      ref.current.play()
+      void ref.current.play()
     }
   }, [ref, vidIndex])
 
   return (
-    <Box className={styles.header}>
+    <Box className={styles.header} data-cy="header">
       <Box className={styles.videoWrapper}>
         <video
           autoPlay
@@ -28,7 +28,7 @@ const Header = () => {
         >
           <source
             type="video/mp4"
-            src="https://drive.google.com/uc?export=download&id=1Uf8UXRBa4FBx4D3Ha367Rw7_JgwWV5DB"
+            src="https://drive.google.com/uc?export=download&id=1ACcQeYgTajF55qi_YdMW8W6z3fw44Plh"
           />
         </video>
         <video
@@ -40,7 +40,7 @@ const Header = () => {
         >
           <source
             type="video/mp4"
-            src="https://drive.google.com/uc?export=download&id=1Pd3BlQ6DwHFyfTGQJTWlaPnq1jrY2ReB"
+            src="https://drive.google.com/uc?export=download&id=1sPjICy1dxIjxh3-SlEvjj8AI1UIrv8nU"
           />
         </video>
       </Box>
@@ -53,11 +53,16 @@ const Header = () => {
         <Box className={styles.buttonWrapper}>
           <Button
             color="primary"
+            data-cy="headerCreateButton"
             onClick={() => router.push('/tournament/new')}
           >
             Create Tournament
           </Button>
-          <Button color="plain" onClick={() => router.push('/tournaments')}>
+          <Button
+            color="plain"
+            data-cy="headerJoinButton"
+            onClick={() => router.push('/tournaments')}
+          >
             Join Tournament
           </Button>
         </Box>

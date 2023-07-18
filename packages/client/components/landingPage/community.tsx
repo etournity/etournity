@@ -13,7 +13,7 @@ const Community = () => {
   }
 
   return (
-    <Box className={styles.community}>
+    <Box className={styles.community} data-cy="community">
       <Box className={styles.videoWrapper}>
         <video muted autoPlay loop className={styles.video}>
           <source
@@ -34,6 +34,7 @@ const Community = () => {
         <Button
           color="black"
           className={styles.button}
+          data-cy="communityDiscordButton"
           onClick={handleButtonClick}
         >
           <img src="/assets/landingpage/discord.svg" alt="Disc" />

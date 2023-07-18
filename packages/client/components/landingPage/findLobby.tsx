@@ -18,7 +18,7 @@ const FindLobby = () => {
   const visibleClassName = everShown ? styles.visible : ''
 
   return (
-    <Box className={styles.findLobby}>
+    <Box className={styles.findLobby} data-cy="findLobby">
       <SectionTitle
         title="Play games with the community"
         description="With all these tools at your disposal, we need to make sure that you know what's happening at every step of the way when your using Etournity."
