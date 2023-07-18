@@ -4,7 +4,7 @@ import Box from '@mui/material/Box'
 import Button from '@components/landingPage/button'
 
 const Community = () => {
-  const videoId = '1_1Ojo39ySBrE0V-MeIYHId_q45dYG_G5'
+  const videoId = '1IWWIdZZY6YRTmQOfL89Y3NEQufz1eQbh'
 
   const handleButtonClick = () => {
     if (typeof window !== 'undefined') {

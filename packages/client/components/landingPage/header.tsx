@@ -6,6 +6,8 @@ import { useRouter } from 'next/router'
 
 const Header = () => {
   const router = useRouter()
+  const introVideoUrl = '1ZHcj20eLPPYh043mHOOSS6sOh_-NxfOC'
+  const loopingVideoUrl = '1vrB3kzXjgl_4qdetyHYQb6YG181kNiSM'
 
   const [vidIndex, setVidIndex] = React.useState(0)
   const ref = React.useRef<HTMLVideoElement>(null)
@@ -28,7 +30,7 @@ const Header = () => {
         >
           <source
             type="video/mp4"
-            src="https://drive.google.com/uc?export=download&id=1ACcQeYgTajF55qi_YdMW8W6z3fw44Plh"
+            src={`https://drive.google.com/uc?export=download&id=${introVideoUrl}`}
           />
         </video>
         <video
@@ -41,7 +43,7 @@ const Header = () => {
         >
           <source
             type="video/mp4"
-            src="https://drive.google.com/uc?export=download&id=1sPjICy1dxIjxh3-SlEvjj8AI1UIrv8nU"
+            src={`https://drive.google.com/uc?export=download&id=${loopingVideoUrl}`}
           />
         </video>
       </Box>
