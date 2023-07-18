@@ -49,14 +49,32 @@ describe('Landingpage', () => {
 
   it('Section Open-Source, Github Button', () => {
     cy.get('[data-cy=openSourceGithubButton]').should('be.visible')
+
+    cy.window().then((win) => {
+      cy.stub(win, 'open').as('windowOpenStub')
+    })
+
     cy.get('[data-cy=openSourceGithubButton]').click()
-    cy.url().should('include', 'https://github.com/etournity/etournity')
+
+    cy.get('@windowOpenStub').should(
+      'be.calledWith',
+      'https://github.com/etournity/etournity'
+    )
   })
 
   it('Section Open-Source, Video Button', () => {
     cy.get('[data-cy=openSourceVideoButton]').should('be.visible')
+
+    cy.window().then((win) => {
+      cy.stub(win, 'open').as('windowOpenStub')
+    })
+
     cy.get('[data-cy=openSourceVideoButton]').click()
-    cy.url().should('include', 'https://www.youtube.com/watch?v=2D4ryfEDFvI')
+
+    cy.get('@windowOpenStub').should(
+      'be.calledWith',
+      'https://www.youtube.com/watch?v=2D4ryfEDFvI'
+    )
   })
 
   it('Section Community Exists', () => {
@@ -65,8 +83,17 @@ describe('Landingpage', () => {
 
   it('Section Community, Discord Button', () => {
     cy.get('[data-cy=communityDiscordButton]').should('be.visible')
+
+    cy.window().then((win) => {
+      cy.stub(win, 'open').as('windowOpenStub')
+    })
+
     cy.get('[data-cy=communityDiscordButton]').click()
-    cy.url().should('include', 'https://discord.com/invite/ysm29w7Yxn')
+
+    cy.get('@windowOpenStub').should(
+      'be.calledWith',
+      'https://discord.com/invite/ysm29w7Yxn'
+    )
   })
 
   it('Section Tetris Exists', () => {
