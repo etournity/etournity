@@ -35,6 +35,7 @@ const Header = () => {
           ref={ref}
           muted
           loop
+          preload="auto"
           className={styles.video}
           style={{ display: vidIndex === 1 ? 'block' : 'none' }}
         >
