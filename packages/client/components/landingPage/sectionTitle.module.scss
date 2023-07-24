@@ -2,7 +2,7 @@
 
 
 .container{
-  padding-bottom: 64px;
+  padding-bottom: 4.0rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -10,23 +10,23 @@
 
   .title{
     font-weight: 600;
-    line-height: 40px;
+    line-height: 2.5rem;
 
-    font-size: 24px;
+    font-size: 1.5rem;
     @include breakpoint(md){
-      font-size: 32px;
+      font-size: 2.0rem;
     }
 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom:12px;
+    margin-bottom:0.75rem;
     &::before, &::after{
       content: "";
       display: block;
       width: 20vw;
-      height:1px;
-      margin:0 40px;
+      height:0.0625rem;
+      margin:0 2.5rem;
     }
     &::before{
       background: linear-gradient(to left, $muiPrimary, $charcoal);
@@ -43,13 +43,13 @@
   }
 
   .description{
-    line-height: 24px;
-    letter-spacing: 0.5px;
+    line-height: 1.5rem;
+    letter-spacing: 0.03125rem;
     font-weight: 400;
 
-    font-size: 12px;
+    font-size: 0.75rem;
     @include breakpoint(md){
-      font-size: 16px;
+      font-size: 1.0rem;
     }
   }
 }

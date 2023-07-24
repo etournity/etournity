@@ -1,14 +1,14 @@
 @import "style/variables";
 
 .button{
-  padding: 10px 24px;
-  border-radius: 100px;
+  padding: 0.625rem 1.5rem;
+  border-radius: 6.25rem;
   font-weight: 600;
   cursor: pointer;
 
-  font-size: 12px;
+  font-size: 0.75rem;
   @include breakpoint(sm){
-    font-size: 14px;
+    font-size: 0.875rem;
   }
 
   &:hover{
@@ -27,7 +27,7 @@
   }
   &plain{
     background-color: transparent;
-    border: 1px solid $muiOutline;
+    border: 0.0625rem solid $muiOutline;
     color: $muiPrimary;
   }
   &black{

@@ -6,13 +6,13 @@
 }
 
 .video{
-  height: 386px;
+  height: 24.125rem;
   z-index: -1;
 
   &Wrapper{
     position: relative;
     width: 100vw;
-    height: 386px;
+    height: 24.125rem;
     overflow: hidden;
   }
 
@@ -42,46 +42,46 @@
   text-align: center;
 
   > *{
-    max-width: 744px;
-    margin: 0 24px;
+    max-width: 46.5rem;
+    margin: 0 1.5rem;
   }
 
   .title{
-    padding-bottom: 12px;
+    padding-bottom: 0.75rem;
     font-weight: 900;
 
-    font-size: 36px;
+    font-size: 2.25rem;
     @include breakpoint(sm){
-      font-size: 45px;
+      font-size: 2.8125rem;
     }
     @include breakpoint(md){
-      font-size: 57px;
+      font-size: 3.5625rem;
     }
   }
 
   .description{
     font-weight: 400;
-    letter-spacing: 0.4px;
+    letter-spacing: 0.025rem;
 
-    font-size: 12px;
+    font-size: 0.75rem;
     @include breakpoint(sm){
-      font-size: 14px;
+      font-size: 0.875rem;
     }
     @include breakpoint(md){
-      font-size: 16px;
+      font-size: 1.0rem;
     }
   }
 
   .button{
-    margin-top: 36px;
+    margin-top: 2.25rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
-    line-height:22px;
+    gap: 0.5rem;
+    line-height:1.375rem;
 
     & > *{
-      height: 20px;
+      height: 1.25rem;
     }
   }
 

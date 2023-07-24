@@ -36,40 +36,40 @@
   text-align: center;
 
   & > *{
-    max-width: 744px;
-    margin: 0 24px;
-    text-shadow: $charcoal 1px 0 10px;
+    max-width: 46.5rem;
+    margin: 0 1.5rem;
+    text-shadow: $charcoal 0.0625rem 0 0.625rem;
   }
 
   .title{
-    font-size: 36px;
+    font-size: 2.25rem;
     font-weight: 900;
 
     @include breakpoint(sm){
-      font-size: 45px;
+      font-size: 2.8125rem;
     }
     @include breakpoint(md){
-      font-size: 57px;
+      font-size: 3.5625rem;
     }
   }
 
   .description{
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.03125rem;
 
     @include breakpoint(sm){
-      font-size: 14px;
+      font-size: 0.875rem;
     }
     @include breakpoint(md){
-      font-size: 16px;
+      font-size: 1.0rem;
     }
   }
 
   .buttonWrapper{
-    padding-top: 36px;
+    padding-top: 2.25rem;
     display: flex;
-    gap: 36px;
+    gap: 2.25rem;
   }
 }
 

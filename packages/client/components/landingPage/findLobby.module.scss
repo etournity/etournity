@@ -1,7 +1,7 @@
 @import "style/variables";
 
-$bg-glow-height: 320px;
-$bg-glow-top: 200px;
+$bg-glow-height: 20.0rem;
+$bg-glow-top: 12.5rem;
 
 .findLobby {
 
@@ -17,7 +17,7 @@ $bg-glow-top: 200px;
     z-index: 2;
     display: flex;
     width: 100%;
-    min-height: 100px;
+    min-height: 6.25rem;
     justify-content: center;
     align-items: start;
 
@@ -28,7 +28,7 @@ $bg-glow-top: 200px;
       display: block;
       z-index: 3;
       width: 200vw;
-      height: 500px;
+      height: 31.25rem;
       top: calc(#{$bg-glow-top} + #{$bg-glow-height});
       left: -100vw;
       background: linear-gradient(0deg, $charcoal 50%, transparent);
@@ -120,7 +120,7 @@ $bg-glow-top: 200px;
     opacity: 0;
   }
   25%{
-    transform: translateY(138px);
+    transform: translateY(8.625rem);
     opacity: 0;
   }
 }
@@ -131,8 +131,8 @@ $bg-glow-top: 200px;
   }
   25%{
     opacity: 0;
-    transform: translateY(138px);
-    padding-bottom: 118px;
+    transform: translateY(8.625rem);
+    padding-bottom: 7.375rem;
   }
 }
 

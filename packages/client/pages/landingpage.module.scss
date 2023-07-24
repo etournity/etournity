@@ -1,6 +1,6 @@
 @use "sass:string";
 @import "style/variables";
-$bg-glow-height: 320px;
+$bg-glow-height: 20.0rem;
 
 .landingPage{
   display: flex;
@@ -30,25 +30,7 @@ $bg-glow-height: 320px;
   }
 }
 
-.loading{
-  position: relative;
-  &::after{
-    content: "";
-    display: block;
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    top: 0;
-    background-color: $charcoal;
-    background-image: url("/assets/landingpage/loader.gif");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 100px;
-    z-index: 100;
-  }
-}
-
 .spacer{
-  height: 120px;
+  height: 7.5rem;
   background: transparent;
 }
