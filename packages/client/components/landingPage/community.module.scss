@@ -6,13 +6,14 @@
 }
 
 .video{
-  height: 24.125rem;
+  min-width: 100vw;
+  min-height: 100vh;
   z-index: -1;
 
   &Wrapper{
     position: relative;
-    width: 100vw;
     height: 24.125rem;
+    width: 100vw;
     overflow: hidden;
   }
 

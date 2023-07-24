@@ -6,19 +6,20 @@ $bannerHeight: 7.5rem;
 }
 
 .video{
-  width: 100vw;
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
   position: relative;
   aspect-ratio: 16/9;
   z-index: -1;
 
-  @include breakpoint(md){
-    transform: translateY(-$bannerHeight);
-  }
-
   &Wrapper{
     width: 100vw;
     height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
