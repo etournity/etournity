@@ -56,7 +56,7 @@ $bg-glow-top: 200px;
     display: block;
     width: 200vw;
     height: $bg-glow-height;
-    background: linear-gradient(180deg, rgba(0, 224, 181, 0.00) 0%, rgba(0, 224, 181, 0.72) 100%);
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 224, 181, 0.72) 200%);
     z-index: 1;
   }
 

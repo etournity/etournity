@@ -5,8 +5,7 @@
 }
 
 .bottom{
-  display: grid;
-  grid-gap: 24px 0;
+  display: inline-grid;
   justify-items: center;
 
   @include breakpoint(sm){
@@ -28,7 +27,7 @@
 }
 
 .card{
-  background-color: $muiSurface2;
+  background-color: $charcoal;
   width: 300px;
   height: 262px;
   border-radius: 8px;
@@ -65,16 +64,16 @@
     0% {
         opacity: 0;
         padding-top: 200px;
-        grid-gap: 38px 0;
+        grid-gap: 38px 24px;
     }
     25% {
       opacity: 0;
       padding-top: 200px;
-      grid-gap: 38px 0;
+      grid-gap: 38px 24px;
     }
     100% {
         padding: 0;
         transform: translateY(0);
-        grid-gap: 24px 0;
+        grid-gap: 24px;
     }
 }
