@@ -16,8 +16,9 @@ const OpenSource = ({ className = '' }: LandingPageSectionProps) => {
       <h2 className={styles.preTitle}>We are a community. We are a team.</h2>
       <h1 className={styles.title}>WE ARE OPEN SOURCE</h1>
       <p className={styles.description}>
-        What better way than to strive to be the best than with out community.
-        Help us build the best tournament platform of tomorrow.
+        We need your help! Do you have feedback? Do you want to have a new game
+        implemented? Do you want to improve your coding? We would love to learn
+        from you!
       </p>
       <Box className={styles.buttonWrapper}>
         <Button

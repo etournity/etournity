@@ -74,7 +74,7 @@ const Header = () => {
       <Box className={styles.banner}>
         <h1 className={styles.bannerTitle}>WELCOME TO ETOURNITY.</h1>
         <p className={styles.bannerDescription}>
-          Your esports tournament creation platform.
+          Esports Tournaments - Easy & Open Source
         </p>
       </Box>
     </Box>

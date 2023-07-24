@@ -34,11 +34,6 @@ const Tetris = () => {
       </Box>
       <Box className={styles.content}>
         <h1 className={styles.title}> JUMP RIGHT INTO IT.</h1>
-        <p className={styles.description}>
-          {' '}
-          What better way than to strive to be the best than with out community.
-          Help us build the best tournament platform of tomorrow.{' '}
-        </p>
         <Box className={styles.buttonWrapper}>
           <Button
             color="primary"

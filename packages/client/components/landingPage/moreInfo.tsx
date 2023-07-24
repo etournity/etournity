@@ -22,19 +22,19 @@ const MoreInfo = ({ className = '' }: LandingPageSectionProps) => {
         <Box className={styles.cardWrapper}>
           <InfoCard
             title="Streamlined Communication"
-            description="Players can submit issues in real time which are then displayed in your dashboard for you and your Mods to easily fix."
+            description="If players run into a problem, our easy ticketing system lets them send help requests directly to your dashboard."
             icon="forum.svg"
             styles={styles}
           />
           <InfoCard
             title="All-in-One Platform"
-            description="From data organization to having the ability to generate brackets at will, Etournity offers everything in one place. "
+            description="Power at Your Fingertips Body: From set-up to finals, we want you to have full control over your tournament."
             icon="hub.svg"
             styles={styles}
           />
           <InfoCard
             title="Easy to Use For Players"
-            description="From the initial invitation to the final match, we make sure all players have an easy to follow experience leaving no one behind."
+            description="From initial invitation to finals, players are being led through your event step-by-step. Great for beginners!"
             icon="touch.svg"
             styles={styles}
           />

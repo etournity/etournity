@@ -27,9 +27,8 @@ const Community = () => {
       <Box className={styles.content}>
         <h1 className={styles.title}>JOIN THE COMMUNITY</h1>
         <p className={styles.description}>
-          We love chatting to you guys, and not only that but if you want to
-          stay up to date with everything Etournity join our Discord server and
-          never miss out on anything.
+          Interested in upcoming features? Want to stay up-to-date with our
+          development? We would love to get to know you!
         </p>
         <Button
           color="black"

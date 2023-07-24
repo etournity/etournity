@@ -53,19 +53,6 @@
     }
   }
 
-  .description{
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.03125rem;
-
-    @include breakpoint(sm){
-      font-size: 0.875rem;
-    }
-    @include breakpoint(md){
-      font-size: 1.0rem;
-    }
-  }
-
   .buttonWrapper{
     padding-top: 2.25rem;
     display: flex;

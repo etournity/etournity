@@ -21,7 +21,7 @@ const FindLobby = () => {
     <Box className={styles.findLobby} data-cy="findLobby">
       <SectionTitle
         title="Play games with the community"
-        description="With all these tools at your disposal, we need to make sure that you know what's happening at every step of the way when your using Etournity."
+        description="Discover tournaments of other people and get to know new friends!"
       />
       <Box className={styles.SearchWrapper}>
         <Img name="SearchLg" />

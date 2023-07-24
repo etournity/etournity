@@ -19,39 +19,21 @@ const Features = () => {
 
       <Box ref={ref} className={`${styles.bottom} ${visibleClassName}`}>
         <InfoCard
-          title="Easy Invite"
-          description="Get people to your lobby with just a single 4-digit code."
+          title="Automated Tournaments"
+          description="Players are taken through your event step-by-step, great for beginners!"
           icon="easyInvite.svg"
           styles={styles}
         />
         <InfoCard
-          title="Ticketing System"
-          description="Get feedback from participants as the tournament is going on."
+          title="Unexpected Problems?"
+          description="Players can report issues straight to your dashboard."
           icon="ticketingSystem.svg"
           styles={styles}
         />
         <InfoCard
-          title="General Info"
-          description="Manage all the tournament information from one place."
-          icon="generalInfo.svg"
-          styles={styles}
-        />
-        <InfoCard
-          title="Tournament Controller"
-          description="Set up all the tournaments starting and end times."
+          title="Admin Dashboard"
+          description="All tournament info on a single screen."
           icon="tournamentController.svg"
-          styles={styles}
-        />
-        <InfoCard
-          title="Round Progression Controller"
-          description="Have full control of tournament with round management."
-          icon="roundProgressionController.svg"
-          styles={styles}
-        />
-        <InfoCard
-          title="Participant Information"
-          description="Manage your participants experience through the tournament."
-          icon="participantInformation.svg"
           styles={styles}
         />
       </Box>
