@@ -5,6 +5,11 @@
   flex-direction: column;
   align-items: center;
   padding: 4.375rem 0;
+  text-align: center;
+
+  & > *{
+    max-width: 71rem;
+  }
 }
 
 .preTitle{

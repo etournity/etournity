@@ -84,6 +84,11 @@
     & > *{
       height: 1.25rem;
     }
+
+    &Wrapper{
+      display: flex;
+      gap: 2.25rem;
+    }
   }
 
 }

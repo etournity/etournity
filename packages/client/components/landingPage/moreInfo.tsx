@@ -12,7 +12,7 @@ const MoreInfo = ({ className = '' }: LandingPageSectionProps) => {
   const visibleClassName = everShown ? styles.visible : ''
 
   return (
-    <Box className={className} data-cy="moreInfo">
+    <Box className={`${className} ${styles.moreInfo}`} data-cy="moreInfo">
       <SectionTitle
         className={styles.titleWrapper}
         title="More of what we offer"
@@ -27,8 +27,8 @@ const MoreInfo = ({ className = '' }: LandingPageSectionProps) => {
             styles={styles}
           />
           <InfoCard
-            title="All-in-One Platform"
-            description="Power at Your Fingertips Body: From set-up to finals, we want you to have full control over your tournament."
+            title="Power at Your Fingertips"
+            description="From set-up to finals, we want you to have full control over your tournament."
             icon="hub.svg"
             styles={styles}
           />

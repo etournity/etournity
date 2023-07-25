@@ -14,18 +14,10 @@ $cardGap: 1.5rem;
   display: flex;
   justify-items: center;
 
-  flex-direction: column;
-
-  @include breakpoint(md){
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    width: calc(#{$cardWidth} * 2 + #{$cardGap});
-  }
-
-  @include breakpoint(lg){
-    width: calc(#{$cardWidth} * 3 + #{$cardGap} * 2);
-  }
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 71rem;
 }
 
 .visible{

@@ -6,9 +6,9 @@ import Button from '@components/landingPage/button'
 const Community = () => {
   const videoId = '1IWWIdZZY6YRTmQOfL89Y3NEQufz1eQbh'
 
-  const handleButtonClick = () => {
+  const handleButtonClick = (url: string) => {
     if (typeof window !== 'undefined') {
-      window.open('https://discord.com/invite/ysm29w7Yxn', '_blank')
+      window.open(url, '_blank')
     }
   }
 
@@ -30,15 +30,28 @@ const Community = () => {
           Interested in upcoming features? Want to stay up-to-date with our
           development? We would love to get to know you!
         </p>
-        <Button
-          color="black"
-          className={styles.button}
-          data-cy="communityDiscordButton"
-          onClick={handleButtonClick}
-        >
-          <img src="/assets/landingpage/discord.svg" alt="Disc" />
-          <p>Join Discord</p>
-        </Button>
+        <Box className={styles.buttonWrapper}>
+          <Button
+            color="black"
+            className={styles.button}
+            data-cy="communityDiscordButton"
+            onClick={() =>
+              handleButtonClick('https://discord.com/invite/ysm29w7Yxn')
+            }
+          >
+            <img src="/assets/landingpage/discord.svg" alt="Disc" />
+            <p>Join Discord</p>
+          </Button>
+          <Button
+            color="black"
+            className={styles.button}
+            data-cy="communityTwitchButton"
+            onClick={() => handleButtonClick('https://www.twitch.tv/etournity')}
+          >
+            <img src="/assets/landingpage/twitch.svg" alt="Twitch" />
+            <p>Join Twitch</p>
+          </Button>
+        </Box>
       </Box>
     </Box>
   )

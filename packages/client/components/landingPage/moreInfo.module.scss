@@ -1,6 +1,12 @@
 @import "style/variables";
 $horizontalGap: 4.5rem;
 
+.moreInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .titleWrapper{
   h1{
     color: $muiPrimary;
@@ -8,6 +14,7 @@ $horizontalGap: 4.5rem;
 }
 
 .content{
+    max-width: 71rem;
     display: flex;
     flex-direction: column;
     align-items: center;

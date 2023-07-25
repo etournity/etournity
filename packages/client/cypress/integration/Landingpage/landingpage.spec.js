@@ -96,6 +96,21 @@ describe('Landingpage', () => {
     )
   })
 
+  it('Section Community, Twitch Button', () => {
+    cy.get('[data-cy=communityTwitchButton]').should('be.visible')
+
+    cy.window().then((win) => {
+      cy.stub(win, 'open').as('windowOpenStub')
+    })
+
+    cy.get('[data-cy=communityTwitchButton]').click()
+
+    cy.get('@windowOpenStub').should(
+      'be.calledWith',
+      'https://www.twitch.tv/etournity'
+    )
+  })
+
   it('Section Tetris Exists', () => {
     cy.get('[data-cy=tetris]').should('be.visible')
   })
