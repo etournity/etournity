@@ -1,0 +1,39 @@
+@import "style/variables";
+
+.button{
+  padding: 0.625rem 1.5rem;
+  border-radius: 6.25rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  font-size: 0.75rem;
+  @include breakpoint(sm){
+    font-size: 0.875rem;
+  }
+
+  &:hover{
+    filter: brightness(1.1);
+  }
+  &:active{
+    filter: brightness(0.9);
+  }
+}
+
+.color{
+  &primary{
+    background-color: $muiPrimary;
+    border: none;
+    color:$muiOnPrimary;
+  }
+  &plain{
+    background-color: transparent;
+    border: 0.0625rem solid $muiOutline;
+    color: $muiPrimary;
+  }
+  &black{
+    background-color: $charcoal;
+    border: none;
+    color: $muiPrimary;
+    box-shadow: $muiBoxShadow1;
+  }
+}

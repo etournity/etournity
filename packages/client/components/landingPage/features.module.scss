@@ -1,0 +1,78 @@
+@import "style/variables";
+$cardWidth: 18.75rem;
+$cardGap: 1.5rem;
+
+
+.features{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.bottom{
+  display: flex;
+  justify-items: center;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 71rem;
+}
+
+.visible{
+  animation: moveIn 1.5s ease-in-out forwards;
+}
+
+.card{
+  background-color: $charcoal;
+  width: $cardWidth;
+  height: 16.375rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.30), 0 0.5rem 0.75rem 0.375rem rgba(0, 0, 0, 0.15);
+
+  &Text{
+    padding: 1.5rem 1.5rem 3.0rem;
+  }
+
+  &Title{
+    font-size: 1.0rem;
+    letter-spacing: 0.00625rem;
+    font-weight: 600;
+    padding-bottom: 0.75rem;
+  }
+
+  &Description{
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0.015625rem;
+  }
+
+  &Icon{
+    padding:0.9375rem;
+    width: 4.125rem;
+    height: 4.125rem;
+    margin-top:3.0rem;
+    background-color: $muiSurface4;
+    border-radius: 0.5rem;
+  }
+}
+
+
+@keyframes moveIn {
+    0% {
+        opacity: 0;
+        padding-top: 12.5rem;
+        grid-gap: 2.375rem 1.5rem;
+    }
+    25% {
+      opacity: 0;
+      padding-top: 12.5rem;
+      grid-gap: 2.375rem 1.5rem;
+    }
+    100% {
+        padding: 0;
+        transform: translateY(0);
+        grid-gap: 1.5rem;
+    }
+}

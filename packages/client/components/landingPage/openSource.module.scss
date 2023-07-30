@@ -1,0 +1,58 @@
+@import "style/variables";
+
+.openSource{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4.375rem 0;
+  text-align: center;
+
+  & > *{
+    max-width: 71rem;
+  }
+}
+
+.preTitle{
+  font-weight: 600;
+
+  font-size: 0.875rem;
+  @include breakpoint(sm) {
+    font-size: 1.5rem;
+  }
+    @include breakpoint(md) {
+        font-size: 2.0rem;
+    }
+}
+
+.title{
+  font-weight: 900;
+  color: $muiPrimary;
+
+  font-size: 2.25rem;
+    @include breakpoint(sm) {
+        font-size: 2.8125rem;
+    }
+    @include breakpoint(md) {
+        font-size: 3.5625rem;
+    }
+}
+
+.description{
+  font-weight: 400;
+  letter-spacing: 0.025rem;
+
+  font-size: 0.75rem;
+
+  @include breakpoint(sm) {
+    font-size: 0.875rem;
+  }
+  @include breakpoint(md) {
+      font-size: 1.0rem;
+  }
+}
+
+.buttonWrapper{
+  padding-top: 2.25rem;
+  display: flex;
+  gap: 2.25rem;
+}

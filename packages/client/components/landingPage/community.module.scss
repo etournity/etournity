@@ -1,0 +1,96 @@
+@import "style/variables";
+
+
+.community{
+  width: 100vw !important;
+}
+
+.video{
+  min-width: 100vw;
+  min-height: 100vh;
+  z-index: -1;
+
+  &Wrapper{
+    position: relative;
+    height: 24.125rem;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+
+  &Overlay{
+    background-color: $muiPrimary;
+    opacity: 0.65;
+  }
+}
+
+.content, .videoOverlay{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+
+  color: black;
+  text-align: center;
+
+  > *{
+    max-width: 46.5rem;
+    margin: 0 1.5rem;
+  }
+
+  .title{
+    padding-bottom: 0.75rem;
+    font-weight: 900;
+
+    font-size: 2.25rem;
+    @include breakpoint(sm){
+      font-size: 2.8125rem;
+    }
+    @include breakpoint(md){
+      font-size: 3.5625rem;
+    }
+  }
+
+  .description{
+    font-weight: 400;
+    letter-spacing: 0.025rem;
+
+    font-size: 0.75rem;
+    @include breakpoint(sm){
+      font-size: 0.875rem;
+    }
+    @include breakpoint(md){
+      font-size: 1.0rem;
+    }
+  }
+
+  .button{
+    margin-top: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    line-height:1.375rem;
+
+    & > *{
+      height: 1.25rem;
+    }
+
+    &Wrapper{
+      display: flex;
+      gap: 2.25rem;
+    }
+  }
+
+}
+
+

@@ -1,0 +1,109 @@
+@import "style/variables";
+$bannerHeight: 7.5rem;
+
+.header {
+  width: 100vw !important;
+}
+
+.video{
+  min-width: 100vw;
+  min-height: 100vh;
+  object-fit: cover;
+  position: relative;
+  aspect-ratio: 16/9;
+  z-index: -1;
+
+  &Wrapper{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(calc(-#{$bannerHeight}/2));
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+
+  .title{
+    font-weight: 900;
+    width: 50%;
+
+    font-size: 2.25rem;
+    @include breakpoint(md){
+      font-size: 2.8125rem;
+    }
+    @include breakpoint(lg){
+      font-size: 3.5625rem;
+    }
+
+    &Highlight{
+      color: $muiPrimary;
+    }
+  }
+
+  .buttonWrapper{
+    padding-top: 2.25rem;
+    display: flex;
+    gap: 2.25rem;
+  }
+}
+
+.banner{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: $bannerHeight;
+  z-index: 1;
+  background: $muiPrimary;
+  box-shadow: inset 0 0.4375rem 0.5625rem 0 rgba(0,0,0,0.4);
+
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  @include breakpoint(md){
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+
+  > * {
+    color: black;
+  }
+
+  &Title{
+    font-size: 1.5rem;
+    font-weight: 900;
+    @include breakpoint(sm){
+      font-size: 2.25rem;
+    }
+    @include breakpoint(lg){
+      font-size: 2.8125rem;
+    }
+  }
+
+  &Description{
+    font-size: 1.0rem;
+    font-weight: 600;
+    letter-spacing: 0.00625rem;
+    @include breakpoint(md){
+      font-size: 1.375rem;
+    }
+  }
+}

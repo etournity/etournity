@@ -1,0 +1,67 @@
+@import "style/variables";
+
+
+.container{
+  padding-bottom: 4.0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
+  .title{
+    font-weight: 600;
+    line-height: 2.5rem;
+
+    font-size: 1.5rem;
+    @include breakpoint(md){
+      font-size: 2.0rem;
+    }
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom:0.75rem;
+    &::before, &::after{
+      content: "";
+      display: block;
+      width: 20vw;
+      height:0.0625rem;
+      margin:0 2.5rem;
+    }
+    &::before{
+      background: linear-gradient(to left, $muiPrimary, $charcoal);
+    }
+    &::after{
+      background: linear-gradient(to right, $muiPrimary, $charcoal);
+    }
+  }
+
+  .visible{
+    &::before, &::after{
+      animation: fadeIn 800ms ease-in-out forwards;
+    }
+  }
+
+  .description{
+    line-height: 1.5rem;
+    letter-spacing: 0.03125rem;
+    font-weight: 400;
+
+    font-size: 0.75rem;
+    @include breakpoint(md){
+      font-size: 1.0rem;
+    }
+  }
+}
+
+@keyframes fadeIn{
+  0% {
+    width: 0;
+  }
+  25%{
+    width: 0;
+  }
+  100%{
+    width: 20vw;
+  }
+}

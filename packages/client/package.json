@@ -80,6 +80,7 @@
     "react-scroll": "^1.8.2",
     "react-scroll-horizontal": "^1.6.6",
     "react-spring": "^9.0.0",
+    "react-unity-webgl": "^9.4.2",
     "react-useportal": "1.0.13",
     "sass-loader": "10.1.0",
     "storybook": "^6.4.22",
