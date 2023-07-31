@@ -41,7 +41,8 @@ $bannerHeight: 7.5rem;
 
   .title{
     font-weight: 900;
-    width: 50%;
+    min-width: 50%;
+    margin: 0 1.5rem;
 
     font-size: 2.25rem;
     @include breakpoint(md){
@@ -77,6 +78,7 @@ $bannerHeight: 7.5rem;
   flex-direction: column;
   text-align: center;
   align-items: center;
+  justify-content: center;
 
   @include breakpoint(md){
     justify-content: space-evenly;
