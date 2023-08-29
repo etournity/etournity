@@ -2484,7 +2484,6 @@ __metadata:
     react-scroll: ^1.8.2
     react-scroll-horizontal: ^1.6.6
     react-spring: ^9.0.0
-    react-unity-webgl: ^9.4.2
     react-useportal: 1.0.13
     sass-loader: 10.1.0
     storybook: ^6.4.22
@@ -25499,15 +25498,6 @@ __metadata:
     react: ">=16.6.0"
     react-dom: ">=16.6.0"
   checksum: 75602840106aa9c6545149d6d7ae1502fb7b7abadcce70a6954c4b64a438ff1cd16fc77a0a1e5197cdd72da398f39eb929ea06f9005c45b132ed34e056ebdeb1
-  languageName: node
-  linkType: hard
-
-"react-unity-webgl@npm:^9.4.2":
-  version: 9.4.2
-  resolution: "react-unity-webgl@npm:9.4.2"
-  peerDependencies:
-    react: ">=16.8.0"
-  checksum: 39d0071ef008538adc4a5926e7c2a4568c199b302911a546cef27fe15affdc0895c7216b171ef53de8aa0af4d1a960e456ebae666287da0a234e3e11f43d5444
   languageName: node
   linkType: hard
 
