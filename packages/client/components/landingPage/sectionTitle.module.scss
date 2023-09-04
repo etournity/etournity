@@ -21,18 +21,21 @@
     justify-content: center;
     align-items: center;
     margin-bottom:0.75rem;
-    &::before, &::after{
-      content: "";
-      display: block;
-      width: 20vw;
-      height:0.0625rem;
-      margin:0 2.5rem;
-    }
-    &::before{
-      background: linear-gradient(to left, $muiPrimary, $charcoal);
-    }
-    &::after{
-      background: linear-gradient(to right, $muiPrimary, $charcoal);
+
+    @include breakpoint(sm){
+      &::before, &::after{
+        content: "";
+        display: block;
+        width: 20vw;
+        height:0.0625rem;
+        margin:0 2.5rem;
+      }
+      &::before{
+        background: linear-gradient(to left, $muiPrimary, $charcoal);
+      }
+      &::after{
+        background: linear-gradient(to right, $muiPrimary, $charcoal);
+      }
     }
   }
 
