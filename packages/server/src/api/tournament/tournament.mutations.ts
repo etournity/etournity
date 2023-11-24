@@ -36,10 +36,10 @@ export const TournamentCreateInput = nonNull(
     definition(t) {
       t.nonNull.string('title')
       t.nonNull.string('description')
-      t.nonNull.dateTime('date')
+      t.nonNull.field('date', { type: 'DateTime' })
       t.nonNull.int('maxPlayers')
-      t.dateTime('checkinStart')
-      t.dateTime('checkinEnd')
+      t.field('checkinStart', { type: 'DateTime' })
+      t.field('checkinEnd', { type: 'DateTime' })
       t.nonNull.int('noShow')
       t.id('region')
       t.string('supportLink')
