@@ -1,0 +1,138 @@
+@import "style/variables";
+
+$bg-glow-height: 20.0rem;
+$bg-glow-top: 12.5rem;
+
+.findLobby {
+
+  .Search{
+    &Wrapper{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  .bottom{
+    z-index: 2;
+    display: flex;
+    width: 100%;
+    min-height: 6.25rem;
+    justify-content: center;
+    align-items: start;
+
+
+    &::after{
+      content: "";
+      position: absolute;
+      display: block;
+      z-index: 3;
+      width: 200vw;
+      height: 31.25rem;
+      top: calc(#{$bg-glow-top} + #{$bg-glow-height});
+      left: -100vw;
+      background: linear-gradient(0deg, $charcoal 50%, transparent);
+    }
+  }
+
+  .image{
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+  }
+
+  .Card{
+    &Wrapper {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -50vw;
+    top: $bg-glow-top;
+    display: block;
+    width: 200vw;
+    height: $bg-glow-height;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 224, 181, 0.72) 200%);
+    z-index: 1;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 200vw;
+    height: 100%;
+    left: -50vw;
+    top: calc(#{$bg-glow-top} + #{$bg-glow-height});
+    background-color: $charcoal;
+    z-index: 0;
+  }
+}
+
+@include breakpoint(xs){
+  .Search{
+    &Lg{
+      display: none;
+    }
+    &Sm{
+      display: block;
+    }
+  }
+  .Filters {
+    display: none;
+  }
+}
+
+//Breakpoints
+@include breakpoint(md){
+  .Search{
+    &Lg{
+      display: block;
+    }
+    &Sm{
+      display: none;
+    }
+  }
+  .Filters {
+    display: block;
+  }
+}
+
+//Animations
+.visible{
+  .Filters{
+    animation: moveFiltersIn 1.5s ease-in-out forwards;
+  }
+
+  .CardWrapper{
+    img{
+      animation: moveCardsIn 1.5s ease-in-out forwards;
+    }
+  }
+}
+
+@keyframes moveFiltersIn{
+  0%{
+    opacity: 0;
+  }
+  25%{
+    transform: translateY(8.625rem);
+    opacity: 0;
+  }
+}
+
+@keyframes moveCardsIn{
+  0%{
+    opacity: 0;
+  }
+  25%{
+    opacity: 0;
+    transform: translateY(8.625rem);
+    padding-bottom: 7.375rem;
+  }
+}
+

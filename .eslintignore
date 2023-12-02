@@ -3,6 +3,10 @@ packages/client/.next/
 packages/client/out_publish/*
 packages/client/out_functions/*
 
+# Client Tetris
+packages/client/public/assets/landingpage/tetris/*
+
+
 # Admin Next & Netlify Output
 packages/admin/.next/
 packages/admin/out_publish/*

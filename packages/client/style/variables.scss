@@ -119,6 +119,7 @@ $br-large: 0.3125rem;
   $lg-min: 1240px;
   $md-min: 905px;
   $sm-min: 600px;
+  $xs-min: 0px;
 
   @if $point == xl {
     @media (min-width: $xl-min) {

@@ -1,0 +1,116 @@
+@import "style/variables";
+$horizontalGap: 4.5rem;
+
+.moreInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titleWrapper{
+  h1{
+    color: $muiPrimary;
+  }
+}
+
+.content{
+    max-width: 71rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card{
+  background: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  &Wrapper{
+    width: 100%;
+    display: grid;
+    margin-bottom: 2.25rem;
+
+    @include breakpoint(xs){
+        grid-template-columns: repeat(1, auto);
+        gap: 3.0rem;
+    }
+
+    @include breakpoint(sm){
+        grid-template-columns: repeat(3, auto);
+        gap: $horizontalGap;
+    }
+  }
+
+  &Icon{
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  &Title{
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    margin-top: 1.0rem;
+    font-size: 0.875rem;
+
+    @include breakpoint(md){
+      font-size: 1.0rem;
+    }
+  }
+
+  &Description{
+    font-weight: 400;
+    font-size: 0.75rem;
+
+    @include breakpoint(lg){
+      font-size: 0.875rem;
+    }
+  }
+}
+
+.lines{
+  width: 100%;
+  position: relative;
+
+  @include breakpoint(xs){
+    visibility: hidden;
+  }
+
+  @include breakpoint(sm){
+    visibility: visible;
+  }
+
+  &Wrapper{
+    position: relative;
+    width: calc(66% + #{$horizontalGap});
+
+    &::before{
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+    }
+  }
+}
+
+.visible::before{
+  background: $charcoal;
+  animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+      height: 100%;
+    }
+    25% {
+      height: 100%;
+    }
+    100% {
+      height: 0;
+    }
+}
