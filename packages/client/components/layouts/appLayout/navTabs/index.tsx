@@ -38,7 +38,7 @@ export const NavTabs: React.FC = () => {
 
   useEffect(() => {
     setIndicatorPos(getIndicatorProps())
-    return () => { }
+    return () => {}
   }, [path, activeMatch, activeTournament, userIsStaff])
 
   const openTickets = (): ReactNode => {
