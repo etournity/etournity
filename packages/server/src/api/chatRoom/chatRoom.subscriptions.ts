@@ -1,4 +1,4 @@
-import { arg, idArg, list, nonNull, subscriptionField } from 'nexus'
+import { arg, idArg, list, nonNull, stringArg, subscriptionField } from 'nexus'
 import { ChatRoom } from 'nexus-prisma'
 import { withFilter } from 'graphql-subscriptions'
 
@@ -7,7 +7,7 @@ export const ChatRoomSubscriptions = subscriptionField('chatRoomChanged', {
 
   args: {
     chatRoomId: nonNull(idArg()),
-    actions: list(nonNull(arg({ type: 'String' }))),
+    actions: list(nonNull(stringArg())),
   },
   subscribe: withFilter(
     (_, __, { pubsub }) => pubsub.asyncIterator([ChatRoom.$name]),

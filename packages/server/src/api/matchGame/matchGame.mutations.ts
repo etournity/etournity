@@ -1,7 +1,6 @@
 import { arg, extendType, idArg, nonNull } from 'nexus'
-import { MatchGame, PrismaClient } from '@prisma/client'
+import { MatchGame, PrismaClient, Prisma } from '@prisma/client'
 import { PubSubHandler } from '../../helpers/pubSubHelper'
-import { PrismaClientOptions } from '@prisma/client/runtime'
 import { Match, MatchGame as MatchGameType } from 'nexus-prisma'
 import { setMatchGameStatus } from '../../helpers/setMatchGameStatus'
 
@@ -34,7 +33,7 @@ export const createMatchGame = async ({
   matchId,
   pubsub,
 }: {
-  prisma: PrismaClient<PrismaClientOptions, never>
+  prisma: PrismaClient<Prisma.PrismaClientOptions, never>
   matchId: string
   pubsub: PubSubHandler
 }): Promise<MatchGame | null> => {

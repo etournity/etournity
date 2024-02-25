@@ -1,4 +1,4 @@
-Cypress.Commands.add('logMeIn', (role) => {
+Cypress.Commands.add('login', (role) => {
   let token = ''
   if (role === 'player1')
     token =
@@ -13,10 +13,18 @@ Cypress.Commands.add('logMeIn', (role) => {
     token =
       'eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MDE0NzE3NTUsImV4cCI6MTkwMDAwMDAwMCwiYXVkIjoiZXRvdXJuaXRpZXMiLCJpc3MiOiJldG91cm5pdHkuY29tIiwic3ViIjoiYzAwMDAwMDAwMDAwMDAwMDAwMDBhZG1pbiJ9.A78vKWrgi30Qu-J1zUQ4cxcj4_h4PVd_5qLLNECQth3JMJahMwzvLlN_qaW_FQMAWqQ03USSlVdAnCddSggbew'
 
-  cy.clearCookies()
-  cy.setCookie('jwt_local', token)
-  cy.reload()
-  cy.getCookie('jwt_local')
+  cy.session(
+    role,
+    () => {
+      cy.clearCookies()
+      cy.setCookie('jwt_local', token)
+    },
+    {
+      validate() {
+        cy.document().its('cookie').should('contain', 'jwt_local')
+      },
+    }
+  )
 })
 
 Cypress.Commands.add('getBySel', (selector) => {
