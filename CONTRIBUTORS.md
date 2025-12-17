@@ -10,7 +10,6 @@
 - [Jakob Sautner](https://github.com/lappalal)
 - [Victor Strickmann]()
 - [Victor Bellu]()
-- [Kjell Hoffhenke](https://github.com/AtomToast)
 - [Henry Gressmann](https://github.com/explodingcamera)
 - [Luca Brües](https://github.com/lucanr1)
 - [Simon Savin](https://github.com/Envuy5)
