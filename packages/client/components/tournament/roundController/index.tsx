@@ -1,20 +1,20 @@
-import { Round, TournamentStatus } from "@generated/graphql";
-import React from "react";
-import { PartialDeep } from "type-fest";
-import { RoundSteps, RoundStep } from "../roundSteps";
-import styles from "./roundController.module.scss";
-import classNames from "classnames";
+import { Round, TournamentStatus } from '@generated/graphql'
+import React from 'react'
+import { PartialDeep } from 'type-fest'
+import { RoundSteps, RoundStep } from '../roundSteps'
+import styles from './roundController.module.scss'
+import classNames from 'classnames'
 
 export interface RoundControllerProps {
-  rounds: Array<PartialDeep<Round>>;
-  onChange: (change: RoundStatusChange) => void;
-  className?: string;
-  tournamentStatus: TournamentStatus;
+  rounds: Array<PartialDeep<Round>>
+  onChange: (change: RoundStatusChange) => void
+  className?: string
+  tournamentStatus: TournamentStatus
 }
 
 export interface RoundStatusChange {
-  roundId?: string;
-  change: "locked" | "unlocked";
+  roundId?: string
+  change: 'locked' | 'unlocked'
 }
 
 export const RoundController: React.FC<RoundControllerProps> = ({
@@ -28,7 +28,7 @@ export const RoundController: React.FC<RoundControllerProps> = ({
     <div className={styles.controllerWrap}>
       <div className={styles.leftGradiant} />
       <div className={styles.stepsDiv}>
-        <div className={styles.gradientSpacingDiv}></div>
+        <div className={styles.gradientSpacingDiv} />
         <RoundSteps tournamentStatus={tournamentStatus} onChange={onChange}>
           {[...rounds]
             ?.sort((a, b) => (a.number ?? 0) - (b.number ?? 0))
@@ -53,4 +53,4 @@ export const RoundController: React.FC<RoundControllerProps> = ({
       </div>
     </div>
   </div>
-);
+)

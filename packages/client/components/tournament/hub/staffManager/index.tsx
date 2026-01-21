@@ -32,9 +32,8 @@ export const StaffManager: React.FC<StaffManagerProps> = ({
     {staffList.map(
       (staff) =>
         staff.user && (
-          <div>
+          <div key={staff.id}>
             <StaffCard
-              key={staff.id}
               participant={staff}
               kickable={hasPermissionToKick(staff) && !staff.isCurrentUser}
               onKick={() => onKick(staff)}

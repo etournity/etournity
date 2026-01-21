@@ -16,19 +16,8 @@ export type Scalars = {
   Boolean: boolean;
   Int: number;
   Float: number;
-  /**
-   * The `BigInt` scalar type represents non-fractional signed whole numeric values.
-   * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/BigInt
-   */
-  BigInt: any;
-  /** The `Byte` scalar type represents byte value as a Buffer */
-  Bytes: any;
   /** A date-time string at UTC, such as 2007-12-03T10:15:30Z, compliant with the `date-time` format outlined in section 5.6 of the RFC 3339 profile of the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
   DateTime: any;
-  /** An arbitrary-precision Decimal type */
-  Decimal: any;
-  /** The `JSONObject` scalar type represents JSON objects as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
-  Json: any;
 };
 
 export type AuthInfo = {
@@ -1024,13 +1013,10 @@ export type DirectiveResolverFn<TResult = {}, TParent = {}, TContext = {}, TArgs
 export type ResolversTypes = {
   authInfo: ResolverTypeWrapper<AuthInfo>;
   BestOfInput: BestOfInput;
-  BigInt: ResolverTypeWrapper<Scalars['BigInt']>;
   Boolean: ResolverTypeWrapper<Scalars['Boolean']>;
-  Bytes: ResolverTypeWrapper<Scalars['Bytes']>;
   ChatMessage: ResolverTypeWrapper<ChatMessage>;
   ChatRoom: ResolverTypeWrapper<ChatRoom>;
   DateTime: ResolverTypeWrapper<Scalars['DateTime']>;
-  Decimal: ResolverTypeWrapper<Scalars['Decimal']>;
   Float: ResolverTypeWrapper<Scalars['Float']>;
   Game: ResolverTypeWrapper<Game>;
   GameMode: ResolverTypeWrapper<GameMode>;
@@ -1039,7 +1025,6 @@ export type ResolversTypes = {
   ID: ResolverTypeWrapper<Scalars['ID']>;
   Image: ResolverTypeWrapper<Image>;
   Int: ResolverTypeWrapper<Scalars['Int']>;
-  Json: ResolverTypeWrapper<Scalars['Json']>;
   Language: ResolverTypeWrapper<Language>;
   Match: ResolverTypeWrapper<Match>;
   MatchGame: ResolverTypeWrapper<MatchGame>;
@@ -1077,13 +1062,10 @@ export type ResolversTypes = {
 export type ResolversParentTypes = {
   authInfo: AuthInfo;
   BestOfInput: BestOfInput;
-  BigInt: Scalars['BigInt'];
   Boolean: Scalars['Boolean'];
-  Bytes: Scalars['Bytes'];
   ChatMessage: ChatMessage;
   ChatRoom: ChatRoom;
   DateTime: Scalars['DateTime'];
-  Decimal: Scalars['Decimal'];
   Float: Scalars['Float'];
   Game: Game;
   GameMode: GameMode;
@@ -1091,7 +1073,6 @@ export type ResolversParentTypes = {
   ID: Scalars['ID'];
   Image: Image;
   Int: Scalars['Int'];
-  Json: Scalars['Json'];
   Language: Language;
   Match: Match;
   MatchGame: MatchGame;
@@ -1126,14 +1107,6 @@ export type AuthInfoResolvers<ContextType = any, ParentType extends ResolversPar
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
 
-export interface BigIntScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['BigInt'], any> {
-  name: 'BigInt';
-}
-
-export interface BytesScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Bytes'], any> {
-  name: 'Bytes';
-}
-
 export type ChatMessageResolvers<ContextType = any, ParentType extends ResolversParentTypes['ChatMessage'] = ResolversParentTypes['ChatMessage']> = {
   author?: Resolver<ResolversTypes['User'], ParentType, ContextType>;
   authorId?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
@@ -1158,10 +1131,6 @@ export type ChatRoomResolvers<ContextType = any, ParentType extends ResolversPar
 
 export interface DateTimeScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['DateTime'], any> {
   name: 'DateTime';
-}
-
-export interface DecimalScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Decimal'], any> {
-  name: 'Decimal';
 }
 
 export type GameResolvers<ContextType = any, ParentType extends ResolversParentTypes['Game'] = ResolversParentTypes['Game']> = {
@@ -1203,10 +1172,6 @@ export type ImageResolvers<ContextType = any, ParentType extends ResolversParent
   url?: Resolver<ResolversTypes['String'], ParentType, ContextType>;
   __isTypeOf?: IsTypeOfResolverFn<ParentType, ContextType>;
 };
-
-export interface JsonScalarConfig extends GraphQLScalarTypeConfig<ResolversTypes['Json'], any> {
-  name: 'Json';
-}
 
 export type LanguageResolvers<ContextType = any, ParentType extends ResolversParentTypes['Language'] = ResolversParentTypes['Language']> = {
   code?: Resolver<ResolversTypes['ID'], ParentType, ContextType>;
@@ -1551,17 +1516,13 @@ export type UserAccountResolvers<ContextType = any, ParentType extends Resolvers
 
 export type Resolvers<ContextType = any> = {
   authInfo?: AuthInfoResolvers<ContextType>;
-  BigInt?: GraphQLScalarType;
-  Bytes?: GraphQLScalarType;
   ChatMessage?: ChatMessageResolvers<ContextType>;
   ChatRoom?: ChatRoomResolvers<ContextType>;
   DateTime?: GraphQLScalarType;
-  Decimal?: GraphQLScalarType;
   Game?: GameResolvers<ContextType>;
   GameMode?: GameModeResolvers<ContextType>;
   GameUser?: GameUserResolvers<ContextType>;
   Image?: ImageResolvers<ContextType>;
-  Json?: GraphQLScalarType;
   Language?: LanguageResolvers<ContextType>;
   Match?: MatchResolvers<ContextType>;
   MatchGame?: MatchGameResolvers<ContextType>;

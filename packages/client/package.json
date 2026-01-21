@@ -14,7 +14,7 @@
     "start": "next start -p 8080",
     "storybook": "start-storybook -p 6006 -s ./public -c .storybook",
     "storybook:ci": "start-storybook --quiet -s ./public -c .storybook --ci",
-    "test": "yarn cypress run && yarn cypress run-ct",
+    "test": "yarn cypress run --e2e && yarn cypress run --component",
     "test:ci": "ELECTRON_ENABLE_LOGGING=true DEBUG=cypress:electron yarn cypress run --record --key 5224917d-c053-4e8e-92f1-ba352d45bb07 && yarn cypress run-ct --record --key 5224917d-c053-4e8e-92f1-ba352d45bb07",
     "test:types": "yarn tsc --noEmit --skipLibCheck"
   },
@@ -99,12 +99,11 @@
     "yup": "0.30.0"
   },
   "devDependencies": {
-    "@cypress/react": "^5.10.3",
     "@cypress/webpack-dev-server": "^1.7.0",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.2.2",
     "chromatic": "^5.7.1",
-    "cypress": "^9.1.0",
+    "cypress": "^13.6.1",
     "eslint-plugin-prettier": "4.0.0",
     "html-webpack-plugin": "5",
     "webpack": "5",

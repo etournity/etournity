@@ -1,5 +1,5 @@
-import React from "react";
-import styles from "./imprintPrivacy.module.scss";
+import React from 'react'
+import styles from './imprintPrivacy.module.scss'
 
 const Imprint = () => (
   <div className={styles.wrapper}>
@@ -88,7 +88,7 @@ const Imprint = () => (
         target="_blank"
         rel="noreferrer"
       >
-        {" "}
+        {' '}
         https://ec.europa.eu/consumers/odr
       </a>
     </p>
@@ -108,11 +108,11 @@ const Imprint = () => (
     <br />
     <br />
     <p>
-      At Etournity (”We”, “Us”, “Our”), accessible from{" "}
+      At Etournity (”We”, “Us”, “Our”), accessible from{' '}
       <a href="https://etournity.com" target="_blank" rel="noreferrer">
-        https://etournity.com{" "}
+        https://etournity.com{' '}
       </a>
-      and{" "}
+      and{' '}
       <a href="https://etournity.app" target="_blank" rel="noreferrer">
         https://etournity.app
       </a>
@@ -138,7 +138,7 @@ const Imprint = () => (
         target="_blank"
         rel="noreferrer"
       >
-        {" "}
+        {' '}
         https://www.bfdi.bund.de/DE/Infothek/Anschriften_Links/anschriften_links-node.html
       </a>
       .
@@ -218,7 +218,7 @@ const Imprint = () => (
             <li>
               technical data, such as your IP address, browser information, used
               operating system, date and time stamps, referring and exit pages,
-              number and location of clicks{" "}
+              number and location of clicks{' '}
             </li>
             <li>tournament records</li>
             <li>gameplay data and statistics</li>
@@ -241,7 +241,7 @@ const Imprint = () => (
       Etournity will retain your personal information only for as long as is
       necessary for the purposes set out in this Privacy Policy. We will retain
       and use your information to the extent necessary to comply with our legal
-      obligations, resolve disputes, and enforce our policies.{" "}
+      obligations, resolve disputes, and enforce our policies.{' '}
     </p>
     <br />
     <p>
@@ -385,6 +385,6 @@ const Imprint = () => (
     <br />
     <p>12435 Berlin, Germany</p>
   </div>
-);
+)
 
-export default Imprint;
+export default Imprint

@@ -1,14 +1,14 @@
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
 generator client {
   provider = "prisma-client-js"
 }
 
 generator nexusPrisma {
   provider = "nexus-prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
 }
 
 model Image {
@@ -24,60 +24,51 @@ model Image {
 }
 
 model User {
-  id          String     @id @default(cuid())
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
-  displayName String
-  gameUsers   GameUser[] @relation("UserToGameUsers")
-
-  roles       String[]
-  permissions String[]
-
-  linkedAccounts UserAccount[] @relation("UserToAccount")
-  participants   Participant[] @relation("UserToParticipant")
-
-  assignedTickets     Ticket[]      @relation("assignee")
-  reportedTickets     Ticket[]      @relation("reporter")
-  ticket              Ticket[]      @relation("reported")
-  // Settings (could be extracted in the future)
+  id                  String        @id @default(cuid())
+  createdAt           DateTime      @default(now())
+  updatedAt           DateTime      @updatedAt
+  displayName         String
+  roles               String[]
+  permissions         String[]
   hideAlphaDisclaimer Boolean       @default(false)
-  chatRooms           ChatRoom[]
   messages            ChatMessage[]
+  gameUsers           GameUser[]    @relation("UserToGameUsers")
+  participants        Participant[] @relation("UserToParticipant")
+  assignedTickets     Ticket[]      @relation("assignee")
+  ticket              Ticket[]      @relation("reported")
+  reportedTickets     Ticket[]      @relation("reporter")
+  linkedAccounts      UserAccount[] @relation("UserToAccount")
+  chatRooms           ChatRoom[]    @relation("ChatRoomToUser")
 }
 
 model Game {
-  id        String  @id @default(cuid())
-  title     String
-  verified  Boolean @default(false) // whether the game has been verified by admins
-  supported Boolean @default(false) // whether the game is officially supported by etournity
-  homepage  String?
-  image     Image?  @relation(fields: [imageId], references: [id])
-  imageId   String? @unique
-
-  tournaments Tournament[]
+  id          String       @id @default(cuid())
+  title       String
+  verified    Boolean      @default(false)
+  supported   Boolean      @default(false)
+  homepage    String?
+  imageId     String?      @unique
+  image       Image?       @relation(fields: [imageId], references: [id])
   gameUsers   GameUser[]   @relation("GameToGameUsers")
-  gameMode    GameMode[]
+  tournaments Tournament[]
+  gameMode    GameMode[]   @relation("GameToGameMode")
 }
 
-// For game related user data
 model GameUser {
   id         String  @id @default(cuid())
-  user       User?   @relation("UserToGameUsers", fields: [userId], references: [id])
   userId     String?
-  game       Game    @relation("GameToGameUsers", fields: [gameId], references: [id])
   gameId     String
   inGameName String
   elo        Int
+  game       Game    @relation("GameToGameUsers", fields: [gameId], references: [id])
+  user       User?   @relation("UserToGameUsers", fields: [userId], references: [id])
 
-  // a gameuser can only exist once for each game per user
   @@unique([userId, gameId], name: "GameUser_userId_gameId_key")
 }
 
 model UserAccount {
-  id      String @id @default(cuid())
-  ownerId String
-  owner   User   @relation("UserToAccount", fields: [ownerId], references: [id])
-
+  id            String  @id @default(cuid())
+  ownerId       String
   provider      String
   userId        String
   username      String
@@ -90,10 +81,7 @@ model UserAccount {
   fetchedAt     String
   accessToken   String
   refreshToken  String
-
-
-  // users can only have one account linked for a specific provider
-  // a provider account can only be linked to a single user
+  owner         User    @relation("UserToAccount", fields: [ownerId], references: [id])
 
   @@unique([ownerId, provider], name: "UserAccount_ownerId_provider_key")
   @@unique([userId, provider], name: "UserAccount_userId_provider_key")
@@ -107,41 +95,38 @@ model Tournament {
   publishedAt  DateTime?
   description  String?
   date         DateTime
-  game         Game             @relation(fields: [gameId], references: [id])
   gameId       String
-  gameMode     GameMode         @relation(fields: [gameModeId], references: [id])
   gameModeId   String
   status       TournamentStatus @default(DRAFT)
   languageCode String?
-  language     Language?        @relation(fields: [languageCode], references: [code])
   regionCode   String?
-  region       Region?          @relation(fields: [regionCode], references: [code])
-
   discordLink  String?
   supportLink  String?
   streamLink   String?
-  participants Participant[]
   rules        String
-
   maxPlayers   Int?
   checkinStart DateTime?
   checkinEnd   DateTime?
-  noShow       Int        @default(10)
+  noShow       Int              @default(10)
   prizePool    String?
-  platforms    Platform[]
-  stages       Stage[]
-  tickets      Ticket[]
-  Team         Team[]
   chatRoom     ChatRoom?
+  participants Participant[]
+  stages       Stage[]
+  Team         Team[]
+  tickets      Ticket[]
+  game         Game             @relation(fields: [gameId], references: [id])
+  gameMode     GameMode         @relation(fields: [gameModeId], references: [id])
+  language     Language?        @relation(fields: [languageCode], references: [code])
+  region       Region?          @relation(fields: [regionCode], references: [code])
+  platforms    Platform[]       @relation("PlatformToTournament")
 }
 
 model GameMode {
-  id       String @id @default(cuid())
-  name     String
-  teamSize Int?
-
-  games      Game[]
+  id         String       @id @default(cuid())
+  name       String
+  teamSize   Int?
   tournament Tournament[]
+  games      Game[]       @relation("GameToGameMode")
 }
 
 model Language {
@@ -150,66 +135,47 @@ model Language {
   tournaments Tournament[]
 }
 
-enum TournamentStatus {
-  DRAFT
-  PUBLISHED
-  STARTED
-  FINISHED
-  CANCELLED
-  ERROR
-}
-
 model Participant {
   id            String            @id @default(cuid())
   userId        String
-  user          User              @relation("UserToParticipant", fields: [userId], references: [id])
-  roles         ParticipantRole[]
   registeredAt  DateTime?         @default(now())
   checkedInAt   DateTime?
-  tournament    Tournament?       @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
   tournamentId  String?
-  team          Team?             @relation(fields: [teamId], references: [id])
   teamId        String?
-  readyChecks   ReadyCheck[]
   requestingMod Boolean           @default(false)
   deniedMod     Boolean           @default(false)
   kicked        Boolean           @default(false)
+  team          Team?             @relation(fields: [teamId], references: [id])
+  tournament    Tournament?       @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  user          User              @relation("UserToParticipant", fields: [userId], references: [id])
+  roles         ParticipantRole[]
+  readyChecks   ReadyCheck[]
+  leaderOfTeam  Team[]            @relation("TeamleaderToTeam")
 
-
-  // users can only have one participant inside each tournament
-  leaderOfTeam Team[] @relation("TeamleaderToTeam")
   @@unique([userId, tournamentId], name: "participant_userId_tournamentId_key")
 }
 
 model ParticipantRole {
   id            String              @id @default(cuid())
   type          ParticipantRoleType
-  participant   Participant         @relation(fields: [participantId], references: [id], onDelete: Cascade)
   participantId String
-}
-
-enum ParticipantRoleType {
-  PLAYER
-  HOST
-  ADMIN
-  MODERATOR
+  participant   Participant         @relation(fields: [participantId], references: [id], onDelete: Cascade)
 }
 
 model Team {
-  id   String @id @default(cuid())
-  name String
-  seed Int?
-
-  participants Participant[]
-  leader       Participant?  @relation("TeamleaderToTeam", fields: [leaderId], references: [id])
+  id           String        @id @default(cuid())
+  name         String
+  seed         Int?
   leaderId     String?
-  matches      Match[]
-  readyChecks  ReadyCheck[]
-  submissions  Submission[]
-  results      Result[]
   avatar       String?
   tournamentId String
+  participants Participant[]
+  readyChecks  ReadyCheck[]
+  results      Result[]
+  submissions  Submission[]
+  leader       Participant?  @relation("TeamleaderToTeam", fields: [leaderId], references: [id])
   tournament   Tournament    @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+  matches      Match[]       @relation("MatchToTeam")
 
   @@unique([name, tournamentId], name: "team_name_tournamentId_key")
 }
@@ -223,22 +189,154 @@ model Region {
 model Platform {
   code        String       @id
   name        String
-  tournaments Tournament[]
+  tournaments Tournament[] @relation("PlatformToTournament")
 }
 
 model Match {
   id            String       @id @default(cuid())
   number        Int
   status        MatchStatus  @default(SCHEDULED)
-  readyChecks   ReadyCheck[]
-  opponents     Team[]
   gameLobbyCode String?
-  round         Round?       @relation(fields: [roundId], references: [id])
   roundId       String?
-  matchGames    MatchGame[]
   inGame        String[]
-  tickets       Ticket[]
   noShowTimer   DateTime?
+  round         Round?       @relation(fields: [roundId], references: [id])
+  matchGames    MatchGame[]
+  readyChecks   ReadyCheck[]
+  tickets       Ticket[]
+  opponents     Team[]       @relation("MatchToTeam")
+}
+
+model ReadyCheck {
+  id            String      @id @default(cuid())
+  checkedInAt   DateTime
+  lobbyRole     String
+  matchId       String
+  participantId String
+  teamId        String?
+  match         Match       @relation(fields: [matchId], references: [id])
+  participant   Participant @relation(fields: [participantId], references: [id])
+  team          Team?       @relation(fields: [teamId], references: [id])
+
+  @@unique([participantId, matchId], name: "readyCheck_participantId_matchId_key")
+}
+
+model MatchGame {
+  id          String       @id @default(cuid())
+  number      Int
+  status      GameStatus
+  matchId     String
+  match       Match        @relation(fields: [matchId], references: [id])
+  result      Result[]
+  submissions Submission[]
+}
+
+model Submission {
+  id          String     @id @default(cuid())
+  teamId      String
+  resubmitted Boolean    @default(false)
+  matchGameId String?
+  results     Result[]
+  matchGame   MatchGame? @relation(fields: [matchGameId], references: [id], onDelete: Cascade)
+  team        Team       @relation(fields: [teamId], references: [id])
+
+  @@unique([matchGameId, teamId], name: "submission_matchGameId_teamId_key")
+}
+
+model Result {
+  id           String      @id @default(cuid())
+  score        Int
+  teamId       String
+  submissionId String?
+  matchGameId  String?
+  matchGame    MatchGame?  @relation(fields: [matchGameId], references: [id], onDelete: Cascade)
+  submission   Submission? @relation(fields: [submissionId], references: [id], onDelete: Cascade)
+  team         Team        @relation(fields: [teamId], references: [id])
+}
+
+model Round {
+  id      String      @id @default(cuid())
+  title   String?
+  number  Int         @default(autoincrement())
+  format  Int
+  stageId String?
+  status  RoundStatus @default(UPCOMING)
+  locked  Boolean     @default(false)
+  matches Match[]
+  stage   Stage?      @relation(fields: [stageId], references: [id], onDelete: Cascade)
+
+  @@unique([stageId, number], name: "round_stageId_number_key")
+}
+
+model Stage {
+  id           String     @id @default(cuid())
+  title        String?
+  number       Int        @default(autoincrement())
+  type         StageType
+  mode         Int?       @default(1)
+  tournamentId String
+  rounds       Round[]
+  tournament   Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
+
+  @@unique([tournamentId, number], name: "stage_tournamentId_number_key")
+}
+
+model Ticket {
+  id           String      @id @default(cuid())
+  type         TicketType
+  resolved     Boolean     @default(false)
+  matchBlocked Boolean?    @default(false)
+  message      String?
+  verdict      String?
+  number       Int?        @default(autoincrement())
+  reportedId   String?
+  reporterId   String?
+  assigneeId   String?
+  tournamentId String?
+  matchId      String?
+  assignee     User?       @relation("assignee", fields: [assigneeId], references: [id])
+  match        Match?      @relation(fields: [matchId], references: [id])
+  reported     User?       @relation("reported", fields: [reportedId], references: [id])
+  reporter     User?       @relation("reporter", fields: [reporterId], references: [id])
+  tournament   Tournament? @relation(fields: [tournamentId], references: [id])
+
+  @@unique([tournamentId, number], name: "ticket_tournament_number_key")
+}
+
+model ChatRoom {
+  id           String        @id @default(cuid())
+  name         String
+  archivedAt   DateTime?
+  tournamentId String?       @unique
+  messages     ChatMessage[]
+  tournament   Tournament?   @relation(fields: [tournamentId], references: [id])
+  members      User[]        @relation("ChatRoomToUser")
+}
+
+model ChatMessage {
+  id         String   @id @default(cuid())
+  createdAt  DateTime
+  authorId   String
+  content    String
+  chatRoomId String
+  author     User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  chatRoom   ChatRoom @relation(fields: [chatRoomId], references: [id], onDelete: Cascade)
+}
+
+enum TournamentStatus {
+  DRAFT
+  PUBLISHED
+  STARTED
+  FINISHED
+  CANCELLED
+  ERROR
+}
+
+enum ParticipantRoleType {
+  PLAYER
+  HOST
+  ADMIN
+  MODERATOR
 }
 
 enum MatchStatus {
@@ -251,74 +349,11 @@ enum MatchStatus {
   NO_SHOW
 }
 
-model ReadyCheck {
-  id            String      @id @default(cuid())
-  checkedInAt   DateTime
-  lobbyRole     String
-  matchId       String
-  match         Match       @relation(fields: [matchId], references: [id])
-  participantId String
-  participant   Participant @relation(fields: [participantId], references: [id])
-  team          Team?       @relation(fields: [teamId], references: [id])
-  teamId        String?
-
-  // participants can only have one readyCheck for each match
-  @@unique([participantId, matchId], name: "readyCheck_participantId_matchId_key")
-}
-
-model MatchGame {
-  id          String       @id @default(cuid())
-  number      Int
-  submissions Submission[]
-  status      GameStatus
-  match       Match        @relation(fields: [matchId], references: [id])
-  matchId     String
-  result      Result[]
-}
-
-model Submission {
-  id          String     @id @default(cuid())
-  team        Team       @relation(fields: [teamId], references: [id])
-  teamId      String
-  resubmitted Boolean    @default(false)
-  results     Result[]
-  matchGame   MatchGame? @relation(fields: [matchGameId], references: [id], onDelete: Cascade)
-  matchGameId String?
-
-  // participants can only have one readyCheck for each match
-  @@unique([matchGameId, teamId], name: "submission_matchGameId_teamId_key")
-}
-
-model Result {
-  id           String      @id @default(cuid())
-  team         Team        @relation(fields: [teamId], references: [id])
-  score        Int
-  teamId       String
-  submission   Submission? @relation(fields: [submissionId], references: [id], onDelete: Cascade)
-  submissionId String?
-  matchGame    MatchGame?  @relation(fields: [matchGameId], references: [id], onDelete: Cascade)
-  matchGameId  String?
-}
-
 enum GameStatus {
   CONFLICT
   WAITING
   SUCCESS
   MANUAL_EDIT
-}
-
-model Round {
-  id      String      @id @default(cuid())
-  title   String?
-  number  Int         @default(autoincrement())
-  format  Int
-  matches Match[]
-  stage   Stage?      @relation(fields: [stageId], references: [id], onDelete: Cascade)
-  stageId String?
-  status  RoundStatus @default(UPCOMING)
-  locked  Boolean     @default(false)
-
-  @@unique([stageId, number], name: "round_stageId_number_key")
 }
 
 enum RoundStatus {
@@ -327,45 +362,8 @@ enum RoundStatus {
   COMPLETED
 }
 
-model Stage {
-  id           String     @id @default(cuid())
-  title        String?
-  number       Int        @default(autoincrement())
-  rounds       Round[]
-  type         StageType
-  mode         Int?       @default(1)
-  tournament   Tournament @relation(fields: [tournamentId], references: [id], onDelete: Cascade)
-  tournamentId String
-
-  @@unique([tournamentId, number], name: "stage_tournamentId_number_key")
-}
-
 enum StageType {
   SINGLE
-}
-
-model Ticket {
-  id           String     @id @default(cuid())
-  type         TicketType
-  resolved     Boolean    @default(false)
-  matchBlocked Boolean?   @default(false)
-  message      String?
-  verdict      String?
-  number       Int?       @default(autoincrement())
-
-  reported     User?       @relation("reported", fields: [reportedId], references: [id])
-  reportedId   String?
-  reporter     User?       @relation("reporter", fields: [reporterId], references: [id])
-  reporterId   String?
-  assignee     User?       @relation("assignee", fields: [assigneeId], references: [id])
-  assigneeId   String?
-  tournament   Tournament? @relation(fields: [tournamentId], references: [id])
-  tournamentId String?
-  match        Match?      @relation(fields: [matchId], references: [id])
-  matchId      String?
-
-
-  @@unique([tournamentId, number], name: "ticket_tournament_number_key")
 }
 
 enum TicketType {
@@ -374,24 +372,4 @@ enum TicketType {
   PLAYER_NOT_RESPONDING
   GAME_ISSUE
   PLAYER_REPORT
-}
-
-model ChatRoom {
-  id           String        @id @default(cuid())
-  name         String
-  members      User[]
-  messages     ChatMessage[]
-  archivedAt   DateTime?
-  tournament   Tournament?   @relation(fields: [tournamentId], references: [id])
-  tournamentId String?       @unique
-}
-
-model ChatMessage {
-  id         String   @id @default(cuid())
-  createdAt  DateTime
-  author     User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
-  authorId   String
-  content    String
-  chatRoom   ChatRoom @relation(fields: [chatRoomId], references: [id], onDelete: Cascade)
-  chatRoomId String
 }

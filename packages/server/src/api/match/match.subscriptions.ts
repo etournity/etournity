@@ -1,4 +1,4 @@
-import { arg, idArg, list, nonNull, subscriptionField } from 'nexus'
+import { idArg, list, nonNull, stringArg, subscriptionField } from 'nexus'
 import { Match } from 'nexus-prisma'
 import { withFilter } from 'graphql-subscriptions'
 
@@ -7,7 +7,7 @@ export const MatchSubscriptions = subscriptionField('matchChanged', {
 
   args: {
     matchId: nonNull(idArg()),
-    actions: list(nonNull(arg({ type: 'String' }))),
+    actions: list(nonNull(stringArg())),
   },
   subscribe: withFilter(
     (_, __, { pubsub }) => pubsub.asyncIterator([Match.$name]),

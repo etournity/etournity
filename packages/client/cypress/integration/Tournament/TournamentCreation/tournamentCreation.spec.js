@@ -2,14 +2,10 @@ const dayjs = require('dayjs')
 
 /* eslint-disable jest/expect-expect */
 Cypress.config('scrollBehavior', false)
-describe('Tournament Creation', () => {
+describe('Tournament Creation', { testIsolation: false }, () => {
   describe('Game Select', () => {
-    before(() => {
-      cy.clearStorage()
-      cy.logMeIn('organizer')
-    })
-
     it('cancels the creation', () => {
+      cy.login('organizer')
       cy.visit('/tournament/new')
       cy.get('[data-cy=cancel]').click()
       cy.url().should(
@@ -19,6 +15,7 @@ describe('Tournament Creation', () => {
     })
 
     it('displays a game and mode selection', () => {
+      cy.login('organizer')
       cy.visit('/tournament/new')
       cy.get('[data-cy=gameSelect]').should('be.visible')
       cy.get('[data-cy=modeSelect]').should('be.visible')
@@ -180,8 +177,9 @@ describe('Tournament Creation', () => {
         cy.get('[class*=timetableForm]')
           .first()
           .find('[class*=labelInput]')
+          .as('timeTableInput')
           .clear()
-          .type(5)
+        cy.get('@timeTableInput').type(5)
       })
       it('selects a planned start', () => {
         cy.get('[class*=timetableForm]')
@@ -318,7 +316,8 @@ describe('Tournament Creation', () => {
         cy.get('[data-cy=modeSelect]').contains('1 v 1')
       })
       it('creates the tournament successfully and redirects to hub', () => {
-        cy.get('[data-cy=CreateTournamentButton]').scrollIntoView().click()
+        cy.get('[data-cy=CreateTournamentButton]').scrollIntoView()
+        cy.get('[data-cy=CreateTournamentButton]').click()
         cy.url().should('contain', '/hub')
       })
     }

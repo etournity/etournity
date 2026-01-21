@@ -15,12 +15,14 @@ describe('Layout', () => {
         cy.get('[data-cy=loginButton]').should('be.visible')
       })
       it('opens dropdown on click', () => {
-        cy.logMeIn('player1')
+        cy.login('player1')
+        cy.visit('/')
         cy.get('[data-cy=userBar]').click()
         cy.get('[data-cy=userBarDropdown]').should('be.visible')
       })
       it('shows social links', () => {
-        cy.logMeIn('player1')
+        cy.login('player1')
+        cy.visit('/')
         cy.get('[data-cy=userBar]').click()
         cy.get('[data-cy=socialsButton]').click()
         cy.get('[data-cy=socialLink]').should('have.length', 5)

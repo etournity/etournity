@@ -190,7 +190,7 @@ const BracketViz: React.FC<BracketVizProps> = ({
                 variant="outlined"
                 className={styles.floatBarButton}
                 onClick={() => {
-                  const anim = new Konva.Animation(function(frame) {
+                  const anim = new Konva.Animation(function (frame) {
                     stageRef.current?.absolutePosition(
                       lerp(
                         stageRef.current?.getPosition(),

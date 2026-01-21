@@ -1,6 +1,6 @@
 import { applyMiddleware } from 'graphql-middleware'
-import { declarativeWrappingPlugin, makeSchema } from 'nexus'
-import NexusPrismaScalars from 'nexus-prisma/scalars'
+import { asNexusMethod, declarativeWrappingPlugin, makeSchema } from 'nexus'
+import { DateTimeResolver } from 'graphql-scalars'
 import { join } from 'path'
 import { types } from './api'
 import { permissions } from './permissions'
@@ -8,7 +8,7 @@ import { mutationYupValidationSchemaMap, yupValidation } from './yup'
 
 export const schema = applyMiddleware(
   makeSchema({
-    types: [NexusPrismaScalars, ...types],
+    types: [asNexusMethod(DateTimeResolver, 'dateTime'), ...types],
     shouldExitAfterGenerateArtifacts: process.argv.includes('--nexus-exit'),
     outputs: {
       typegen: join(process.cwd(), './src/generated/nexus.d.ts'),
